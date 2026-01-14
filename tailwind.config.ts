@@ -102,8 +102,10 @@ export default {
           "50%": { transform: "translateY(-10px)" },
         },
         "gold-glow": {
-          "0%, 100%": { boxShadow: "0 0 15px hsl(40 65% 50% / 0.15), 0 4px 15px hsl(40 65% 50% / 0.1)" },
-          "50%": { boxShadow: "0 0 25px hsl(40 65% 50% / 0.25), 0 4px 20px hsl(40 65% 50% / 0.18)" },
+          "0%": { boxShadow: "0 0 12px hsl(40 65% 50% / 0.12), 0 4px 12px hsl(40 65% 50% / 0.08)" },
+          "33%": { boxShadow: "0 0 18px hsl(40 65% 50% / 0.18), 0 4px 16px hsl(40 65% 50% / 0.12)" },
+          "66%": { boxShadow: "0 0 15px hsl(40 65% 50% / 0.15), 0 4px 14px hsl(40 65% 50% / 0.1)" },
+          "100%": { boxShadow: "0 0 12px hsl(40 65% 50% / 0.12), 0 4px 12px hsl(40 65% 50% / 0.08)" },
         },
       },
       animation: {
@@ -111,7 +113,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 2s infinite",
         float: "float 6s ease-in-out infinite",
-        "gold-glow": "gold-glow 5s ease-in-out infinite",
+        "gold-glow": "gold-glow 10s ease-in-out infinite",
       },
       boxShadow: {
         luxury: "0 4px 30px rgba(0, 0, 0, 0.08)",
