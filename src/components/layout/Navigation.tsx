@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/jadore-logo.png";
+import logo from "@/assets/jadore-logo-full.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -45,11 +45,11 @@ const Navigation = () => {
         }`}
       >
         <nav className="container-luxury flex items-center justify-between">
-          <Link to="/" className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0 overflow-hidden">
             <img
               src={logo}
               alt="J'adore Wellness"
-              className="h-10 md:h-12 w-auto"
+              className="h-12 md:h-14 w-auto object-cover object-center"
             />
           </Link>
 
