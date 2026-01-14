@@ -16,8 +16,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground rounded-md",
         link: "text-primary underline-offset-4 hover:underline",
         // Luxury variants
-        gold: "bg-gold text-charcoal font-sans font-medium hover:bg-gold-light rounded-sm shadow-gold hover:shadow-lg tracking-wide",
-        "gold-outline": "border-2 border-gold text-gold font-sans font-medium hover:bg-gold hover:text-charcoal rounded-sm tracking-wide",
+        gold: "bg-gold text-charcoal font-sans font-medium hover:bg-gold-light rounded-sm shadow-gold hover:shadow-lg tracking-wide animate-gold-glow",
+        "gold-outline": "border-2 border-gold text-gold font-sans font-medium hover:bg-gold hover:text-charcoal rounded-sm tracking-wide animate-gold-glow",
         luxury: "bg-charcoal text-ivory font-sans font-medium hover:bg-charcoal-light rounded-sm shadow-luxury hover:shadow-luxury-lg tracking-wide",
         "luxury-outline": "border-2 border-charcoal text-charcoal font-sans font-medium hover:bg-charcoal hover:text-ivory rounded-sm tracking-wide",
         teal: "bg-teal text-ivory font-sans font-medium hover:bg-teal-light rounded-sm shadow-luxury tracking-wide",

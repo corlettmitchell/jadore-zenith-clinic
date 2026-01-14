@@ -101,12 +101,17 @@ export default {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        "gold-glow": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(40 65% 50% / 0.3), 0 4px 20px hsl(40 65% 50% / 0.2)" },
+          "50%": { boxShadow: "0 0 35px hsl(40 65% 50% / 0.5), 0 4px 30px hsl(40 65% 50% / 0.35)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 2s infinite",
         float: "float 6s ease-in-out infinite",
+        "gold-glow": "gold-glow 2.5s ease-in-out infinite",
       },
       boxShadow: {
         luxury: "0 4px 30px rgba(0, 0, 0, 0.08)",
