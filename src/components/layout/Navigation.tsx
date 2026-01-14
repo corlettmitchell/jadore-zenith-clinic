@@ -62,7 +62,9 @@ const Navigation = () => {
                 className={`link-underline text-sm font-sans tracking-wide transition-colors ${
                   location.pathname === link.path
                     ? "text-gold"
-                    : "text-foreground/80 hover:text-foreground"
+                    : isScrolled
+                      ? "text-foreground/80 hover:text-foreground"
+                      : "text-white/90 hover:text-white"
                 }`}
               >
                 {link.name}
@@ -76,12 +78,16 @@ const Navigation = () => {
               href="https://www.optimantra.com/optimus/om/public/getConsentForm?cnsntfrmId=65181&userId=&patientId=0&cnsntfrmfilledFormId=&isEdit=0&isPreview=0&isFormTemplate=0"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-sans text-foreground/70 hover:text-foreground transition-colors"
+              className={`text-sm font-sans transition-colors ${
+                isScrolled
+                  ? "text-foreground/70 hover:text-foreground"
+                  : "text-white/80 hover:text-white"
+              }`}
             >
               Patient Portal
             </a>
             <Link to="/intake">
-              <Button variant="gold" size="default">
+              <Button variant={isScrolled ? "gold" : "gold-outline"} size="default">
                 Get Started
               </Button>
             </Link>
