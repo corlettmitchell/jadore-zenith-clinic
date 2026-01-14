@@ -49,7 +49,7 @@ const Navigation = () => {
             <img
               src={logo}
               alt="J'adore Wellness"
-              className="h-12 md:h-14 w-auto object-cover object-center"
+              className="h-14 md:h-16 w-auto object-cover object-center"
             />
           </Link>
 
