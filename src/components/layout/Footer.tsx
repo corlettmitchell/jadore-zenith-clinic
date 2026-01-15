@@ -64,8 +64,8 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="text-gold mt-0.5 flex-shrink-0" />
                 <span className="text-ivory/70 text-sm">
-                  123 Wellness Boulevard<br />
-                  Louisville, KY 40202
+                  1763 Oceanside Blvd, Suite B<br />
+                  Oceanside, CA 92054
                 </span>
               </li>
               <li className="flex items-center gap-3">
