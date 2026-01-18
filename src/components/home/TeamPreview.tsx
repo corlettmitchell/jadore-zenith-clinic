@@ -6,18 +6,18 @@ import teamNurse from "@/assets/team-nurse.jpg";
 
 const team = [
   {
-    name: "Dr. Sarah Mitchell",
+    name: "Dr. [Name]",
     role: "Medical Director",
     credentials: "MD, Board Certified",
     image: teamDoctor,
-    bio: "Specializing in hormone optimization and regenerative medicine with over 15 years of experience.",
+    bio: "[Bio placeholder - Add your medical director's background and specialties here]",
   },
   {
-    name: "Jennifer Adams",
+    name: "[Name]",
     role: "Nurse Practitioner",
     credentials: "NP-C, MSN",
     image: teamNurse,
-    bio: "Expert in aesthetic medicine and IV therapy with a focus on personalized patient care.",
+    bio: "[Bio placeholder - Add your nurse practitioner's experience and focus areas here]",
   },
 ];
 
