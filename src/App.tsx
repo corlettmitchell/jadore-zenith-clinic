@@ -7,6 +7,10 @@ import ScrollToTop from "./components/shared/ScrollToTop";
 import Index from "./pages/Index";
 import HormoneTherapy from "./pages/HormoneTherapy";
 import Services from "./pages/Services";
+import ColdPlunge from "./pages/ColdPlunge";
+import InfraredSauna from "./pages/InfraredSauna";
+import Compression from "./pages/Compression";
+import IVTherapy from "./pages/IVTherapy";
 import Aesthetics from "./pages/Aesthetics";
 import About from "./pages/About";
 import Team from "./pages/Team";
@@ -27,8 +31,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/hormone-therapy" element={<HormoneTherapy />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/services/cold-plunge" element={<Services />} />
-          <Route path="/services/sauna" element={<Services />} />
+          <Route path="/services/cold-plunge" element={<ColdPlunge />} />
+          <Route path="/services/infrared-sauna" element={<InfraredSauna />} />
+          <Route path="/services/compression" element={<Compression />} />
+          <Route path="/services/iv-therapy" element={<IVTherapy />} />
           <Route path="/aesthetics" element={<Aesthetics />} />
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
