@@ -149,8 +149,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-serif text-lg text-foreground mb-1">Location</h4>
                     <p className="text-muted-foreground">
-                      123 Wellness Boulevard<br />
-                      Louisville, KY 40202
+                      1763 Oceanside Blvd, Suite B<br />
+                      Oceanside, CA 92054
                     </p>
                   </div>
                 </div>
@@ -161,7 +161,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-serif text-lg text-foreground mb-1">Phone</h4>
-                    <p className="text-muted-foreground">(502) 555-0123</p>
+                    <p className="text-muted-foreground">(xxx) xxx-xxxx</p>
                   </div>
                 </div>
 
