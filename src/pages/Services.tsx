@@ -221,6 +221,7 @@ const Services = () => {
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
         serviceName={selectedService}
+        partnerUrl="https://bellalongevityspa.com/?srsltid=AfmBOopuTglJHLU1fbvYLJ4foozrYLrZfIYu0hy7ZiG-qvuFfv8XskE0"
       />
     </Layout>
   );
