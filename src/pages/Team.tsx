@@ -9,20 +9,20 @@ import teamNurse from "@/assets/team-nurse.jpg";
 
 const team = [
   {
-    name: "Dr. Sarah Mitchell",
+    name: "Dr. [Name]",
     role: "Medical Director",
-    credentials: "MD, Board Certified in Internal Medicine",
+    credentials: "MD, Board Certified",
     image: teamDoctor,
-    bio: "Dr. Mitchell brings over 15 years of experience in hormone optimization and regenerative medicine. After witnessing the limitations of conventional medicine, she founded J'adore Wellness to provide the personalized, proactive care her patients deserve. She is passionate about helping patients achieve optimal health through evidence-based protocols tailored to individual needs.",
-    specialties: ["Hormone Optimization", "Regenerative Medicine", "Preventive Care"],
+    bio: "[Bio placeholder - Add your medical director's background, experience, and passion for wellness medicine here. Include their journey to founding J'adore Wellness and their approach to patient care.]",
+    specialties: ["Specialty 1", "Specialty 2", "Specialty 3"],
   },
   {
-    name: "Jennifer Adams",
+    name: "[Name]",
     role: "Nurse Practitioner",
-    credentials: "NP-C, MSN, Board Certified",
+    credentials: "NP-C, MSN",
     image: teamNurse,
-    bio: "Jennifer specializes in aesthetic medicine and IV therapy, combining her nursing expertise with advanced training in cosmetic procedures. She is known for her gentle technique and artistic eye, helping patients achieve natural-looking results. Her approach focuses on enhancing each patient's unique features while prioritizing safety and comfort.",
-    specialties: ["Aesthetic Medicine", "IV Therapy", "Injectables"],
+    bio: "[Bio placeholder - Add your nurse practitioner's experience, areas of expertise, and approach to patient care here. Highlight their training and what makes them passionate about helping patients.]",
+    specialties: ["Specialty 1", "Specialty 2", "Specialty 3"],
   },
 ];
 
