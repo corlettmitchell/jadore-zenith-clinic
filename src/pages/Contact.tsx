@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/shared/SectionHeading";
+import SEO from "@/components/seo/SEO";
+import { seoData } from "@/lib/seo-data";
 
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -14,6 +16,7 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO {...seoData.contact} />
       {/* Hero */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-luxury">
         <div className="container-luxury">

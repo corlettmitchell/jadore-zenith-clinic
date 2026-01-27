@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Gauge, Zap, Heart, Activity, Timer, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/seo/SEO";
+import { seoData } from "@/lib/seo-data";
 import compressionImage from "@/assets/service-compression.jpg";
 
 const benefits = [
@@ -41,6 +43,7 @@ const benefits = [
 const Compression = () => {
   return (
     <Layout>
+      <SEO {...seoData.compression} />
       {/* Hero */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-luxury">
         <div className="container-luxury">

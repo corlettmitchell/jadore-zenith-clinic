@@ -9,10 +9,13 @@ import CareModel from "@/components/home/CareModel";
 import ProcessSection from "@/components/home/ProcessSection";
 import TeamPreview from "@/components/home/TeamPreview";
 import CTASection from "@/components/home/CTASection";
+import SEO from "@/components/seo/SEO";
+import { seoData } from "@/lib/seo-data";
 
 const Index = () => {
   return (
     <Layout>
+      <SEO {...seoData.home} />
       <Hero />
       <IntroSection />
       <SymptomGrid />
