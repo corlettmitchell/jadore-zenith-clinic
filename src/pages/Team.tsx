@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Linkedin, Mail } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/shared/SectionHeading";
+import SEO from "@/components/seo/SEO";
+import { seoData } from "@/lib/seo-data";
 import teamDoctor from "@/assets/team-doctor.jpg";
 import teamNurse from "@/assets/team-nurse.jpg";
 
@@ -29,6 +31,7 @@ const team = [
 const Team = () => {
   return (
     <Layout>
+      <SEO {...seoData.team} />
       {/* Hero */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-luxury">
         <div className="container-luxury">

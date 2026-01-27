@@ -6,6 +6,8 @@ import { ArrowRight, Droplets, Gauge, Snowflake, Sun } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/shared/SectionHeading";
 import PartnerRedirectModal from "@/components/shared/PartnerRedirectModal";
+import SEO from "@/components/seo/SEO";
+import { seoData } from "@/lib/seo-data";
 import ivImage from "@/assets/service-iv.jpg";
 import compressionImage from "@/assets/service-compression.jpg";
 import coldPlungeImage from "@/assets/service-coldplunge.jpg";
@@ -91,6 +93,7 @@ const Services = () => {
 
   return (
     <Layout>
+      <SEO {...seoData.services} />
       {/* Hero */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-luxury">
         <div className="container-luxury">

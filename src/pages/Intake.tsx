@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { Shield, Lock, FileText } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/seo/SEO";
+import { seoData } from "@/lib/seo-data";
 import logo from "@/assets/jadore-logo.png";
 
 const Intake = () => {
   return (
     <Layout>
+      <SEO {...seoData.intake} />
       {/* Hero */}
       <section className="pt-32 pb-12 md:pt-40 md:pb-16 bg-gradient-luxury">
         <div className="container-luxury">

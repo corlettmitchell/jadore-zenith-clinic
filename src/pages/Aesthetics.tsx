@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/shared/SectionHeading";
+import SEO from "@/components/seo/SEO";
+import { seoData } from "@/lib/seo-data";
 import aestheticsImage from "@/assets/service-aesthetics.jpg";
 
 const treatments = [
@@ -63,6 +65,7 @@ const treatments = [
 const Aesthetics = () => {
   return (
     <Layout>
+      <SEO {...seoData.aesthetics} />
       {/* Hero */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">

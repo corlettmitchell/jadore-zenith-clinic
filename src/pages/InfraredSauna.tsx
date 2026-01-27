@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Sun, Heart, Sparkles, Droplets, ThermometerSun, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SEO from "@/components/seo/SEO";
+import { seoData } from "@/lib/seo-data";
 import saunaImage from "@/assets/service-sauna.jpg";
 
 const benefits = [
@@ -41,6 +43,7 @@ const benefits = [
 const InfraredSauna = () => {
   return (
     <Layout>
+      <SEO {...seoData.infraredSauna} />
       {/* Hero */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-luxury">
         <div className="container-luxury">

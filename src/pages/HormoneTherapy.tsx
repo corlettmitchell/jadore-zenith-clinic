@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/shared/SectionHeading";
+import SEO from "@/components/seo/SEO";
+import { seoData } from "@/lib/seo-data";
 import hormoneImage from "@/assets/service-hormone.jpg";
 
 const benefits = [
@@ -59,6 +61,7 @@ const therapies = [
 const HormoneTherapy = () => {
   return (
     <Layout>
+      <SEO {...seoData.hormoneTherapy} />
       {/* Hero */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
         <div className="absolute inset-0">
