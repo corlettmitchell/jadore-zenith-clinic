@@ -26,10 +26,10 @@ const metrics = [
 
 const WhyJadore = () => {
   return (
-    <section className="section-padding bg-teal relative overflow-hidden">
+    <section className="section-padding bg-gold-dark relative overflow-hidden">
       {/* Decorative pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_25%,_hsl(var(--ivory))_25%,_hsl(var(--ivory))_50%,_transparent_50%,_transparent_75%,_hsl(var(--ivory))_75%)] bg-[length:60px_60px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_25%,_hsl(var(--gold-light))_25%,_hsl(var(--gold-light))_50%,_transparent_50%,_transparent_75%,_hsl(var(--gold-light))_75%)] bg-[length:60px_60px]" />
       </div>
 
       <div className="container-luxury relative">
