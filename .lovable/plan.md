@@ -1,49 +1,36 @@
 
-# Change "Why Choose Us" Section to Brown Color Scheme
 
-## Overview
-Update the WhyJadore component to use brown/gold tones instead of teal while keeping the same diagonal stripe pattern.
+# Update All URLs to Use Custom Domain (jadore-wellness.com)
 
----
+## Problem
+Google is indexing the site under the Lovable staging domain (`jadore-zenith-clinic.lovable.app`) instead of your custom domain (`jadore-wellness.com`). This is because all canonical URLs, Open Graph tags, and structured data currently point to the Lovable domain.
 
-## Current Implementation
-- **Background**: `bg-teal` (deep teal green)
-- **Stripe Pattern**: 45-degree diagonal stripes using ivory color at 10% opacity
-- **Text Colors**: Ivory text, gold accents
-
----
-
-## Proposed Changes
-
-### Color Approach
-Use the existing gold-dark color as the base background with lighter gold stripes to create a warm, luxurious brown-striped effect that matches the site's design system.
-
-### Changes to `src/components/home/WhyJadore.tsx`
-
-**Line 29** - Change background from teal to gold-dark:
-```
-bg-teal → bg-gold-dark
-```
-
-**Line 32** - Update stripe color to use a lighter gold for contrast:
-```
-hsl(var(--ivory)) → hsl(var(--gold-light))
-```
-
-This creates a warm brown background with subtle lighter brown/gold stripes, maintaining the exact same 45-degree diagonal pattern and 60px stripe size.
-
----
-
-## Visual Result
-- **Base Color**: Deep warm brown/gold (`--gold-dark`: 38 60% 40%)
-- **Stripe Color**: Lighter gold (`--gold-light`: 42 70% 65%) at 10% opacity
-- **Same Pattern**: 45-degree diagonal stripes at 60px intervals
-- **Text**: Remains ivory with gold accents for good contrast
+## Solution
+Replace every instance of `https://jadore-zenith-clinic.lovable.app` with `https://jadore-wellness.com` across the codebase. This tells Google that the custom domain is the authoritative version of the site.
 
 ---
 
 ## Files to Modify
 
-| File | Change |
-|------|--------|
-| `src/components/home/WhyJadore.tsx` | Update background class and stripe color |
+### 1. `src/components/seo/SEO.tsx`
+- Change `BASE_URL` from `https://jadore-zenith-clinic.lovable.app` to `https://jadore-wellness.com`
+
+### 2. `index.html`
+Update all references to the Lovable domain in:
+- Canonical link tag
+- Open Graph `og:url` and `og:image` tags
+- Twitter card URL and image tags
+- JSON-LD structured data (`@id`, `url`, `logo`, `image`, publisher references, search action target)
+
+Total: approximately 15-20 URL replacements in index.html.
+
+---
+
+## Why This Fixes the Google Issue
+- **Canonical tags** tell Google which URL is the "official" version of each page
+- **Structured data URLs** reinforce which domain Google should associate with the business
+- Once updated and republished, Google will gradually shift to showing `jadore-wellness.com` in search results
+
+## Note
+Make sure your custom domain is connected and active in Lovable project settings (Settings > Domains) before publishing. If not already done, you will need to add DNS records pointing to Lovable's IP address (185.158.133.1).
+
