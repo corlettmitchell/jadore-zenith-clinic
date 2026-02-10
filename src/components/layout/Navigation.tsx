@@ -9,7 +9,8 @@ const serviceSubLinks = [
   { name: "Cold Plunge", path: "/services/cold-plunge" },
   { name: "Infrared Saunas", path: "/services/infrared-sauna" },
   { name: "Compression", path: "/services/compression" },
-  { name: "Peptides & IV Therapy", path: "/services/iv-therapy" },
+  { name: "Peptide Therapy", path: "/services/peptide-therapy" },
+  { name: "Weight Loss", path: "/services/weight-loss" },
   { name: "Aesthetics", path: "/aesthetics" },
 ];
 

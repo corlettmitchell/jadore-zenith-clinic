@@ -9,7 +9,7 @@ export const seoData: Record<string, PageSEO> = {
   home: {
     title: "J'adore Wellness - Hormone Therapy & Wellness Clinic Oceanside CA",
     description:
-      "Premium hormone therapy, aesthetics, and wellness services in Oceanside, CA. Personalized HRT, IV therapy, cold plunge, infrared sauna, and aesthetic medicine.",
+      "Premium hormone therapy, aesthetics, and wellness services in Oceanside, CA. Personalized HRT, peptide therapy, weight loss, cold plunge, infrared sauna, and aesthetic medicine.",
     canonical: "/",
     keywords:
       "hormone therapy Oceanside, HRT San Diego, testosterone therapy, wellness clinic California, hormone optimization, anti-aging clinic",
@@ -22,13 +22,21 @@ export const seoData: Record<string, PageSEO> = {
     keywords:
       "hormone replacement therapy, HRT Oceanside, testosterone therapy San Diego, bioidentical hormones, TRT, menopause treatment, hormone optimization",
   },
-  ivTherapy: {
-    title: "Peptides & IV Therapy - J'adore Wellness Oceanside CA",
+  peptideTherapy: {
+    title: "Peptide Therapy - J'adore Wellness Oceanside CA",
     description:
-      "Advanced IV therapy and peptide protocols in Oceanside. NAD+, vitamin infusions, BPC-157, and more. 100% bioavailability for maximum results.",
-    canonical: "/iv-therapy",
+      "Advanced peptide protocols in Oceanside. BPC-157, Semaglutide, CJC-1295, and more. Targeted regenerative medicine for optimal results.",
+    canonical: "/services/peptide-therapy",
     keywords:
-      "IV therapy Oceanside, peptide therapy San Diego, NAD+ infusion, vitamin IV drip, BPC-157, regenerative medicine",
+      "peptide therapy Oceanside, BPC-157 San Diego, Semaglutide, regenerative medicine, peptide protocols",
+  },
+  weightLoss: {
+    title: "Weight Loss Optimization - J'adore Wellness Oceanside CA",
+    description:
+      "Medical weight loss programs in Oceanside with Semaglutide, peptide therapy, and personalized protocols. Achieve sustainable, physician-supervised results.",
+    canonical: "/services/weight-loss",
+    keywords:
+      "medical weight loss Oceanside, Semaglutide San Diego, weight management, GLP-1 therapy, weight loss clinic California",
   },
   coldPlunge: {
     title: "Cold Plunge Therapy - J'adore Wellness Oceanside CA",
@@ -57,7 +65,7 @@ export const seoData: Record<string, PageSEO> = {
   services: {
     title: "Wellness Services - J'adore Wellness Oceanside CA",
     description:
-      "Comprehensive wellness services in Oceanside including IV therapy, compression therapy, cold plunge, and infrared sauna. Optimize your health and recovery.",
+      "Comprehensive wellness services in Oceanside including peptide therapy, weight loss, compression therapy, cold plunge, and infrared sauna. Optimize your health and recovery.",
     canonical: "/services",
     keywords:
       "wellness services Oceanside, recovery therapies San Diego, health optimization, regenerative treatments California",

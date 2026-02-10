@@ -2,24 +2,25 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Droplets, Gauge, Snowflake, Sun } from "lucide-react";
+import { ArrowRight, Droplets, TrendingDown, Gauge, Snowflake, Sun } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/shared/SectionHeading";
 import PartnerRedirectModal from "@/components/shared/PartnerRedirectModal";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
 import ivImage from "@/assets/service-iv.jpg";
+import weightlossImage from "@/assets/service-weightloss.jpg";
 import compressionImage from "@/assets/service-compression.jpg";
 import coldPlungeImage from "@/assets/service-coldplunge.jpg";
 import saunaImage from "@/assets/service-sauna.jpg";
 
 const services = [
   {
-    id: "iv-therapy",
+    id: "peptide-therapy",
     icon: Droplets,
-    title: "Peptides & IV Therapy",
-    tagline: "Cellular Optimization",
-    description: "Advanced regenerative protocols combining therapeutic peptides and intravenous nutrient therapy for enhanced recovery, anti-aging, and peak performance.",
+    title: "Peptide Therapy",
+    tagline: "Regenerative Medicine",
+    description: "Advanced peptide protocols for cellular optimization, tissue healing, hormone support, and anti-aging. Our physician-supervised protocols are tailored to your unique health goals.",
     benefits: [
       "Enhanced cellular regeneration",
       "Improved immune function",
@@ -29,6 +30,24 @@ const services = [
     ],
     image: ivImage,
     isPartner: false,
+    link: "/services/peptide-therapy",
+  },
+  {
+    id: "weight-loss",
+    icon: TrendingDown,
+    title: "Weight Loss Optimization",
+    tagline: "Medical Weight Management",
+    description: "Physician-supervised weight loss programs featuring Semaglutide, Tirzepatide, and personalized metabolic protocols for sustainable, lasting results.",
+    benefits: [
+      "Semaglutide & Tirzepatide protocols",
+      "Personalized metabolic testing",
+      "Appetite regulation",
+      "Lean muscle preservation",
+      "Ongoing physician monitoring",
+    ],
+    image: weightlossImage,
+    isPartner: false,
+    link: "/services/weight-loss",
   },
   {
     id: "compression",
@@ -45,6 +64,7 @@ const services = [
     ],
     image: compressionImage,
     isPartner: false,
+    link: "/services/compression",
   },
   {
     id: "cold-plunge",
@@ -110,9 +130,9 @@ const Services = () => {
               Comprehensive Wellness Therapies
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
-              From cutting-edge regenerative treatments to recovery therapies, 
-              discover our full range of wellness services designed to optimize 
-              your health and performance.
+              From cutting-edge regenerative treatments to medical weight loss 
+              and recovery therapies, discover our full range of wellness services 
+              designed to optimize your health and performance.
             </p>
           </motion.div>
         </div>
@@ -146,7 +166,6 @@ const Services = () => {
                       <service.icon size={24} className="text-charcoal" />
                     </div>
                   </div>
-                  {/* Decorative */}
                   <div className={`absolute -bottom-4 ${index % 2 === 1 ? "-right-4" : "-left-4"} w-32 h-32 bg-teal/10 rounded-sm -z-10`} />
                 </div>
 
@@ -177,6 +196,13 @@ const Services = () => {
                       Book Session
                       <ArrowRight size={18} />
                     </Button>
+                  ) : service.link ? (
+                    <Link to={service.link}>
+                      <Button variant="gold" size="lg" className="gap-2">
+                        Learn More
+                        <ArrowRight size={18} />
+                      </Button>
+                    </Link>
                   ) : (
                     <Link to="/contact">
                       <Button variant="gold" size="lg" className="gap-2">
