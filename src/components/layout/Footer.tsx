@@ -22,7 +22,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: "Hormone Therapy", path: "/hormone-therapy" },
-                { name: "Peptides & IV Therapy", path: "/services" },
+                { name: "Peptide Therapy", path: "/services/peptide-therapy" },
                 { name: "Aesthetics", path: "/aesthetics" },
                 { name: "About Us", path: "/about" },
                 { name: "Our Team", path: "/team" },
@@ -45,8 +45,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 "Testosterone Therapy",
-                "HGH & Peptides",
-                "IV Vitamin Therapy",
+                "Peptide Therapy",
+                "Weight Loss Optimization",
                 "Injectables",
                 "Body Sculpting",
               ].map((service) => (

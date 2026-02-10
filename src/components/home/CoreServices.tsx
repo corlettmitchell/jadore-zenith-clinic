@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Syringe, Droplets, Sparkles, Gauge, Snowflake, Sun } from "lucide-react";
+import { ArrowRight, Syringe, Droplets, Sparkles, Gauge, Snowflake, Sun, TrendingDown } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import PartnerRedirectModal from "@/components/shared/PartnerRedirectModal";
 import hormoneImage from "@/assets/service-hormone.jpg";
@@ -10,6 +10,7 @@ import aestheticsImage from "@/assets/service-aesthetics.jpg";
 import compressionImage from "@/assets/service-compression.jpg";
 import coldPlungeImage from "@/assets/service-coldplunge.jpg";
 import saunaImage from "@/assets/service-sauna.jpg";
+import weightlossImage from "@/assets/service-weightloss.jpg";
 
 const services = [
   {
@@ -21,11 +22,11 @@ const services = [
     isPartner: false,
   },
   {
-    title: "Peptides & IV Therapy",
+    title: "Peptide Therapy",
     description: "Advanced regenerative protocols for cellular optimization.",
     icon: Droplets,
     image: ivImage,
-    link: "/services",
+    link: "/services/peptide-therapy",
     isPartner: false,
   },
   {
@@ -37,11 +38,19 @@ const services = [
     isPartner: false,
   },
   {
+    title: "Weight Loss Optimization",
+    description: "Medical weight management with Semaglutide and personalized protocols.",
+    icon: TrendingDown,
+    image: weightlossImage,
+    link: "/services/weight-loss",
+    isPartner: false,
+  },
+  {
     title: "Compression Therapy",
     description: "Accelerate recovery and enhance circulation.",
     icon: Gauge,
     image: compressionImage,
-    link: "/services",
+    link: "/services/compression",
     isPartner: false,
   },
   {
