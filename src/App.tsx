@@ -9,10 +9,8 @@ import HormoneTherapy from "./pages/HormoneTherapy";
 import Services from "./pages/Services";
 import ColdPlunge from "./pages/ColdPlunge";
 import InfraredSauna from "./pages/InfraredSauna";
-import Compression from "./pages/Compression";
 import PeptideTherapy from "./pages/PeptideTherapy";
 import WeightLoss from "./pages/WeightLoss";
-import Aesthetics from "./pages/Aesthetics";
 import About from "./pages/About";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
@@ -34,17 +32,16 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/services/cold-plunge" element={<ColdPlunge />} />
           <Route path="/services/infrared-sauna" element={<InfraredSauna />} />
-          <Route path="/services/compression" element={<Compression />} />
           <Route path="/services/peptide-therapy" element={<PeptideTherapy />} />
           <Route path="/services/weight-loss" element={<WeightLoss />} />
-          {/* Redirect old IV therapy URL */}
+          {/* Redirect old URLs */}
           <Route path="/services/iv-therapy" element={<PeptideTherapy />} />
-          <Route path="/aesthetics" element={<Aesthetics />} />
+          <Route path="/services/compression" element={<Services />} />
+          <Route path="/aesthetics" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/intake" element={<Intake />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

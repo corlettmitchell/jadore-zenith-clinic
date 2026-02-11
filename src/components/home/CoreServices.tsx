@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Syringe, Droplets, Sparkles, Gauge, Snowflake, Sun, TrendingDown } from "lucide-react";
+import { ArrowRight, Syringe, Droplets, TrendingDown, Snowflake, Sun } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import PartnerRedirectModal from "@/components/shared/PartnerRedirectModal";
 import hormoneImage from "@/assets/service-hormone.jpg";
 import ivImage from "@/assets/service-iv.jpg";
-import aestheticsImage from "@/assets/service-aesthetics.jpg";
-import compressionImage from "@/assets/service-compression.jpg";
+import weightlossImage from "@/assets/service-weightloss.jpg";
 import coldPlungeImage from "@/assets/service-coldplunge.jpg";
 import saunaImage from "@/assets/service-sauna.jpg";
-import weightlossImage from "@/assets/service-weightloss.jpg";
 
 const services = [
   {
@@ -30,31 +28,15 @@ const services = [
     isPartner: false,
   },
   {
-    title: "Aesthetics",
-    description: "Premium aesthetic treatments for natural, refined results.",
-    icon: Sparkles,
-    image: aestheticsImage,
-    link: "/aesthetics",
-    isPartner: false,
-  },
-  {
-    title: "Weight Loss Optimization",
-    description: "Medical weight management with Semaglutide and personalized protocols.",
+    title: "Medical Weight Loss",
+    description: "Physician-supervised weight management with personalized protocols.",
     icon: TrendingDown,
     image: weightlossImage,
     link: "/services/weight-loss",
     isPartner: false,
   },
   {
-    title: "Compression Therapy",
-    description: "Accelerate recovery and enhance circulation.",
-    icon: Gauge,
-    image: compressionImage,
-    link: "/services/compression",
-    isPartner: false,
-  },
-  {
-    title: "Cold Plunge",
+    title: "Cold Plunge Therapy",
     description: "Boost metabolism and reduce inflammation naturally.",
     icon: Snowflake,
     image: coldPlungeImage,
@@ -66,7 +48,7 @@ const services = [
     description: "Deep detoxification and relaxation therapy.",
     icon: Sun,
     image: saunaImage,
-    link: "/services/sauna",
+    link: "/services/infrared-sauna",
     isPartner: true,
   },
 ];
@@ -89,7 +71,7 @@ const CoreServices = () => {
         <SectionHeading
           eyebrow="Our Services"
           title="Comprehensive Wellness Solutions"
-          description="From hormone optimization to cutting-edge aesthetics, discover treatments designed to transform how you look and feel."
+          description="From hormone optimization to recovery therapies, discover treatments designed to transform how you feel and perform."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">

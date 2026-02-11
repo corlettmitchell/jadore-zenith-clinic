@@ -35,8 +35,8 @@ const PartnerRedirectModal = ({
             You're being redirected
           </DialogTitle>
           <DialogDescription className="text-muted-foreground leading-relaxed pt-2">
-            {serviceName} sessions are currently booked through our on-site wellness 
-            partner. You'll now be taken to their scheduling portal.
+            Cold Plunge and Infrared Sauna sessions are operated by our onsite 
+            wellness partner. You will be redirected to their secure booking portal.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="flex gap-3 sm:gap-3 mt-4">

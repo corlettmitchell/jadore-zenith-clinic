@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Droplets, TrendingDown, Gauge, Snowflake, Sun } from "lucide-react";
+import { ArrowRight, Droplets, TrendingDown, Snowflake, Sun } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/shared/SectionHeading";
 import PartnerRedirectModal from "@/components/shared/PartnerRedirectModal";
@@ -10,7 +10,6 @@ import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
 import ivImage from "@/assets/service-iv.jpg";
 import weightlossImage from "@/assets/service-weightloss.jpg";
-import compressionImage from "@/assets/service-compression.jpg";
 import coldPlungeImage from "@/assets/service-coldplunge.jpg";
 import saunaImage from "@/assets/service-sauna.jpg";
 
@@ -35,7 +34,7 @@ const services = [
   {
     id: "weight-loss",
     icon: TrendingDown,
-    title: "Weight Loss Optimization",
+    title: "Medical Weight Loss",
     tagline: "Medical Weight Management",
     description: "Physician-supervised weight loss programs featuring Semaglutide, Tirzepatide, and personalized metabolic protocols for sustainable, lasting results.",
     benefits: [
@@ -50,26 +49,9 @@ const services = [
     link: "/services/weight-loss",
   },
   {
-    id: "compression",
-    icon: Gauge,
-    title: "Compression Therapy",
-    tagline: "Recovery & Circulation",
-    description: "Pneumatic compression technology to enhance blood flow, reduce muscle soreness, and accelerate recovery after workouts or medical procedures.",
-    benefits: [
-      "Reduced muscle soreness",
-      "Enhanced lymphatic drainage",
-      "Improved circulation",
-      "Faster recovery times",
-      "Reduced swelling",
-    ],
-    image: compressionImage,
-    isPartner: false,
-    link: "/services/compression",
-  },
-  {
     id: "cold-plunge",
     icon: Snowflake,
-    title: "Cold Plunge",
+    title: "Cold Plunge Therapy",
     tagline: "Metabolic Activation",
     description: "Cold water immersion therapy to boost metabolism, reduce inflammation, and enhance mental clarity through controlled cold exposure.",
     benefits: [
@@ -166,7 +148,7 @@ const Services = () => {
                       <service.icon size={24} className="text-charcoal" />
                     </div>
                   </div>
-                  <div className={`absolute -bottom-4 ${index % 2 === 1 ? "-right-4" : "-left-4"} w-32 h-32 bg-teal/10 rounded-sm -z-10`} />
+                  <div className={`absolute -bottom-4 ${index % 2 === 1 ? "-right-4" : "-left-4"} w-32 h-32 bg-gold/5 rounded-sm -z-10`} />
                 </div>
 
                 {/* Content */}

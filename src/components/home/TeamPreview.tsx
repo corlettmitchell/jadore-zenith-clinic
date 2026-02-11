@@ -1,23 +1,19 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import teamDoctor from "@/assets/team-doctor.jpg";
-import teamNurse from "@/assets/team-nurse.jpg";
+import { ArrowRight, User } from "lucide-react";
 
 const team = [
   {
     name: "Dr. [Name]",
     role: "Medical Director",
     credentials: "MD, Board Certified",
-    image: teamDoctor,
-    bio: "[Bio placeholder - Add your medical director's background and specialties here]",
+    specialty: "Hormone Optimization & Regenerative Medicine",
   },
   {
     name: "[Name]",
     role: "Nurse Practitioner",
     credentials: "NP-C, MSN",
-    image: teamNurse,
-    bio: "[Bio placeholder - Add your nurse practitioner's experience and focus areas here]",
+    specialty: "Peptide Therapy & Weight Management",
   },
 ];
 
@@ -36,7 +32,7 @@ const TeamPreview = () => {
             Your Care Team
           </span>
           <h2 className="heading-section">
-            Meet Our Experts
+            Meet The Experts
           </h2>
           <p className="body-large mt-6 max-w-2xl mx-auto">
             Our team combines decades of medical expertise with a genuine passion 
@@ -55,13 +51,17 @@ const TeamPreview = () => {
               className="group"
             >
               <div className="card-luxury overflow-hidden">
-                <div className="relative aspect-[3/4] overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
+                {/* Silhouette Placeholder */}
+                <div className="relative aspect-[3/4] overflow-hidden bg-secondary flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-32 h-32 mx-auto rounded-full bg-muted flex items-center justify-center mb-4">
+                      <User size={64} className="text-muted-foreground/40" />
+                    </div>
+                    <p className="text-xs text-muted-foreground/60 font-sans uppercase tracking-wider">
+                      Photo Coming Soon
+                    </p>
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <h3 className="font-serif text-2xl text-ivory mb-1">
                       {member.name}
@@ -75,8 +75,9 @@ const TeamPreview = () => {
                   </div>
                 </div>
                 <div className="p-6">
-                  <p className="body-regular">
-                    {member.bio}
+                  <p className="text-sm font-sans text-muted-foreground">
+                    <span className="text-gold font-medium">Specialty:</span>{" "}
+                    {member.specialty}
                   </p>
                 </div>
               </div>
