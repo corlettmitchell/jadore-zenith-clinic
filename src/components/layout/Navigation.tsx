@@ -5,19 +5,21 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/jadore-logo-full.png";
 
-const serviceSubLinks = [
-  { name: "Cold Plunge", path: "/services/cold-plunge" },
-  { name: "Infrared Saunas", path: "/services/infrared-sauna" },
-  { name: "Compression", path: "/services/compression" },
+const hormoneSubLinks = [
+  { name: "Hormone Therapy", path: "/hormone-therapy" },
   { name: "Peptide Therapy", path: "/services/peptide-therapy" },
-  { name: "Weight Loss", path: "/services/weight-loss" },
-  { name: "Aesthetics", path: "/aesthetics" },
+  { name: "Medical Weight Loss", path: "/services/weight-loss" },
+];
+
+const recoverySubLinks = [
+  { name: "Cold Plunge Therapy", path: "/services/cold-plunge" },
+  { name: "Infrared Sauna", path: "/services/infrared-sauna" },
 ];
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Hormone Therapy", path: "/hormone-therapy" },
-  { name: "Services", path: "/services", hasDropdown: true },
+  { name: "Hormone Therapy", path: "/hormone-therapy", hasDropdown: true, dropdownKey: "hormone" },
+  { name: "Recovery Services", path: "/services", hasDropdown: true, dropdownKey: "recovery" },
   { name: "About", path: "/about" },
   { name: "Our Team", path: "/team" },
   { name: "Contact", path: "/contact" },
@@ -26,8 +28,8 @@ const navLinks = [
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -40,8 +42,20 @@ const Navigation = () => {
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
-    setIsServicesOpen(false);
+    setOpenDropdown(null);
+    setMobileDropdown(null);
   }, [location.pathname]);
+
+  const getSubLinks = (key: string) => {
+    if (key === "hormone") return hormoneSubLinks;
+    if (key === "recovery") return recoverySubLinks;
+    return [];
+  };
+
+  const isActiveDropdown = (key: string) => {
+    const links = getSubLinks(key);
+    return links.some(l => location.pathname === l.path);
+  };
 
   return (
     <>
@@ -68,34 +82,46 @@ const Navigation = () => {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <div
-                key={link.path}
+                key={link.name}
                 className="relative"
-                onMouseEnter={() => link.hasDropdown && setIsServicesOpen(true)}
-                onMouseLeave={() => link.hasDropdown && setIsServicesOpen(false)}
+                onMouseEnter={() => link.hasDropdown && setOpenDropdown(link.dropdownKey!)}
+                onMouseLeave={() => link.hasDropdown && setOpenDropdown(null)}
               >
-                <Link
-                  to={link.path}
-                  className={`link-underline text-sm font-sans tracking-wide transition-colors inline-flex items-center gap-1 ${
-                    location.pathname === link.path || (link.hasDropdown && location.pathname.startsWith('/services'))
-                      ? "text-gold"
-                      : isScrolled
-                        ? "text-foreground/80 hover:text-foreground"
-                        : "text-white/90 hover:text-white"
-                  }`}
-                >
-                  {link.name}
-                  {link.hasDropdown && (
+                {link.hasDropdown ? (
+                  <button
+                    className={`link-underline text-sm font-sans tracking-wide transition-colors inline-flex items-center gap-1 ${
+                      isActiveDropdown(link.dropdownKey!)
+                        ? "text-gold"
+                        : isScrolled
+                          ? "text-foreground/80 hover:text-foreground"
+                          : "text-white/90 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
                     <ChevronDown 
                       size={14} 
-                      className={`transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
+                      className={`transition-transform duration-200 ${openDropdown === link.dropdownKey ? 'rotate-180' : ''}`}
                     />
-                  )}
-                </Link>
+                  </button>
+                ) : (
+                  <Link
+                    to={link.path}
+                    className={`link-underline text-sm font-sans tracking-wide transition-colors inline-flex items-center gap-1 ${
+                      location.pathname === link.path
+                        ? "text-gold"
+                        : isScrolled
+                          ? "text-foreground/80 hover:text-foreground"
+                          : "text-white/90 hover:text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )}
 
-                {/* Services Dropdown */}
+                {/* Dropdown */}
                 {link.hasDropdown && (
                   <AnimatePresence>
-                    {isServicesOpen && (
+                    {openDropdown === link.dropdownKey && (
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -104,14 +130,7 @@ const Navigation = () => {
                         className="absolute top-full left-0 pt-2 w-56"
                       >
                         <div className="bg-card border border-border rounded-sm shadow-luxury-lg py-2">
-                          <Link
-                            to="/services"
-                            className="block px-4 py-2.5 text-sm text-foreground hover:bg-secondary hover:text-gold transition-colors"
-                          >
-                            All Services
-                          </Link>
-                          <div className="border-t border-border my-1" />
-                          {serviceSubLinks.map((subLink) => (
+                          {getSubLinks(link.dropdownKey!).map((subLink) => (
                             <Link
                               key={subLink.path}
                               to={subLink.path}
@@ -178,7 +197,7 @@ const Navigation = () => {
             <div className="flex flex-col items-center gap-4 p-8">
               {navLinks.map((link, index) => (
                 <motion.div
-                  key={link.path}
+                  key={link.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.05 }}
@@ -187,9 +206,9 @@ const Navigation = () => {
                   {link.hasDropdown ? (
                     <div>
                       <button
-                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        onClick={() => setMobileDropdown(mobileDropdown === link.dropdownKey ? null : link.dropdownKey!)}
                         className={`text-xl font-serif inline-flex items-center gap-2 ${
-                          location.pathname.startsWith('/services')
+                          isActiveDropdown(link.dropdownKey!)
                             ? "text-gold"
                             : "text-foreground"
                         }`}
@@ -197,11 +216,11 @@ const Navigation = () => {
                         {link.name}
                         <ChevronDown 
                           size={18} 
-                          className={`transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`}
+                          className={`transition-transform duration-200 ${mobileDropdown === link.dropdownKey ? 'rotate-180' : ''}`}
                         />
                       </button>
                       <AnimatePresence>
-                        {mobileServicesOpen && (
+                        {mobileDropdown === link.dropdownKey && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
                             animate={{ height: 'auto', opacity: 1 }}
@@ -209,17 +228,7 @@ const Navigation = () => {
                             className="overflow-hidden"
                           >
                             <div className="flex flex-col gap-3 mt-4 pb-2">
-                              <Link
-                                to="/services"
-                                className={`text-base ${
-                                  location.pathname === '/services'
-                                    ? "text-gold"
-                                    : "text-muted-foreground"
-                                }`}
-                              >
-                                All Services
-                              </Link>
-                              {serviceSubLinks.map((subLink) => (
+                              {getSubLinks(link.dropdownKey!).map((subLink) => (
                                 <Link
                                   key={subLink.path}
                                   to={subLink.path}

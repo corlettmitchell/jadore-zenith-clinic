@@ -12,7 +12,7 @@ const Footer = () => {
             <img src={logo} alt="J'adore Wellness" className="h-12 mb-6" />
             <p className="text-ivory/70 text-sm leading-relaxed mb-6">
               Where science meets personal wellness. Delivering hormone optimization, 
-              regenerative therapies, and aesthetic medicine.
+              regenerative therapies, and medical weight management.
             </p>
           </div>
 
@@ -23,7 +23,7 @@ const Footer = () => {
               {[
                 { name: "Hormone Therapy", path: "/hormone-therapy" },
                 { name: "Peptide Therapy", path: "/services/peptide-therapy" },
-                { name: "Aesthetics", path: "/aesthetics" },
+                { name: "Medical Weight Loss", path: "/services/weight-loss" },
                 { name: "About Us", path: "/about" },
                 { name: "Our Team", path: "/team" },
               ].map((link) => (
@@ -44,11 +44,11 @@ const Footer = () => {
             <h4 className="font-serif text-lg mb-6 text-gold">Services</h4>
             <ul className="space-y-3">
               {[
-                "Testosterone Therapy",
+                "Hormone Replacement Therapy",
                 "Peptide Therapy",
-                "Weight Loss Optimization",
-                "Injectables",
-                "Body Sculpting",
+                "Medical Weight Loss",
+                "Cold Plunge Therapy",
+                "Infrared Sauna",
               ].map((service) => (
                 <li key={service}>
                   <span className="text-ivory/70 text-sm">{service}</span>

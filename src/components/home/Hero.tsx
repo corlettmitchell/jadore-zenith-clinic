@@ -28,7 +28,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <span className="inline-block text-gold text-sm font-sans uppercase tracking-[0.3em] mb-6">
-            Hormone Optimization · Regenerative Medicine · Aesthetics
+            Hormone Optimization · Regenerative Medicine · Recovery
           </span>
         </motion.div>
 
@@ -50,7 +50,7 @@ const Hero = () => {
           className="text-ivory/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-sans leading-relaxed"
         >
           J'adore Wellness delivers hormone optimization, regenerative therapies, 
-          and aesthetic medicine designed to elevate how you look, feel, and perform.
+          and recovery services designed to elevate how you feel and perform.
         </motion.p>
 
         <motion.div

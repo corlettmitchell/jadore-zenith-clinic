@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Award, Star, FileCheck, Users } from "lucide-react";
+import { Award, FileCheck, Users, ShieldCheck } from "lucide-react";
 
 const metrics = [
   {
@@ -8,9 +8,9 @@ const metrics = [
     label: "Years Combined Medical Experience",
   },
   {
-    icon: Star,
-    value: "50+",
-    label: "Five-Star Reviews",
+    icon: ShieldCheck,
+    value: "Board",
+    label: "Certified Providers",
   },
   {
     icon: FileCheck,
@@ -26,12 +26,7 @@ const metrics = [
 
 const WhyJadore = () => {
   return (
-    <section className="section-padding bg-gold-dark relative overflow-hidden">
-      {/* Decorative pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[linear-gradient(45deg,_transparent_25%,_hsl(var(--gold-light))_25%,_hsl(var(--gold-light))_50%,_transparent_50%,_transparent_75%,_hsl(var(--gold-light))_75%)] bg-[length:60px_60px]" />
-      </div>
-
+    <section className="section-padding bg-secondary relative overflow-hidden">
       <div className="container-luxury relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,10 +35,10 @@ const WhyJadore = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block text-sm font-sans uppercase tracking-[0.2em] text-gold-light mb-4">
+          <span className="inline-block text-sm font-sans uppercase tracking-[0.2em] text-gold mb-4">
             Why Choose Us
           </span>
-          <h2 className="heading-section text-ivory">
+          <h2 className="heading-section text-foreground">
             The J'adore Difference
           </h2>
         </motion.div>
@@ -58,13 +53,13 @@ const WhyJadore = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="text-center"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-ivory/10 rounded-full mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gold/10 rounded-full mb-4">
                 <metric.icon size={28} className="text-gold" />
               </div>
-              <div className="text-4xl md:text-5xl font-serif text-ivory mb-2">
+              <div className="text-4xl md:text-5xl font-serif text-foreground mb-2">
                 {metric.value}
               </div>
-              <p className="text-ivory/70 text-sm font-sans">
+              <p className="text-muted-foreground text-sm font-sans">
                 {metric.label}
               </p>
             </motion.div>

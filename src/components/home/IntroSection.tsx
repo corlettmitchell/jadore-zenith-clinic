@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import SectionHeading from "@/components/shared/SectionHeading";
 
 const IntroSection = () => {
   return (
@@ -27,10 +26,14 @@ const IntroSection = () => {
               cookie-cutter treatments. We believe you deserve to feel extraordinary—not 
               just acceptable.
             </p>
-            <p className="body-regular">
+            <p className="body-regular mb-6">
               Our approach combines cutting-edge diagnostics with personalized medicine, 
               treating the root cause of your symptoms rather than masking them. Every 
               protocol is crafted around your unique biology, goals, and lifestyle.
+            </p>
+            <p className="text-sm text-muted-foreground italic">
+              J'adore Wellness operates under a consulting partnership with OptimizeU, 
+              a nationally recognized hormone optimization organization.
             </p>
           </motion.div>
 
