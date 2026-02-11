@@ -1,36 +1,64 @@
 
 
-# Update All URLs to Use Custom Domain (jadore-wellness.com)
+# Google Apps Script Contact Form Integration
 
-## Problem
-Google is indexing the site under the Lovable staging domain (`jadore-zenith-clinic.lovable.app`) instead of your custom domain (`jadore-wellness.com`). This is because all canonical URLs, Open Graph tags, and structured data currently point to the Lovable domain.
+## Overview
+Connect the existing contact form to a Google Sheet using Google Apps Script (free, no backend needed). The form already matches the site theme -- we just need to wire up the submission logic.
 
-## Solution
-Replace every instance of `https://jadore-zenith-clinic.lovable.app` with `https://jadore-wellness.com` across the codebase. This tells Google that the custom domain is the authoritative version of the site.
+## How It Works
 
----
+1. You create a Google Sheet and a small Apps Script attached to it
+2. The script acts as a free web endpoint that receives form data
+3. Our contact form sends data to that endpoint on submit
+4. The data appears as rows in your Google Sheet
 
-## Files to Modify
+## What You Need To Do (One-Time Setup)
 
-### 1. `src/components/seo/SEO.tsx`
-- Change `BASE_URL` from `https://jadore-zenith-clinic.lovable.app` to `https://jadore-wellness.com`
+1. Go to [Google Sheets](https://sheets.google.com) and create a new spreadsheet
+2. Add these column headers in Row 1: **First Name | Last Name | Email | Phone | Service Interest | Message | Submitted At**
+3. Click **Extensions > Apps Script**
+4. Replace the default code with this script:
 
-### 2. `index.html`
-Update all references to the Lovable domain in:
-- Canonical link tag
-- Open Graph `og:url` and `og:image` tags
-- Twitter card URL and image tags
-- JSON-LD structured data (`@id`, `url`, `logo`, `image`, publisher references, search action target)
+```javascript
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = JSON.parse(e.postData.contents);
+  sheet.appendRow([
+    data.firstName,
+    data.lastName,
+    data.email,
+    data.phone,
+    data.serviceInterest,
+    data.message,
+    new Date().toISOString()
+  ]);
+  return ContentService
+    .createTextOutput(JSON.stringify({ status: "success" }))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+```
 
-Total: approximately 15-20 URL replacements in index.html.
+5. Click **Deploy > New deployment**
+6. Choose **Web app**, set "Execute as" to **Me**, and "Who has access" to **Anyone**
+7. Click **Deploy** and copy the Web App URL
+8. Share that URL with me (it's safe -- it can only append rows to your sheet)
 
----
+## What I Will Build
 
-## Why This Fixes the Google Issue
-- **Canonical tags** tell Google which URL is the "official" version of each page
-- **Structured data URLs** reinforce which domain Google should associate with the business
-- Once updated and republished, Google will gradually shift to showing `jadore-wellness.com` in search results
+### Update: `src/pages/Contact.tsx`
+- Add form state management (track each field value)
+- On submit, send a `fetch()` POST request to your Google Apps Script URL
+- Add loading state on the submit button while sending
+- Show the existing "Thank you" success message on success
+- Show a toast error if the request fails
+- Add basic client-side validation with proper encoding
 
-## Note
-Make sure your custom domain is connected and active in Lovable project settings (Settings > Domains) before publishing. If not already done, you will need to add DNS records pointing to Lovable's IP address (185.158.133.1).
+### Technical Details
+- The Google Apps Script URL will be stored as a constant in the component (it's a public endpoint, not a secret)
+- No backend, edge functions, or Cloud credits required
+- The form design, colors, and layout stay exactly as they are now
+- Input validation using basic checks before submission
+
+## After Setup
+Once you give me the Apps Script Web App URL, I will wire everything up in one step.
 
