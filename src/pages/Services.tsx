@@ -34,7 +34,7 @@ const services = [
   {
     id: "weight-loss",
     icon: TrendingDown,
-    title: "Medical Weight Loss",
+    title: "Weight Loss",
     tagline: "Medical Weight Management",
     description: "Physician-supervised weight loss programs featuring Semaglutide, Tirzepatide, and personalized metabolic protocols for sustainable, lasting results.",
     benefits: [

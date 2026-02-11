@@ -23,7 +23,7 @@ const Footer = () => {
               {[
                 { name: "Hormone Therapy", path: "/hormone-therapy" },
                 { name: "Peptide Therapy", path: "/services/peptide-therapy" },
-                { name: "Medical Weight Loss", path: "/services/weight-loss" },
+                { name: "Weight Loss", path: "/services/weight-loss" },
                 { name: "About Us", path: "/about" },
                 { name: "Our Team", path: "/team" },
               ].map((link) => (
@@ -46,7 +46,7 @@ const Footer = () => {
               {[
                 "Hormone Replacement Therapy",
                 "Peptide Therapy",
-                "Medical Weight Loss",
+                "Weight Loss",
                 "Cold Plunge Therapy",
                 "Infrared Sauna",
               ].map((service) => (
