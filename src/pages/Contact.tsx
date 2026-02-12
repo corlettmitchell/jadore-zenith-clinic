@@ -1,20 +1,65 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
+import { toast } from "@/hooks/use-toast";
+
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbyGV_Hl1g0nJePL-ARIEsMIPHXOwcu0-tpW2tGo1rF3Pv6KtWE-4J0JOl7Xjso8QFhcJA/exec";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    serviceInterest: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const updateField = (field: string, value: string) =>
+    setForm((prev) => ({ ...prev, [field]: value }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Connect to Google Sheet
-    setSubmitted(true);
+
+    if (!form.firstName.trim() || !form.lastName.trim() || !form.email.trim() || !form.phone.trim()) {
+      toast({ title: "Please fill in all required fields.", variant: "destructive" });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: form.firstName.trim(),
+          lastName: form.lastName.trim(),
+          email: form.email.trim(),
+          phone: form.phone.trim(),
+          serviceInterest: form.serviceInterest,
+          message: form.message.trim(),
+        }),
+      });
+      setSubmitted(true);
+    } catch {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -36,7 +81,7 @@ const Contact = () => {
               Begin Your Journey
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
-              Ready to experience personalized wellness care? Reach out to 
+              Ready to experience personalized wellness care? Reach out to
               schedule your consultation or ask any questions.
             </p>
           </motion.div>
@@ -56,7 +101,7 @@ const Contact = () => {
             >
               <h2 className="heading-section mb-6">Get In Touch</h2>
               <p className="body-regular mb-8">
-                Fill out the form below and a member of our team will 
+                Fill out the form below and a member of our team will
                 contact you shortly.
               </p>
 
@@ -81,9 +126,12 @@ const Contact = () => {
                       <label className="block text-sm font-sans text-foreground mb-2">
                         First Name *
                       </label>
-                      <Input 
+                      <Input
                         required
-                        placeholder="First name" 
+                        maxLength={100}
+                        value={form.firstName}
+                        onChange={(e) => updateField("firstName", e.target.value)}
+                        placeholder="First name"
                         className="bg-card border-border focus:border-gold"
                       />
                     </div>
@@ -91,9 +139,12 @@ const Contact = () => {
                       <label className="block text-sm font-sans text-foreground mb-2">
                         Last Name *
                       </label>
-                      <Input 
+                      <Input
                         required
-                        placeholder="Last name" 
+                        maxLength={100}
+                        value={form.lastName}
+                        onChange={(e) => updateField("lastName", e.target.value)}
+                        placeholder="Last name"
                         className="bg-card border-border focus:border-gold"
                       />
                     </div>
@@ -103,10 +154,13 @@ const Contact = () => {
                     <label className="block text-sm font-sans text-foreground mb-2">
                       Email *
                     </label>
-                    <Input 
+                    <Input
                       required
                       type="email"
-                      placeholder="your@email.com" 
+                      maxLength={255}
+                      value={form.email}
+                      onChange={(e) => updateField("email", e.target.value)}
+                      placeholder="your@email.com"
                       className="bg-card border-border focus:border-gold"
                     />
                   </div>
@@ -115,10 +169,13 @@ const Contact = () => {
                     <label className="block text-sm font-sans text-foreground mb-2">
                       Phone Number *
                     </label>
-                    <Input 
+                    <Input
                       required
                       type="tel"
-                      placeholder="(555) 555-5555" 
+                      maxLength={20}
+                      value={form.phone}
+                      onChange={(e) => updateField("phone", e.target.value)}
+                      placeholder="(555) 555-5555"
                       className="bg-card border-border focus:border-gold"
                     />
                   </div>
@@ -127,7 +184,11 @@ const Contact = () => {
                     <label className="block text-sm font-sans text-foreground mb-2">
                       Service Interest
                     </label>
-                    <select className="w-full h-10 px-3 bg-card border border-border rounded-md text-sm focus:border-gold focus:outline-none">
+                    <select
+                      value={form.serviceInterest}
+                      onChange={(e) => updateField("serviceInterest", e.target.value)}
+                      className="w-full h-10 px-3 bg-card border border-border rounded-md text-sm focus:border-gold focus:outline-none"
+                    >
                       <option value="">Select a service...</option>
                       <option value="hormone">Hormone Therapy</option>
                       <option value="peptide">Peptide Therapy</option>
@@ -142,15 +203,25 @@ const Contact = () => {
                     <label className="block text-sm font-sans text-foreground mb-2">
                       Message
                     </label>
-                    <Textarea 
+                    <Textarea
+                      value={form.message}
+                      onChange={(e) => updateField("message", e.target.value)}
+                      maxLength={1000}
                       placeholder="Tell us about your health goals..."
                       rows={4}
                       className="bg-card border-border focus:border-gold resize-none"
                     />
                   </div>
 
-                  <Button type="submit" variant="gold" size="xl" className="w-full">
-                    Send Message
+                  <Button type="submit" variant="gold" size="xl" className="w-full" disabled={loading}>
+                    {loading ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      "Send Message"
+                    )}
                   </Button>
                 </form>
               )}
@@ -165,7 +236,7 @@ const Contact = () => {
             >
               <h2 className="heading-section mb-6">Visit Our Clinic</h2>
               <p className="body-regular mb-8">
-                Our clinic is designed for your comfort and privacy. 
+                Our clinic is designed for your comfort and privacy.
                 We look forward to welcoming you.
               </p>
 
