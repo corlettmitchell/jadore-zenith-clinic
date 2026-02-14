@@ -9,6 +9,9 @@ import HormoneTherapy from "./pages/HormoneTherapy";
 import Services from "./pages/Services";
 import ColdPlunge from "./pages/ColdPlunge";
 import InfraredSauna from "./pages/InfraredSauna";
+import Compression from "./pages/Compression";
+import HyperbaricOxygen from "./pages/HyperbaricOxygen";
+import FloatSpa from "./pages/FloatSpa";
 import PeptideTherapy from "./pages/PeptideTherapy";
 import WeightLoss from "./pages/WeightLoss";
 import About from "./pages/About";
@@ -32,11 +35,13 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/services/cold-plunge" element={<ColdPlunge />} />
           <Route path="/services/infrared-sauna" element={<InfraredSauna />} />
+          <Route path="/services/compression" element={<Compression />} />
+          <Route path="/services/hyperbaric-oxygen" element={<HyperbaricOxygen />} />
+          <Route path="/services/float-spa" element={<FloatSpa />} />
           <Route path="/services/peptide-therapy" element={<PeptideTherapy />} />
           <Route path="/services/weight-loss" element={<WeightLoss />} />
           {/* Redirect old URLs */}
           <Route path="/services/iv-therapy" element={<PeptideTherapy />} />
-          <Route path="/services/compression" element={<Services />} />
           <Route path="/aesthetics" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
