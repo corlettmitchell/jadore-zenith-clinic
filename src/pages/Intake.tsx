@@ -176,7 +176,7 @@ const Intake = () => {
                       <option value="">Select a service...</option>
                       <option value="hormone">Hormone Therapy</option>
                       <option value="peptide">Peptide Therapy</option>
-                      <option value="weight-loss">Weight Loss</option>
+                      <option value="weight-loss">Weight Care</option>
                       <option value="cold-plunge">Cold Plunge Therapy</option>
                       <option value="sauna">Infrared Sauna</option>
                       <option value="other">Other / General Inquiry</option>

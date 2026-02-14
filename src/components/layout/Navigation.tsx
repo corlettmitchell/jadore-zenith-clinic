@@ -8,7 +8,7 @@ import logo from "@/assets/jadore-logo-full.png";
 const hormoneSubLinks = [
   { name: "Hormone Therapy", path: "/hormone-therapy" },
   { name: "Peptide Therapy", path: "/services/peptide-therapy" },
-  { name: "Weight Loss", path: "/services/weight-loss" },
+  { name: "Weight Care", path: "/services/weight-loss" },
 ];
 
 const recoverySubLinks = [
