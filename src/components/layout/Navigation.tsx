@@ -18,7 +18,7 @@ const recoverySubLinks = [
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Hormone Therapy", path: "/hormone-therapy", hasDropdown: true, dropdownKey: "hormone" },
+  { name: "Hormone Replacement", path: "/hormone-therapy", hasDropdown: true, dropdownKey: "hormone" },
   { name: "Recovery Services", path: "/services", hasDropdown: true, dropdownKey: "recovery" },
   { name: "About", path: "/about" },
   { name: "Our Team", path: "/team" },
