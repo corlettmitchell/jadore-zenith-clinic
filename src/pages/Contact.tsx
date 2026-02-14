@@ -260,7 +260,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-serif text-lg text-foreground mb-1">Phone</h4>
-                    <p className="text-muted-foreground">(xxx) xxx-xxxx</p>
+                    <p className="text-muted-foreground"><a href="tel:+14422211138" className="hover:text-gold transition-colors">(442) 221-1138</a></p>
                   </div>
                 </div>
 
