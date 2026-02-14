@@ -66,7 +66,7 @@ const WeightLoss = () => {
               Medical Weight Management
             </span>
             <h1 className="heading-display text-ivory mb-6">
-              Weight Loss Optimization
+              Weight Care
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
               Achieve sustainable weight loss with physician-supervised protocols 
@@ -153,7 +153,7 @@ const WeightLoss = () => {
               Our Approach
             </span>
             <h2 className="heading-section">
-              Comprehensive Weight Loss Solutions
+              Comprehensive Weight Care Solutions
             </h2>
             <p className="body-large mt-4 max-w-2xl mx-auto">
               We combine the latest medical advancements with personalized care 
@@ -192,8 +192,8 @@ const WeightLoss = () => {
             transition={{ duration: 0.8 }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="heading-section text-ivory mb-6">
-              Start Your Weight Loss Journey
+             <h2 className="heading-section text-ivory mb-6">
+              Start Your Weight Care Journey
             </h2>
             <p className="text-ivory/80 text-lg mb-8">
               Schedule a consultation to discuss which weight loss protocol 
