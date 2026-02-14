@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
+import floatSpaImage from "@/assets/service-floatspa.webp";
 
 const benefits = [
   {
@@ -79,8 +80,8 @@ const FloatSpa = () => {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-luxury-lg bg-secondary flex items-center justify-center">
-                <Waves size={80} className="text-gold/30" />
+              <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-luxury-lg">
+                <img src={floatSpaImage} alt="Float Spa therapy session" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent" />
               </div>
               <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-teal/10 rounded-sm -z-10" />
