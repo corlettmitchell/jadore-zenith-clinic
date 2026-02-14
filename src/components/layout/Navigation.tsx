@@ -14,6 +14,9 @@ const hormoneSubLinks = [
 const recoverySubLinks = [
   { name: "Cold Plunge Therapy", path: "/services/cold-plunge" },
   { name: "Infrared Sauna", path: "/services/infrared-sauna" },
+  { name: "Compression Therapy", path: "/services/compression" },
+  { name: "Hyperbaric Oxygen Therapy", path: "/services/hyperbaric-oxygen" },
+  { name: "Float Spa", path: "/services/float-spa" },
 ];
 
 const navLinks = [

@@ -58,9 +58,25 @@ export const seoData: Record<string, PageSEO> = {
     title: "Compression Therapy - J'adore Wellness Oceanside CA",
     description:
       "Professional NormaTec compression therapy in Oceanside. Enhance circulation, reduce muscle soreness, and accelerate recovery like elite athletes.",
-    canonical: "/compression",
+    canonical: "/services/compression",
     keywords:
       "compression therapy Oceanside, NormaTec San Diego, lymphatic drainage, muscle recovery, athletic recovery therapy",
+  },
+  hyperbaricOxygen: {
+    title: "Hyperbaric Oxygen Therapy - J'adore Wellness Oceanside CA",
+    description:
+      "Hyperbaric oxygen therapy (HBOT) in Oceanside. Accelerate healing, reduce inflammation, and enhance recovery with pressurized oxygen therapy.",
+    canonical: "/services/hyperbaric-oxygen",
+    keywords:
+      "hyperbaric oxygen therapy Oceanside, HBOT San Diego, oxygen therapy, wound healing, recovery therapy California",
+  },
+  floatSpa: {
+    title: "Float Spa - Sensory Deprivation Therapy - J'adore Wellness Oceanside CA",
+    description:
+      "Float spa and sensory deprivation therapy in Oceanside. Experience deep relaxation, stress relief, and pain management in our float tanks.",
+    canonical: "/services/float-spa",
+    keywords:
+      "float spa Oceanside, sensory deprivation San Diego, float tank therapy, REST therapy, Epsom salt float California",
   },
   services: {
     title: "Wellness Services - J'adore Wellness Oceanside CA",
