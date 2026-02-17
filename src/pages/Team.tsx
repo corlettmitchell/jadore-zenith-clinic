@@ -55,71 +55,27 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Team Members */}
+      {/* Team Coming Soon */}
       <section className="section-padding bg-background">
-        <div className="container-luxury">
-          <div className="space-y-24">
-            {team.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center ${
-                  index % 2 === 1 ? "lg:grid-flow-dense" : ""
-                }`}
-              >
-                {/* Image */}
-                <div className={`relative ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                  <div className="relative aspect-[3/4] rounded-sm overflow-hidden shadow-luxury-lg">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent" />
-                  </div>
-                  {/* Decorative */}
-                  <div className={`absolute -top-4 ${index % 2 === 1 ? "-left-4" : "-right-4"} w-24 h-24 border-2 border-gold/30 rounded-sm -z-10`} />
-                </div>
-
-                {/* Content */}
-                <div className={index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}>
-                  <span className="inline-block text-sm font-sans uppercase tracking-[0.15em] text-gold mb-2">
-                    {member.role}
-                  </span>
-                  <h2 className="heading-section mb-2">{member.name}</h2>
-                  <p className="text-muted-foreground text-sm mb-6">{member.credentials}</p>
-                  
-                  <p className="body-large mb-6">{member.bio}</p>
-                  
-                  <div className="mb-8">
-                    <h4 className="font-serif text-lg text-foreground mb-3">Specialties</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {member.specialties.map((specialty) => (
-                        <span
-                          key={specialty}
-                          className="text-sm bg-secondary text-secondary-foreground px-3 py-1 rounded-sm"
-                        >
-                          {specialty}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex gap-4">
-                    <Link to="/contact">
-                      <Button variant="gold" size="lg" className="gap-2">
-                        Book with {member.name.split(" ")[0]}
-                        <ArrowRight size={16} />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        <div className="container-luxury text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-2xl mx-auto"
+          >
+            <p className="body-large text-muted-foreground">
+              Our team profiles are coming soon. In the meantime, reach out to us directly — we'd love to connect.
+            </p>
+            <div className="mt-8">
+              <Link to="/contact">
+                <Button variant="gold" size="lg" className="gap-2">
+                  Contact Us
+                  <ArrowRight size={16} />
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 
