@@ -1,44 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Zap, Brain, Shield, Sparkles, Battery, Droplets } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
 import ivImage from "@/assets/service-iv.jpg";
-
-const peptides = [
-  {
-    icon: Zap,
-    title: "BPC-157",
-    description: "Promotes tissue healing, reduces inflammation, and supports gut health.",
-  },
-  {
-    icon: Battery,
-    title: "CJC-1295 / Ipamorelin",
-    description: "Stimulates growth hormone release for muscle gain, fat loss, and recovery.",
-  },
-  {
-    icon: Brain,
-    title: "Semax / Selank",
-    description: "Cognitive enhancement, neuroprotection, and anxiety reduction.",
-  },
-  {
-    icon: Shield,
-    title: "Thymosin Alpha-1",
-    description: "Immune modulation and enhanced immune system function.",
-  },
-  {
-    icon: Sparkles,
-    title: "PT-141",
-    description: "Supports sexual health and function in both men and women.",
-  },
-  {
-    icon: Droplets,
-    title: "Semaglutide",
-    description: "Medical weight management through appetite regulation and metabolic support.",
-  },
-];
 
 const PeptideTherapy = () => {
   return (
@@ -129,38 +96,21 @@ const PeptideTherapy = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center max-w-3xl mx-auto"
           >
             <span className="inline-block text-sm font-sans uppercase tracking-[0.2em] text-gold mb-4">
               Our Protocols
             </span>
-            <h2 className="heading-section">
+            <h2 className="heading-section mb-6">
               Targeted Peptide Protocols
             </h2>
-            <p className="body-large mt-4 max-w-2xl mx-auto">
-              Each peptide protocol is customized to address your unique health 
-              goals and optimize your body's natural processes.
+            <p className="body-large">
+              Each protocol is customized to your unique physiology, health history, and goals. 
+              Following a comprehensive consultation and laboratory evaluation, your physician will 
+              identify the appropriate peptide therapy—selected for a specific clinical indication, 
+              dosed with intention, and monitored over time for both safety and meaningful outcomes.
             </p>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {peptides.map((peptide, index) => (
-              <motion.div
-                key={peptide.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="card-luxury p-8"
-              >
-                <div className="w-12 h-12 bg-teal/10 rounded-full flex items-center justify-center mb-4">
-                  <peptide.icon size={24} className="text-teal" />
-                </div>
-                <h3 className="heading-card mb-3">{peptide.title}</h3>
-                <p className="body-regular">{peptide.description}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
