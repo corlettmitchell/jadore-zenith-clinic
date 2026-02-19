@@ -39,11 +39,13 @@ const CareModel = () => {
             Our Approach
           </span>
           <h2 className="heading-section">
-            A Different Kind of Care
+            Built on Data, Refined by Experience
           </h2>
           <p className="body-large mt-6 max-w-2xl mx-auto">
-            We've built our practice around four core principles that guide 
-            every patient interaction and treatment decision.
+            We begin with a comprehensive understanding of your baseline—symptoms, goals, lifestyle, 
+            and laboratory data—then build a plan designed to be both effective and sustainable. 
+            The goal is not "more" of anything, but the right intervention, at the right dose, 
+            for the right individual—with structured monitoring to protect both results and long-term health.
           </p>
         </motion.div>
 

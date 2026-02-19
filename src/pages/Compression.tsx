@@ -57,12 +57,12 @@ const Compression = () => {
               Recovery & Performance
             </span>
             <h1 className="heading-display text-ivory mb-6">
-              Compression Therapy
+              Compression Therapy for Faster Recovery
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
-              Experience professional-grade pneumatic compression therapy used by 
-              elite athletes worldwide. Accelerate recovery, reduce muscle soreness, 
-              and enhance circulation with our NormaTec systems.
+              Pneumatic compression promotes circulation and lymphatic flow to reduce soreness 
+              and support recovery—particularly during periods of increased training, travel, 
+              or high workload.
             </p>
           </motion.div>
         </div>
@@ -99,25 +99,25 @@ const Compression = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="heading-section mb-6">
-                Professional-Grade Recovery
+                Recover Like You Train
               </h2>
               <div className="space-y-4 body-large">
                 <p>
-                  Our compression therapy uses advanced pneumatic compression technology 
-                  to deliver a massage-like experience that promotes faster recovery. 
-                  Originally developed for medical patients, this technology has been 
-                  embraced by professional athletes and wellness enthusiasts alike.
+                  Pneumatic compression delivers sequential pressure to promote 
+                  lymphatic flow and venous return—reducing soreness, swelling, 
+                  and the systemic fatigue that accumulates with repeated high-output 
+                  effort or prolonged inactivity.
                 </p>
                 <p>
-                  The system uses dynamic air pressure to massage your limbs, mobilize 
-                  fluid, and speed recovery. The sequential pulse technology mimics the 
-                  natural muscle pump of the legs and arms, enhancing the movement of 
-                  blood and lymph.
+                  It's a straightforward modality with a consistent, well-documented 
+                  effect: better circulation, less soreness, faster return to training 
+                  or daily function. Sessions are brief, passive, and effective.
                 </p>
                 <p>
-                  Whether you're recovering from an intense workout, managing chronic 
-                  swelling, or simply looking to enhance your overall circulation and 
-                  wellness, compression therapy offers a relaxing and effective solution.
+                  Compression therapy is particularly useful during periods of elevated 
+                  training load, post-travel recovery, or as part of a structured 
+                  post-procedure protocol—and integrates cleanly with your broader 
+                  wellness plan.
                 </p>
               </div>
             </motion.div>

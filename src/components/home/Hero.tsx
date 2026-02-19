@@ -38,9 +38,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-medium text-ivory leading-[1.05] mb-8 max-w-5xl mx-auto"
         >
-          Where Science Meets
+          Clinical Rigor.
           <br />
-          <span className="text-gradient-gold">Personal Wellness.</span>
+          <span className="text-gradient-gold">Human Results.</span>
         </motion.h1>
 
         <motion.p
@@ -49,8 +49,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="text-ivory/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-sans leading-relaxed"
         >
-          J'adore Wellness delivers hormone optimization, regenerative therapies, 
-          and recovery services designed to elevate how you feel and perform.
+          J'adore Wellness is a physician-led clinic in Oceanside delivering hormone optimization, 
+          peptide therapy, and recovery modalities—grounded in diagnostics, refined in execution, 
+          and tailored to real life.
         </motion.p>
 
         <motion.div
