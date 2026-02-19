@@ -57,12 +57,12 @@ const InfraredSauna = () => {
               Detoxification & Relaxation
             </span>
             <h1 className="heading-display text-ivory mb-6">
-              Infrared Sauna Therapy
+              Heat Therapy, Elevated
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
-              Experience the healing power of far-infrared heat. Unlike traditional saunas, 
-              infrared technology penetrates deep into your tissues for maximum therapeutic 
-              benefit at comfortable temperatures.
+              Infrared sauna supports circulation, relaxation, and recovery in a comfortable, 
+              controlled environment—a complementary modality for patients focused on 
+              performance, sleep quality, and stress management.
             </p>
           </motion.div>
         </div>
@@ -80,25 +80,24 @@ const InfraredSauna = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="heading-section mb-6">
-                The Power of Infrared Heat
+                Deep Warmth. Better Recovery.
               </h2>
               <div className="space-y-4 body-large">
                 <p>
-                  Infrared saunas use light waves to create heat that is absorbed directly 
-                  by your body, rather than simply heating the air around you. This allows 
-                  for deeper tissue penetration and more effective therapeutic benefits at 
-                  lower, more comfortable temperatures.
+                  Infrared sauna delivers therapeutic heat that penetrates deeper into 
+                  tissue than conventional heat—supporting circulation, muscle relaxation, 
+                  and a meaningful reduction in perceived stress at comfortable temperatures.
                 </p>
                 <p>
-                  The far-infrared spectrum is the same type of heat produced by the sun, 
-                  without harmful UV rays. This gentle, radiant heat promotes profound 
-                  sweating, helping your body eliminate toxins stored in fat cells, heavy 
-                  metals, and other impurities.
+                  As a recovery and restoration modality, it pairs particularly well with 
+                  patients managing high training loads, elevated cortisol, or disrupted 
+                  sleep. The physiological response is consistent and well-supported in 
+                  the literature.
                 </p>
                 <p>
-                  Regular infrared sauna sessions have been shown to support cardiovascular 
-                  health, reduce chronic pain, improve skin appearance, and promote deep 
-                  relaxation. It's the perfect complement to your wellness routine.
+                  Sessions are available through our on-site wellness partner and can 
+                  be incorporated as part of a structured recovery protocol designed 
+                  alongside your primary treatment plan.
                 </p>
               </div>
             </motion.div>

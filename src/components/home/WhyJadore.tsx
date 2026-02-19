@@ -4,23 +4,23 @@ import { Award, FileCheck, Users, ShieldCheck } from "lucide-react";
 const metrics = [
   {
     icon: Award,
-    value: "25+",
-    label: "Years Combined Medical Experience",
+    value: "50+",
+    label: "Years Combined Clinical Experience",
   },
   {
     icon: ShieldCheck,
     value: "Board",
-    label: "Certified Providers",
+    label: "Certified Physician-Led Care",
   },
   {
     icon: FileCheck,
     value: "100%",
-    label: "Personalized Treatment Plans",
+    label: "Data-Driven Treatment Plans",
   },
   {
     icon: Users,
     value: "VIP",
-    label: "Concierge-Style Care",
+    label: "Concierge-Style Follow-Up",
   },
 ];
 
@@ -36,11 +36,16 @@ const WhyJadore = () => {
           className="text-center mb-16"
         >
           <span className="inline-block text-sm font-sans uppercase tracking-[0.2em] text-gold mb-4">
-            Why Choose Us
+            Why J'adore Wellness
           </span>
           <h2 className="heading-section text-ivory">
             The J'adore Difference
           </h2>
+          <p className="body-large text-ivory/70 mt-6 max-w-3xl mx-auto">
+            Patients choose J'adore Wellness because they want clinical judgment, transparency, and 
+            results that hold up over time. We combine a refined environment with the rigor of a medical 
+            practice—careful evaluation, thoughtful dosing, and consistent follow-up grounded in measurable outcomes.
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">

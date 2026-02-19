@@ -83,11 +83,12 @@ const HormoneTherapy = () => {
               Core Treatment
             </span>
             <h1 className="heading-display text-ivory mb-6">
-              Hormone Replacement Therapy
+              Hormone Optimization, Done Like Medicine
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl mb-8 leading-relaxed">
-              Restore hormonal balance and reclaim your vitality with personalized 
-              hormone optimization protocols designed for your unique biology.
+              Hormones influence energy, mood, sleep, body composition, libido, and recovery. 
+              Our approach focuses on identifying the underlying drivers of symptoms and building 
+              a personalized plan rooted in data and physiology.
             </p>
             <Link to="/contact">
               <Button variant="gold" size="xl" className="gap-2">
@@ -110,14 +111,14 @@ const HormoneTherapy = () => {
               transition={{ duration: 0.8 }}
             >
               <SectionHeading
-                eyebrow="Why HRT?"
-                title="Transform How You Feel Every Day"
+                eyebrow="Hormone Optimization"
+                title="Restore Balance. Regain Drive."
                 centered={false}
               />
               <p className="body-large mt-6 mb-8">
-                Hormonal decline is a natural part of aging, but its effects don't 
-                have to be. Our bioidentical hormone replacement therapy helps restore 
-                optimal levels, addressing symptoms at their source.
+                The result is measurable improvement—both in how you feel and in what your labs 
+                demonstrate. We don't chase symptoms; we identify root causes and build a plan 
+                designed to be both effective and sustainable.
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (

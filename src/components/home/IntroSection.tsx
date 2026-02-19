@@ -16,24 +16,23 @@ const IntroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block text-sm font-sans uppercase tracking-[0.2em] text-gold mb-4">
-              Our Philosophy
+              Clinical Precision, Elevated Experience
             </span>
             <h2 className="heading-section mb-6">
-              Normal Isn't Optimal.
+              Clinical Precision, Elevated Experience
             </h2>
             <p className="body-large mb-6">
-              At J'adore Wellness, we don't settle for "normal" lab results or 
-              cookie-cutter treatments. We believe you deserve to feel extraordinary—not 
-              just acceptable.
+              At J'adore Wellness, your plan is built and overseen by board-certified physicians 
+              with real-world experience in complex physiology, recovery, and performance. We practice 
+              with the discipline you'd expect from medicine—not marketing—using objective data, 
+              thoughtful dosing, and a clear plan for follow-up.
             </p>
             <p className="body-regular mb-6">
-              Our approach combines cutting-edge diagnostics with personalized medicine, 
-              treating the root cause of your symptoms rather than masking them. Every 
-              protocol is crafted around your unique biology, goals, and lifestyle.
-            </p>
-            <p className="text-sm text-muted-foreground italic">
-              J'adore Wellness operates under a consulting partnership with OptimizeU, 
-              a nationally recognized hormone optimization organization.
+              As a proud subsidiary of OptimizeU, our team benefits from a nationally recognized 
+              education platform and a collaborative clinical network. Every week, our providers 
+              participate in structured education and case review—drawing on over 50 years of 
+              combined experience across physicians and advanced practice clinicians. When your 
+              case is nuanced, we don't guess—we confer, refine, and get it right.
             </p>
           </motion.div>
 

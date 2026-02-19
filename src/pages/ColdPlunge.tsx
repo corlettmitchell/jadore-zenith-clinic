@@ -57,12 +57,12 @@ const ColdPlunge = () => {
               Recovery & Performance
             </span>
             <h1 className="heading-display text-ivory mb-6">
-              Cold Plunge Therapy
+              Cold Exposure, Refined
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
-              Unlock the power of controlled cold exposure to reduce inflammation, 
-              boost metabolism, and enhance mental clarity. Experience the invigorating 
-              benefits of cold water immersion therapy.
+              Cold immersion, when used intentionally, supports recovery, resilience, and 
+              mental clarity. We guide patients on integrating cold exposure strategically—so 
+              it enhances performance rather than interfering with adaptation.
             </p>
           </motion.div>
         </div>
@@ -99,26 +99,25 @@ const ColdPlunge = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="heading-section mb-6">
-                The Science of Cold Therapy
+                Recovery You Can Measure
               </h2>
               <div className="space-y-4 body-large">
                 <p>
-                  Cold plunge therapy, also known as cold water immersion, has been used for 
-                  centuries to promote healing and enhance performance. Modern science has 
-                  validated what ancient cultures knew: controlled cold exposure triggers 
-                  powerful physiological responses that benefit your entire body.
+                  Cold immersion, when applied with intention, creates a measurable 
+                  physiological response—reducing systemic inflammation, supporting 
+                  nervous system recovery, and improving mental clarity through a 
+                  well-documented hormonal cascade.
                 </p>
                 <p>
-                  When you immerse yourself in cold water, your body activates its natural 
-                  healing mechanisms. Blood vessels constrict, reducing inflammation and 
-                  flushing metabolic waste. The cold triggers the release of endorphins and 
-                  norepinephrine, improving mood and mental clarity.
+                  The key is strategic integration. Cold exposure used indiscriminately 
+                  can blunt adaptation; used correctly, it accelerates recovery and 
+                  builds resilience. We help patients understand how and when to use 
+                  cold therapy within the context of their overall wellness plan.
                 </p>
                 <p>
-                  Our cold plunge sessions are guided by trained professionals who ensure 
-                  you get the maximum benefit while staying safe. Whether you're an athlete 
-                  looking to accelerate recovery or simply seeking to boost your overall 
-                  wellness, cold plunge therapy offers profound benefits.
+                  Our sessions are available through our on-site wellness partner, 
+                  with guidance on protocol design so you're getting results—not 
+                  just discomfort.
                 </p>
               </div>
             </motion.div>

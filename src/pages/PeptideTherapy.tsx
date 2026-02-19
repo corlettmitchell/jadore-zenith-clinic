@@ -57,12 +57,12 @@ const PeptideTherapy = () => {
               Regenerative Medicine
             </span>
             <h1 className="heading-display text-ivory mb-6">
-              Peptide Therapy
+              Targeted Peptides, Chosen With Restraint
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
-              Harness the power of targeted peptide protocols to optimize healing, 
-              performance, and longevity. Our medical team customizes every protocol 
-              to your unique health goals.
+              Peptides can be powerful tools when used with precision. We deploy peptide therapy 
+              selectively based on clear clinical reasoning and defined goals—with structured 
+              monitoring to ensure safety, efficacy, and meaningful outcomes.
             </p>
           </motion.div>
         </div>
@@ -79,24 +79,23 @@ const PeptideTherapy = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="heading-section mb-6">
-                What Are Peptides?
+                Peptide Protocols With Purpose
               </h2>
               <div className="space-y-4 body-large">
                 <p>
                   Peptides are short chains of amino acids that act as signaling 
-                  molecules in your body. They communicate with cells to perform 
-                  specific functions — from accelerating tissue repair to optimizing 
-                  hormone production.
+                  molecules in your body—communicating with cells to perform specific 
+                  functions, from accelerating tissue repair to supporting hormone production.
                 </p>
                 <p>
-                  Unlike synthetic drugs, peptides work with your body's natural 
-                  processes, making them a safe and effective option for a wide 
-                  range of health goals including anti-aging, fat loss, muscle 
-                  recovery, cognitive enhancement, and immune support.
+                  We deploy peptide therapy selectively, based on clear clinical reasoning 
+                  and defined goals. Not every patient needs every peptide—and we're deliberate 
+                  about matching the right tool to the right indication.
                 </p>
                 <p>
-                  Our physician-supervised peptide protocols are tailored to your 
-                  lab work, health history, and wellness objectives for optimal results.
+                  Every protocol is built around your lab work, health history, and wellness 
+                  objectives, with structured monitoring to ensure safety, efficacy, and 
+                  meaningful outcomes over time.
                 </p>
               </div>
             </motion.div>
