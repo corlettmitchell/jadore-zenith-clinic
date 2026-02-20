@@ -1,36 +1,61 @@
 
-# Fix Google Search Favicon
-
-## The Problem
-
-Google Search does not always use the favicon declared in `<link rel="icon">`. It crawls the site independently and often defaults to `/favicon.ico` — the file sitting at the root of the domain. In this project, `public/favicon.ico` is still the default Lovable heart icon, so Google finds and caches that instead of the custom `favicon.png`.
+# Remove All Specific Weight Loss Product Names Site-Wide
 
 ## What Needs to Change
 
-### 1. Replace `public/favicon.ico` with the J'adore favicon
+Every mention of **Semaglutide**, **Tirzepatide**, **GLP-1**, **GIP**, **CJC-1295**, and **Ipamorelin** must be removed from all visible page copy AND from the metadata (titles, descriptions, keywords) that search engines read. There are exactly 3 files that contain these names.
 
-The `public/favicon.ico` file needs to be replaced with the J'adore logo. The cleanest way to do this is to copy the existing `public/favicon.png` (which is already the correct logo) and overwrite `public/favicon.ico` with it. Since `.ico` format is a container, modern browsers and crawlers also accept a PNG file saved with the `.ico` extension — this is widely supported.
+---
 
-### 2. Strengthen the `index.html` favicon declarations
+## File-by-File Changes
 
-Add additional `<link>` tags to be explicit with crawlers. Google's documentation recommends including both `icon` and `shortcut icon` rel types, plus an `apple-touch-icon` for completeness:
+### 1. `src/pages/WeightLoss.tsx` — Most mentions
 
-```html
-<!-- Favicon -->
-<link rel="icon" href="/favicon.png" type="image/png" />
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="apple-touch-icon" href="/favicon.png" />
-```
+**Approaches card array (top of file):**
+- Remove the "Semaglutide (GLP-1)" card entirely
+- Remove the "Tirzepatide" card entirely
+- Replace the "Peptide Protocols" card description — remove "CJC-1295/Ipamorelin", replace with generalized language: *"Targeted peptide therapy to support fat metabolism and preserve lean muscle mass, selected based on individual clinical evaluation."*
 
-## Technical Notes
+**Hero subheadline:**
+- Remove: *"including Semaglutide, Tirzepatide, and personalized metabolic optimization"*
+- Replace with: *"through physician-supervised, data-driven protocols tailored to your physiology and goals."*
 
-- Google re-crawls favicons on its own schedule (can take days to weeks to update in search results after the fix is deployed). The fix itself is straightforward — the delay is on Google's side.
-- No changes are needed to the SEO component or any React pages; this is purely a static asset + `index.html` fix.
-- After publishing, you can submit the URL to Google Search Console's "URL Inspection" tool to request a re-crawl and speed up the favicon update.
+**"Why Medical Weight Loss?" body paragraph:**
+- Remove: *"through advanced pharmaceuticals like Semaglutide and Tirzepatide, combined with comprehensive metabolic testing and personalized treatment plans."*
+- Replace with: *"through evidence-based medical interventions, comprehensive metabolic testing, and personalized treatment plans built around your physiology."*
 
-## Files to Change
+---
 
-| File | Change |
+### 2. `src/pages/Services.tsx` — Weight Loss card
+
+**Description text:**
+- Remove: *"featuring Semaglutide, Tirzepatide, and personalized metabolic protocols"*
+- Replace with: *"Physician-supervised weight management using evidence-based medical protocols, personalized metabolic testing, and ongoing physician monitoring for sustainable, lasting results."*
+
+**Benefits bullet list:**
+- Remove: `"Semaglutide & Tirzepatide protocols"`
+- Replace with: `"Physician-prescribed medical protocols"`
+
+---
+
+### 3. `src/lib/seo-data.ts` — Metadata (critical for search engines)
+
+**`peptideTherapy` entry:**
+- Description: Remove *"BPC-157, Semaglutide, CJC-1295, and more."* → Replace with *"Physician-supervised peptide protocols in Oceanside tailored to cellular regeneration, recovery, and performance."*
+- Keywords: Remove `BPC-157 San Diego, Semaglutide` → Replace with `regenerative medicine Oceanside, peptide therapy San Diego`
+
+**`weightLoss` entry:**
+- Description: Remove *"with Semaglutide, peptide therapy"* → Replace with *"Medical weight loss programs in Oceanside using evidence-based, physician-supervised protocols. Achieve sustainable results with personalized metabolic care."*
+- Keywords: Remove `Semaglutide San Diego, GLP-1 therapy` → Replace with `medical weight management Oceanside, metabolic optimization San Diego`
+
+---
+
+## Summary of Files Changed
+
+| File | Changes |
 |---|---|
-| `public/favicon.ico` | Overwrite with the J'adore logo (copy from `favicon.png`) |
-| `index.html` | Add `shortcut icon` and `apple-touch-icon` link tags |
+| `src/pages/WeightLoss.tsx` | Remove 2 product-named cards, scrub 3 body text mentions |
+| `src/pages/Services.tsx` | Scrub description and 1 benefit bullet |
+| `src/lib/seo-data.ts` | Clean metadata descriptions and keywords for weightLoss and peptideTherapy entries |
+
+No other files contain these product names — the `CoreServices.tsx` homepage component is already clean.
