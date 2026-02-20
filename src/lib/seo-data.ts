@@ -25,18 +25,18 @@ export const seoData: Record<string, PageSEO> = {
   peptideTherapy: {
     title: "Peptide Therapy - J'adore Wellness Oceanside CA",
     description:
-      "Advanced peptide protocols in Oceanside. BPC-157, Semaglutide, CJC-1295, and more. Targeted regenerative medicine for optimal results.",
+      "Physician-supervised peptide protocols in Oceanside tailored to cellular regeneration, recovery, and performance.",
     canonical: "/services/peptide-therapy",
     keywords:
-      "peptide therapy Oceanside, BPC-157 San Diego, Semaglutide, regenerative medicine, peptide protocols",
+      "peptide therapy Oceanside, regenerative medicine Oceanside, peptide therapy San Diego, peptide protocols",
   },
   weightLoss: {
     title: "Weight Loss Optimization - J'adore Wellness Oceanside CA",
     description:
-      "Medical weight loss programs in Oceanside with Semaglutide, peptide therapy, and personalized protocols. Achieve sustainable, physician-supervised results.",
+      "Medical weight loss programs in Oceanside using evidence-based, physician-supervised protocols. Achieve sustainable results with personalized metabolic care.",
     canonical: "/services/weight-loss",
     keywords:
-      "medical weight loss Oceanside, Semaglutide San Diego, weight management, GLP-1 therapy, weight loss clinic California",
+      "medical weight loss Oceanside, medical weight management Oceanside, metabolic optimization San Diego, weight loss clinic California",
   },
   coldPlunge: {
     title: "Cold Plunge Therapy - J'adore Wellness Oceanside CA",

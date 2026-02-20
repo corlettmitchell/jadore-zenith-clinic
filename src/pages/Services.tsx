@@ -36,9 +36,9 @@ const services = [
     icon: TrendingDown,
     title: "Weight Loss",
     tagline: "Medical Weight Management",
-    description: "Physician-supervised weight loss programs featuring Semaglutide, Tirzepatide, and personalized metabolic protocols for sustainable, lasting results.",
+    description: "Physician-supervised weight management using evidence-based medical protocols, personalized metabolic testing, and ongoing physician monitoring for sustainable, lasting results.",
     benefits: [
-      "Semaglutide & Tirzepatide protocols",
+      "Physician-prescribed medical protocols",
       "Personalized metabolic testing",
       "Appetite regulation",
       "Lean muscle preservation",
