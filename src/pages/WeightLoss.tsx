@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, TrendingDown, Pill, Activity, ClipboardCheck, HeartPulse, Salad } from "lucide-react";
+import { ArrowRight, Activity, ClipboardCheck, HeartPulse, Salad } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/seo/SEO";
@@ -9,16 +9,6 @@ import weightlossImage from "@/assets/service-weightloss.jpg";
 
 const approaches = [
   {
-    icon: Pill,
-    title: "Semaglutide (GLP-1)",
-    description: "FDA-approved GLP-1 receptor agonist that reduces appetite, slows gastric emptying, and supports sustainable weight loss.",
-  },
-  {
-    icon: TrendingDown,
-    title: "Tirzepatide",
-    description: "Dual GIP/GLP-1 agonist for enhanced metabolic support and significant, clinically proven weight reduction.",
-  },
-  {
     icon: Activity,
     title: "Metabolic Optimization",
     description: "Comprehensive lab work and hormone evaluation to identify metabolic barriers preventing weight loss.",
@@ -26,7 +16,7 @@ const approaches = [
   {
     icon: HeartPulse,
     title: "Peptide Protocols",
-    description: "Targeted peptides like CJC-1295/Ipamorelin to support fat metabolism and preserve lean muscle mass.",
+    description: "Targeted peptide therapy to support fat metabolism and preserve lean muscle mass, selected based on individual clinical evaluation.",
   },
   {
     icon: Salad,
@@ -69,9 +59,8 @@ const WeightLoss = () => {
               Weight Care
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
-              Achieve sustainable weight loss with physician-supervised protocols 
-              including Semaglutide, Tirzepatide, and personalized metabolic 
-              optimization — tailored to your body and goals.
+              Achieve sustainable weight loss through physician-supervised, 
+              data-driven protocols tailored to your physiology and goals.
             </p>
           </motion.div>
         </div>
@@ -98,9 +87,9 @@ const WeightLoss = () => {
                 </p>
                 <p>
                   Our medical weight loss programs address the root causes of 
-                  weight gain through advanced pharmaceuticals like Semaglutide 
-                  and Tirzepatide, combined with comprehensive metabolic testing 
-                  and personalized treatment plans.
+                  weight gain through evidence-based medical interventions, 
+                  comprehensive metabolic testing, and personalized treatment 
+                  plans built around your physiology.
                 </p>
                 <p>
                   Every protocol is physician-supervised, ensuring safe, effective 
