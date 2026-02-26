@@ -28,7 +28,7 @@ const services = [
     isPartner: false,
   },
   {
-    title: "Weight Loss",
+    title: "Weight Care",
     description: "Physician-supervised weight management with personalized protocols.",
     icon: TrendingDown,
     image: weightlossImage,

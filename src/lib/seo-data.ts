@@ -9,7 +9,7 @@ export const seoData: Record<string, PageSEO> = {
   home: {
     title: "J'adore Wellness - Hormone Therapy & Wellness Clinic Oceanside CA",
     description:
-      "Premium hormone therapy, aesthetics, and wellness services in Oceanside, CA. Personalized HRT, peptide therapy, weight loss, cold plunge, infrared sauna, and aesthetic medicine.",
+      "Premium hormone therapy, aesthetics, and wellness services in Oceanside, CA. Personalized HRT, peptide therapy, weight care, cold plunge, infrared sauna, and aesthetic medicine.",
     canonical: "/",
     keywords:
       "hormone therapy Oceanside, HRT San Diego, testosterone therapy, wellness clinic California, hormone optimization, anti-aging clinic",
@@ -31,12 +31,12 @@ export const seoData: Record<string, PageSEO> = {
       "peptide therapy Oceanside, regenerative medicine Oceanside, peptide therapy San Diego, peptide protocols",
   },
   weightLoss: {
-    title: "Weight Loss Optimization - J'adore Wellness Oceanside CA",
+    title: "Weight Care - J'adore Wellness Oceanside CA",
     description:
-      "Medical weight loss programs in Oceanside using evidence-based, physician-supervised protocols. Achieve sustainable results with personalized metabolic care.",
+      "Medical weight care programs in Oceanside using evidence-based, physician-supervised protocols. Achieve sustainable results with personalized metabolic care.",
     canonical: "/services/weight-loss",
     keywords:
-      "medical weight loss Oceanside, medical weight management Oceanside, metabolic optimization San Diego, weight loss clinic California",
+      "medical weight care Oceanside, medical weight management Oceanside, metabolic optimization San Diego, weight care clinic California",
   },
   coldPlunge: {
     title: "Cold Plunge Therapy - J'adore Wellness Oceanside CA",
@@ -81,7 +81,7 @@ export const seoData: Record<string, PageSEO> = {
   services: {
     title: "Wellness Services - J'adore Wellness Oceanside CA",
     description:
-      "Comprehensive wellness services in Oceanside including peptide therapy, weight loss, compression therapy, cold plunge, and infrared sauna. Optimize your health and recovery.",
+      "Comprehensive wellness services in Oceanside including peptide therapy, weight care, compression therapy, cold plunge, and infrared sauna. Optimize your health and recovery.",
     canonical: "/services",
     keywords:
       "wellness services Oceanside, recovery therapies San Diego, health optimization, regenerative treatments California",

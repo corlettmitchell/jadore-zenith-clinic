@@ -34,7 +34,7 @@ const services = [
   {
     id: "weight-loss",
     icon: TrendingDown,
-    title: "Weight Loss",
+    title: "Weight Care",
     tagline: "Medical Weight Management",
     description: "Physician-supervised weight management using evidence-based medical protocols, personalized metabolic testing, and ongoing physician monitoring for sustainable, lasting results.",
     benefits: [
@@ -112,7 +112,7 @@ const Services = () => {
               Comprehensive Wellness Therapies
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
-              From cutting-edge regenerative treatments to medical weight loss 
+              From cutting-edge regenerative treatments to medical weight care 
               and recovery therapies, discover our full range of wellness services 
               designed to optimize your health and performance.
             </p>

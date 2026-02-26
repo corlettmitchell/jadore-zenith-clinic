@@ -11,7 +11,7 @@ const approaches = [
   {
     icon: Activity,
     title: "Metabolic Optimization",
-    description: "Comprehensive lab work and hormone evaluation to identify metabolic barriers preventing weight loss.",
+    description: "Comprehensive lab work and hormone evaluation to identify metabolic barriers preventing weight management.",
   },
   {
     icon: HeartPulse,
@@ -21,7 +21,7 @@ const approaches = [
   {
     icon: Salad,
     title: "Nutritional Guidance",
-    description: "Personalized dietary strategies and meal planning to complement your medical weight loss protocol.",
+    description: "Personalized dietary strategies and meal planning to complement your medical weight care protocol.",
   },
   {
     icon: ClipboardCheck,
@@ -59,14 +59,14 @@ const WeightLoss = () => {
               Weight Care
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
-              Achieve sustainable weight loss through physician-supervised, 
+              Achieve sustainable weight care through physician-supervised, 
               data-driven protocols tailored to your physiology and goals.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Why Medical Weight Loss */}
+      {/* Why Medical Weight Care */}
       <section className="section-padding bg-background">
         <div className="container-luxury">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -77,16 +77,16 @@ const WeightLoss = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="heading-section mb-6">
-                Why Medical Weight Loss?
+                Why Medical Weight Care?
               </h2>
               <div className="space-y-4 body-large">
                 <p>
-                  Weight loss is more than calories in, calories out. Hormonal 
+                  Weight management is more than calories in, calories out. Hormonal 
                   imbalances, metabolic dysfunction, and genetic factors all play 
                   a role in why traditional diets fail.
                 </p>
                 <p>
-                  Our medical weight loss programs address the root causes of 
+                  Our medical weight care programs address the root causes of 
                   weight gain through evidence-based medical interventions, 
                   comprehensive metabolic testing, and personalized treatment 
                   plans built around your physiology.
@@ -117,7 +117,7 @@ const WeightLoss = () => {
               <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-luxury-lg">
                 <img
                   src={weightlossImage}
-                  alt="Weight Loss Optimization consultation"
+                  alt="Weight Care consultation"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent" />
@@ -146,7 +146,7 @@ const WeightLoss = () => {
             </h2>
             <p className="body-large mt-4 max-w-2xl mx-auto">
               We combine the latest medical advancements with personalized care 
-              to create a weight loss program that works for your unique body.
+              to create a weight care program that works for your unique body.
             </p>
           </motion.div>
 
@@ -185,7 +185,7 @@ const WeightLoss = () => {
               Start Your Weight Care Journey
             </h2>
             <p className="text-ivory/80 text-lg mb-8">
-              Schedule a consultation to discuss which weight loss protocol 
+              Schedule a consultation to discuss which weight care protocol 
               is right for you. Your transformation starts here.
             </p>
             <Link to="/contact">
