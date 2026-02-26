@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/jadore-logo-full.png";
+import logo from "@/assets/jadore-logo-round.png";
 
 const hormoneSubLinks = [
   { name: "Hormone Therapy", path: "/hormone-therapy" },
@@ -76,7 +76,7 @@ const Navigation = () => {
             <img
               src={logo}
               alt="J'adore Wellness"
-              className="h-14 md:h-16 w-auto object-cover object-center"
+              className="h-20 md:h-24 w-auto object-cover object-center"
             />
           </Link>
 
