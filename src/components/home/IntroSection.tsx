@@ -47,10 +47,10 @@ const IntroSection = () => {
           >
             <div className="relative aspect-[4/5] bg-secondary rounded-sm overflow-hidden">
               <img src={clinicLobbyImage} alt="J'adore Wellness clinic lobby" className="absolute inset-0 w-full h-full object-cover" />
-              <div className="absolute inset-4 border border-gold/30 rounded-sm" />
+              <div className="absolute inset-4 border border-gold/60 rounded-sm" />
             </div>
             {/* Overlapping accent */}
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-gold/20 to-gold/5 rounded-sm" />
+            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-gold/40 to-gold/15 rounded-sm" />
           </motion.div>
         </div>
       </div>
