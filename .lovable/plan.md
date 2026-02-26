@@ -1,61 +1,40 @@
 
-# Remove All Specific Weight Loss Product Names Site-Wide
 
-## What Needs to Change
+# Replace "Weight Loss" → "Weight Care" Site-Wide
 
-Every mention of **Semaglutide**, **Tirzepatide**, **GLP-1**, **GIP**, **CJC-1295**, and **Ipamorelin** must be removed from all visible page copy AND from the metadata (titles, descriptions, keywords) that search engines read. There are exactly 3 files that contain these names.
+## Files to Change (6 files)
 
----
+### 1. `src/components/home/CoreServices.tsx`
+- Line 31: `"Weight Loss"` → `"Weight Care"`
 
-## File-by-File Changes
+### 2. `src/pages/Services.tsx`
+- Line 37: title `"Weight Loss"` → `"Weight Care"`
+- Lines 115–116: hero paragraph "medical weight loss" → "medical weight care"
 
-### 1. `src/pages/WeightLoss.tsx` — Most mentions
+### 3. `src/pages/WeightLoss.tsx` (heaviest — ~8 replacements)
+- Line 14: "preventing weight loss" → "preventing weight management"
+- Line 24: "medical weight loss protocol" → "medical weight care protocol"
+- Line 62: "sustainable weight loss" → "sustainable weight care"
+- Line 69 comment: "Why Medical Weight Loss" → "Why Medical Weight Care"
+- Line 80: heading "Why Medical Weight Loss?" → "Why Medical Weight Care?"
+- Line 84: "Weight loss is more than" → "Weight management is more than"
+- Line 89: "medical weight loss programs" → "medical weight care programs"
+- Line 120: alt text "Weight Loss Optimization" → "Weight Care consultation"
+- Line 149: "weight loss program" → "weight care program"
+- Line 188: "weight loss protocol" → "weight care protocol"
 
-**Approaches card array (top of file):**
-- Remove the "Semaglutide (GLP-1)" card entirely
-- Remove the "Tirzepatide" card entirely
-- Replace the "Peptide Protocols" card description — remove "CJC-1295/Ipamorelin", replace with generalized language: *"Targeted peptide therapy to support fat metabolism and preserve lean muscle mass, selected based on individual clinical evaluation."*
+### 4. `src/lib/seo-data.ts`
+- Line 12: homepage description "weight loss" → "weight care"
+- Line 34: title "Weight Loss Optimization" → "Weight Care - J'adore Wellness Oceanside CA"
+- Line 36: description "Medical weight loss programs" → "Medical weight care programs"
+- Line 39: keywords — all "weight loss" → "weight care"
+- Line 84: services description "weight loss" → "weight care"
 
-**Hero subheadline:**
-- Remove: *"including Semaglutide, Tirzepatide, and personalized metabolic optimization"*
-- Replace with: *"through physician-supervised, data-driven protocols tailored to your physiology and goals."*
+### 5. `src/components/layout/Navigation.tsx`
+- Line 13: `"Weight Care"` label already correct — **no change needed**
 
-**"Why Medical Weight Loss?" body paragraph:**
-- Remove: *"through advanced pharmaceuticals like Semaglutide and Tirzepatide, combined with comprehensive metabolic testing and personalized treatment plans."*
-- Replace with: *"through evidence-based medical interventions, comprehensive metabolic testing, and personalized treatment plans built around your physiology."*
+### 6. `index.html`
+- Check for any "weight loss" in meta tags
 
----
+**Not changing:** URL paths (`/services/weight-loss`), file names (`WeightLoss.tsx`), variable names (`weightlossImage`, `weightLoss`), or the `value="weight-loss"` form option values — these are internal/technical and not user-facing. The Footer and Contact/Intake pages already say "Weight Care" in their labels.
 
-### 2. `src/pages/Services.tsx` — Weight Loss card
-
-**Description text:**
-- Remove: *"featuring Semaglutide, Tirzepatide, and personalized metabolic protocols"*
-- Replace with: *"Physician-supervised weight management using evidence-based medical protocols, personalized metabolic testing, and ongoing physician monitoring for sustainable, lasting results."*
-
-**Benefits bullet list:**
-- Remove: `"Semaglutide & Tirzepatide protocols"`
-- Replace with: `"Physician-prescribed medical protocols"`
-
----
-
-### 3. `src/lib/seo-data.ts` — Metadata (critical for search engines)
-
-**`peptideTherapy` entry:**
-- Description: Remove *"BPC-157, Semaglutide, CJC-1295, and more."* → Replace with *"Physician-supervised peptide protocols in Oceanside tailored to cellular regeneration, recovery, and performance."*
-- Keywords: Remove `BPC-157 San Diego, Semaglutide` → Replace with `regenerative medicine Oceanside, peptide therapy San Diego`
-
-**`weightLoss` entry:**
-- Description: Remove *"with Semaglutide, peptide therapy"* → Replace with *"Medical weight loss programs in Oceanside using evidence-based, physician-supervised protocols. Achieve sustainable results with personalized metabolic care."*
-- Keywords: Remove `Semaglutide San Diego, GLP-1 therapy` → Replace with `medical weight management Oceanside, metabolic optimization San Diego`
-
----
-
-## Summary of Files Changed
-
-| File | Changes |
-|---|---|
-| `src/pages/WeightLoss.tsx` | Remove 2 product-named cards, scrub 3 body text mentions |
-| `src/pages/Services.tsx` | Scrub description and 1 benefit bullet |
-| `src/lib/seo-data.ts` | Clean metadata descriptions and keywords for weightLoss and peptideTherapy entries |
-
-No other files contain these product names — the `CoreServices.tsx` homepage component is already clean.
