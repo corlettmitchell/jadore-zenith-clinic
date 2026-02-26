@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import clinicLobbyImage from "@/assets/clinic-lobby.jpg";
 
 const IntroSection = () => {
   return (
@@ -45,15 +46,8 @@ const IntroSection = () => {
             className="relative"
           >
             <div className="relative aspect-[4/5] bg-secondary rounded-sm overflow-hidden">
+              <img src={clinicLobbyImage} alt="J'adore Wellness clinic lobby" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-4 border border-gold/30 rounded-sm" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <span className="text-7xl md:text-8xl font-serif text-gold/20">J'</span>
-                  <p className="text-muted-foreground font-serif italic text-lg mt-4">
-                    "Personalized medicine,<br />not one-size-fits-all."
-                  </p>
-                </div>
-              </div>
             </div>
             {/* Overlapping accent */}
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-gold/20 to-gold/5 rounded-sm" />
