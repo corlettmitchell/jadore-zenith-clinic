@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Syringe, Droplets, TrendingDown, Snowflake, Sun } from "lucide-react";
+import { ArrowRight, Syringe, Droplets, TrendingDown, Snowflake, Sun, Waves } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import PartnerRedirectModal from "@/components/shared/PartnerRedirectModal";
 import hormoneImage from "@/assets/service-hormone.jpg";
@@ -9,6 +9,7 @@ import ivImage from "@/assets/service-iv.jpg";
 import weightlossImage from "@/assets/service-weightloss.jpg";
 import coldPlungeImage from "@/assets/service-coldplunge.jpg";
 import saunaImage from "@/assets/service-sauna.jpg";
+import floatSpaImage from "@/assets/service-floatspa-chamber.jpg";
 
 const services = [
   {
@@ -49,6 +50,14 @@ const services = [
     icon: Sun,
     image: saunaImage,
     link: "/services/infrared-sauna",
+    isPartner: true,
+  },
+  {
+    title: "Float Spa",
+    description: "Sensory deprivation therapy for deep relaxation and recovery.",
+    icon: Waves,
+    image: floatSpaImage,
+    link: "/services/float-spa",
     isPartner: true,
   },
 ];
