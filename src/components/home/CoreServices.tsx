@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Syringe, Droplets, TrendingDown, Snowflake, Sun, Waves } from "lucide-react";
+import { ArrowRight, Syringe, Droplets, TrendingDown, Snowflake, Sun, Wind } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import PartnerRedirectModal from "@/components/shared/PartnerRedirectModal";
 import hormoneImage from "@/assets/service-hormone.jpg";
@@ -53,11 +53,11 @@ const services = [
     isPartner: true,
   },
   {
-    title: "Float Spa",
-    description: "Sensory deprivation therapy for deep relaxation and recovery.",
-    icon: Waves,
+    title: "Hyperbaric Oxygen Therapy",
+    description: "Accelerate healing and recovery with pressurized oxygen therapy.",
+    icon: Wind,
     image: floatSpaImage,
-    link: "/services/float-spa",
+    link: "/services/hyperbaric-oxygen",
     isPartner: true,
   },
 ];
