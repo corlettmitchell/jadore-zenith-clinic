@@ -22,10 +22,10 @@ const IntroSection = () => {
               Built on Data, Refined by Experience
             </h2>
             <p className="body-large mb-6">
-              We begin with a comprehensive understanding of your baseline—symptoms, goals, lifestyle, 
-              and laboratory data—then build a plan designed to be both effective and sustainable. The 
-              goal is not 'more' of anything, but the right intervention, at the right dose, for the 
-              right individual—with structured monitoring to protect both results and long-term health.
+              At J'adore Wellness, your plan is built and overseen by board-certified physicians 
+              with real-world experience in complex physiology, recovery, and performance. We practice 
+              with the discipline you'd expect from medicine—not marketing—using objective data, 
+              thoughtful dosing, and a clear plan for follow-up.
             </p>
             <p className="body-regular mb-6">
               As a proud subsidiary of OptimizeU, our team benefits from a nationally recognized 
