@@ -16,7 +16,7 @@ const IntroSection = () => {
             transition={{ duration: 0.8 }}
           >
             <span className="inline-block text-sm font-sans uppercase tracking-[0.2em] text-gold mb-4">
-              Clinical Precision, Elevated Experience
+              Our Approach
             </span>
             <h2 className="heading-section mb-6">
               Clinical Precision, Elevated Experience
