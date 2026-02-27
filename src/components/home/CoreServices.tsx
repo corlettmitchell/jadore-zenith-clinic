@@ -8,7 +8,7 @@ import hormoneImage from "@/assets/service-hormone.jpg";
 import ivImage from "@/assets/service-iv.jpg";
 import weightlossImage from "@/assets/service-weightloss.jpg";
 import coldPlungeImage from "@/assets/service-coldplunge.jpg";
-import saunaImage from "@/assets/service-sauna.jpg";
+import saunaImage from "@/assets/service-sauna-jadore.png";
 import floatSpaImage from "@/assets/service-floatspa-chamber.jpg";
 
 const services = [
