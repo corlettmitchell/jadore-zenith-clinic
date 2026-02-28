@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Activity, ClipboardCheck, HeartPulse, Salad } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import { Activity, ClipboardCheck, HeartPulse, Salad } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import SectionHeading from "@/components/shared/SectionHeading";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
 import weightlossImage from "@/assets/service-weightloss.jpg";
@@ -44,85 +46,107 @@ const WeightLoss = () => {
     <Layout>
       <SEO {...seoData.weightLoss} />
       {/* Hero */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-luxury">
-        <div className="container-luxury">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={weightlossImage}
+            alt="Medical weight care consultation"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/50" />
+        </div>
+        <div className="container-luxury relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto"
+            className="max-w-2xl"
           >
-            <span className="inline-block text-sm font-sans uppercase tracking-[0.2em] text-gold-light mb-4">
+            <span className="inline-block text-sm font-sans uppercase tracking-[0.2em] text-gold mb-4">
               Medical Weight Management
             </span>
             <h1 className="heading-display text-ivory mb-6">
               Weight Care
             </h1>
-            <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
+            <p className="text-ivory/80 text-lg md:text-xl mb-8 leading-relaxed">
               Achieve sustainable weight care through physician-supervised, 
               data-driven protocols tailored to your physiology and goals.
             </p>
+            <Link to="/contact">
+              <Button variant="gold" size="xl" className="gap-2">
+                Schedule Consultation
+                <ArrowRight size={18} />
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Why Medical Weight Care */}
+      {/* Benefits */}
       <section className="section-padding bg-background">
         <div className="container-luxury">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="heading-section mb-6">
-                Why Medical Weight Care?
-              </h2>
-              <div className="space-y-4 body-large">
-                <p>
-                  Weight management is more than calories in, calories out. Hormonal 
-                  imbalances, metabolic dysfunction, and genetic factors all play 
-                  a role in why traditional diets fail.
-                </p>
-                <p>
-                  Our medical weight care programs address the root causes of 
-                  weight gain through evidence-based medical interventions, 
-                  comprehensive metabolic testing, and personalized treatment 
-                  plans built around your physiology.
-                </p>
-                <p>
-                  Every protocol is physician-supervised, ensuring safe, effective 
-                  results that last — not quick fixes that rebound.
-                </p>
-              </div>
-
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
-                {benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 bg-gold rounded-full" />
-                    <span className="text-muted-foreground">{benefit}</span>
-                  </li>
+              <SectionHeading
+                eyebrow="Medical Weight Care"
+                title="Why Medical Weight Care?"
+                centered={false}
+              />
+              <p className="body-large mt-6 mb-8">
+                Weight management is more than calories in, calories out. Hormonal 
+                imbalances, metabolic dysfunction, and genetic factors all play 
+                a role in why traditional diets fail. Our programs address the root causes 
+                through evidence-based medical interventions and personalized treatment plans.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {benefits.map((benefit, index) => (
+                  <motion.div
+                    key={benefit}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                    className="flex items-center gap-3"
+                  >
+                    <div className="flex-shrink-0 w-6 h-6 bg-gold/10 rounded-full flex items-center justify-center">
+                      <Check size={14} className="text-gold" />
+                    </div>
+                    <span className="text-sm text-foreground">{benefit}</span>
+                  </motion.div>
                 ))}
-              </ul>
+              </div>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative aspect-[4/3] rounded-sm overflow-hidden shadow-luxury-lg">
-                <img
-                  src={weightlossImage}
-                  alt="Weight Care consultation"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 to-transparent" />
+              <div className="bg-secondary/50 p-8 md:p-12 rounded-sm">
+                <h3 className="heading-card mb-4">Is Medical Weight Care Right for You?</h3>
+                <p className="body-regular mb-6">
+                  If you've struggled with weight despite diet and exercise, 
+                  underlying metabolic or hormonal factors could be the cause. 
+                  Our comprehensive evaluation includes advanced testing to 
+                  uncover what's holding you back.
+                </p>
+                <p className="body-regular mb-6">
+                  Every protocol is physician-supervised, ensuring safe, effective 
+                  results that last — not quick fixes that rebound.
+                </p>
+                <Link to="/intake">
+                  <Button variant="luxury" size="lg">
+                    Start Your Evaluation
+                  </Button>
+                </Link>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-teal/10 rounded-sm -z-10" />
             </motion.div>
           </div>
         </div>
@@ -181,7 +205,7 @@ const WeightLoss = () => {
             transition={{ duration: 0.8 }}
             className="max-w-2xl mx-auto"
           >
-             <h2 className="heading-section text-ivory mb-6">
+            <h2 className="heading-section text-ivory mb-6">
               Start Your Weight Care Journey
             </h2>
             <p className="text-ivory/80 text-lg mb-8">
