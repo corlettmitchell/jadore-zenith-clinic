@@ -19,6 +19,7 @@ import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Intake from "./pages/Intake";
 import NotFound from "./pages/NotFound";
+import Logo from "./pages/Logo";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/intake" element={<Intake />} />
+          <Route path="/logo" element={<Logo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
