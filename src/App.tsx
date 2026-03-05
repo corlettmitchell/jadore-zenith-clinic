@@ -20,6 +20,17 @@ import Contact from "./pages/Contact";
 import Intake from "./pages/Intake";
 import NotFound from "./pages/NotFound";
 import Logo from "./pages/Logo";
+// Location Pages
+import CarlsbadPage from "./pages/locations/Carlsbad";
+import VistaPage from "./pages/locations/Vista";
+import SanMarcosPage from "./pages/locations/SanMarcos";
+import EncinitasPage from "./pages/locations/Encinitas";
+import EscondidoPage from "./pages/locations/Escondido";
+import FallbrookPage from "./pages/locations/Fallbrook";
+import RanchoSantaFePage from "./pages/locations/RanchoSantaFe";
+import DelMarPage from "./pages/locations/DelMar";
+import CampPendletonPage from "./pages/locations/CampPendleton";
+import TemeculaPage from "./pages/locations/Temecula";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +60,17 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/intake" element={<Intake />} />
           <Route path="/logo" element={<Logo />} />
+          {/* Location Pages */}
+          <Route path="/locations/carlsbad" element={<CarlsbadPage />} />
+          <Route path="/locations/vista" element={<VistaPage />} />
+          <Route path="/locations/san-marcos" element={<SanMarcosPage />} />
+          <Route path="/locations/encinitas" element={<EncinitasPage />} />
+          <Route path="/locations/escondido" element={<EscondidoPage />} />
+          <Route path="/locations/fallbrook" element={<FallbrookPage />} />
+          <Route path="/locations/rancho-santa-fe" element={<RanchoSantaFePage />} />
+          <Route path="/locations/del-mar" element={<DelMarPage />} />
+          <Route path="/locations/camp-pendleton" element={<CampPendletonPage />} />
+          <Route path="/locations/temecula" element={<TemeculaPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

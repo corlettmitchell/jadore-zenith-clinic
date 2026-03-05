@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="bg-charcoal text-ivory">
       <div className="container-luxury section-padding">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <img src={logo} alt="J'adore Wellness" className="h-12 mb-6" />
@@ -52,6 +52,34 @@ const Footer = () => {
               ].map((service) => (
                 <li key={service}>
                   <span className="text-ivory/70 text-sm">{service}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Locations */}
+          <div>
+            <h4 className="font-serif text-lg mb-6 text-gold">Areas We Serve</h4>
+            <ul className="space-y-3">
+              {[
+                { name: "Carlsbad", path: "/locations/carlsbad" },
+                { name: "Vista", path: "/locations/vista" },
+                { name: "San Marcos", path: "/locations/san-marcos" },
+                { name: "Encinitas", path: "/locations/encinitas" },
+                { name: "Escondido", path: "/locations/escondido" },
+                { name: "Fallbrook", path: "/locations/fallbrook" },
+                { name: "Rancho Santa Fe", path: "/locations/rancho-santa-fe" },
+                { name: "Del Mar", path: "/locations/del-mar" },
+                { name: "Camp Pendleton", path: "/locations/camp-pendleton" },
+                { name: "Temecula", path: "/locations/temecula" },
+              ].map((location) => (
+                <li key={location.path}>
+                  <Link
+                    to={location.path}
+                    className="text-ivory/70 hover:text-gold transition-colors text-sm"
+                  >
+                    {location.name}
+                  </Link>
                 </li>
               ))}
             </ul>

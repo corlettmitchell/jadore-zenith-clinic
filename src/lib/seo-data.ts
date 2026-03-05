@@ -126,4 +126,85 @@ export const seoData: Record<string, PageSEO> = {
     keywords:
       "patient intake form, new patient registration, HIPAA compliant, wellness clinic intake",
   },
+  // Location Pages
+  carlsbad: {
+    title: "Hormone Therapy & Wellness Near Carlsbad CA - J'adore Wellness",
+    description:
+      "Premium hormone therapy and wellness services for Carlsbad residents. Just 10 minutes from Carlsbad Village. Testosterone therapy, peptide therapy, cold plunge, and more.",
+    canonical: "/locations/carlsbad",
+    keywords:
+      "hormone therapy Carlsbad, HRT Carlsbad CA, testosterone therapy Carlsbad, wellness clinic near Carlsbad, bioidentical hormones Carlsbad Village",
+  },
+  vista: {
+    title: "Hormone Therapy & Wellness Near Vista CA - J'adore Wellness", 
+    description:
+      "Advanced wellness center serving Vista, CA. Hormone optimization, regenerative medicine, and wellness services just 15 minutes from downtown Vista.",
+    canonical: "/locations/vista",
+    keywords:
+      "hormone therapy Vista, wellness clinic Vista CA, testosterone therapy Vista, HRT near Vista, regenerative medicine Vista",
+  },
+  sanMarcos: {
+    title: "Hormone Therapy & Wellness Near San Marcos CA - J'adore Wellness",
+    description:
+      "Revolutionary wellness for San Marcos residents. Hormone therapy, peptide protocols, and performance optimization near CSUSM and Lake San Marcos.",
+    canonical: "/locations/san-marcos",
+    keywords:
+      "hormone therapy San Marcos, wellness clinic San Marcos CA, HRT near CSUSM, testosterone therapy San Marcos, peptide therapy San Marcos",
+  },
+  encinitas: {
+    title: "Hormone Therapy & Wellness Near Encinitas CA - J'adore Wellness",
+    description:
+      "Coastal wellness for Encinitas residents. Holistic hormone therapy, regenerative treatments, and mindful medicine just 15 minutes from downtown Encinitas.",
+    canonical: "/locations/encinitas",
+    keywords:
+      "hormone therapy Encinitas, wellness clinic Encinitas CA, holistic medicine Encinitas, bioidentical hormones Encinitas, coastal wellness",
+  },
+  escondido: {
+    title: "Hormone Therapy & Wellness Near Escondido CA - J'adore Wellness",
+    description:
+      "Premium wellness services for Escondido residents. Hormone optimization, weight care, and regenerative medicine serving North County's largest city.",
+    canonical: "/locations/escondido",
+    keywords:
+      "hormone therapy Escondido, wellness clinic Escondido CA, testosterone therapy Escondido, HRT Escondido, weight loss Escondido",
+  },
+  fallbrook: {
+    title: "Hormone Therapy & Wellness Near Fallbrook CA - J'adore Wellness",
+    description:
+      "Rural wellness for Fallbrook's agricultural community. Hormone therapy, recovery optimization, and wellness services for the Avocado Capital of the World.",
+    canonical: "/locations/fallbrook",
+    keywords:
+      "hormone therapy Fallbrook, wellness clinic Fallbrook CA, rural healthcare Fallbrook, testosterone therapy Fallbrook, agricultural wellness",
+  },
+  ranchoSantaFe: {
+    title: "Luxury Wellness Near Rancho Santa Fe CA - J'adore Wellness",
+    description:
+      "World-class hormone therapy and luxury wellness for Rancho Santa Fe residents. Concierge-level care, cutting-edge treatments, and executive health optimization.",
+    canonical: "/locations/rancho-santa-fe",
+    keywords:
+      "hormone therapy Rancho Santa Fe, luxury wellness Rancho Santa Fe, executive health Rancho Santa Fe, VIP medical care, elite wellness",
+  },
+  delMar: {
+    title: "Hormone Therapy & Wellness Near Del Mar CA - J'adore Wellness",
+    description:
+      "Coastal elegance and sophisticated wellness for Del Mar residents. Premium hormone therapy, aesthetic medicine, and boutique healthcare near the village and racetrack.",
+    canonical: "/locations/del-mar",
+    keywords:
+      "hormone therapy Del Mar, wellness clinic Del Mar CA, aesthetic medicine Del Mar, coastal wellness, boutique healthcare Del Mar",
+  },
+  campPendleton: {
+    title: "Hormone Therapy & Wellness Near Camp Pendleton - J'adore Wellness",
+    description:
+      "Elite performance medicine for Marines and military families. Specialized hormone therapy, recovery optimization, and tactical wellness near Camp Pendleton.",
+    canonical: "/locations/camp-pendleton",
+    keywords:
+      "hormone therapy Camp Pendleton, military wellness, Marine health optimization, veterans hormone therapy, tactical medicine",
+  },
+  temecula: {
+    title: "Hormone Therapy & Wellness Near Temecula CA - J'adore Wellness",
+    description:
+      "Wine country wellness for Temecula residents. Sophisticated hormone therapy, anti-aging protocols, and luxury wellness in Riverside County's wine destination.",
+    canonical: "/locations/temecula",
+    keywords:
+      "hormone therapy Temecula, wellness clinic Temecula CA, wine country wellness, anti-aging Temecula, longevity medicine Temecula",
+  },
 };
