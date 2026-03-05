@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
-import hyperbaricImage from "@/assets/service-hyperbaric.jpg";
+import hyperbaricImage from "@/assets/service-floatspa-chamber.jpg";
 
 const benefits = [
   {
