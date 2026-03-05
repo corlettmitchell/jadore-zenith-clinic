@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
-import floatSpaImage from "@/assets/service-floatspa.webp";
+import floatSpaImage from "@/assets/service-floatspa-room.jpg";
 
 const benefits = [
   {
