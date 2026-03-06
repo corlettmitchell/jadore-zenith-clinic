@@ -20,6 +20,7 @@ import Contact from "./pages/Contact";
 import Intake from "./pages/Intake";
 import NotFound from "./pages/NotFound";
 import Logo from "./pages/Logo";
+import Logo2 from "./pages/Logo2";
 // Location Pages
 import CarlsbadPage from "./pages/locations/Carlsbad";
 import VistaPage from "./pages/locations/Vista";
