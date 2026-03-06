@@ -60,7 +60,7 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/intake" element={<Intake />} />
-          <Route path="/logo" element={<Logo />} />
+          <Route path="/logo.png" element={<Logo />} />
           <Route path="/logo2" element={<Logo2 />} />
           {/* Location Pages */}
           <Route path="/locations/carlsbad" element={<CarlsbadPage />} />
