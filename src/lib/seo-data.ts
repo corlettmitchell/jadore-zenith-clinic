@@ -23,20 +23,20 @@ export const seoData: Record<string, PageSEO> = {
       "hormone replacement therapy, HRT Oceanside, testosterone therapy San Diego, bioidentical hormones, TRT, menopause treatment, hormone optimization",
   },
   peptideTherapy: {
-    title: "Peptide Therapy - J'adore Wellness Oceanside CA",
+    title: "Peptide Therapy Oceanside CA - Advanced Peptide Protocols | J'adore Wellness",
     description:
-      "Physician-supervised peptide protocols in Oceanside tailored to cellular regeneration, recovery, and performance.",
+      "Physician-supervised peptide therapy in Oceanside, CA. BPC-157, TB-500, CJC-1295, and more. Targeted protocols for recovery, anti-aging, muscle growth, and cellular regeneration. Serving North San Diego County.",
     canonical: "/services/peptide-therapy",
     keywords:
-      "peptide therapy Oceanside, regenerative medicine Oceanside, peptide therapy San Diego, peptide protocols",
+      "peptide therapy Oceanside, peptide therapy San Diego, BPC-157 Oceanside, peptide injections Carlsbad, regenerative peptides, anti-aging peptides, peptide therapy near me, peptide clinic North County San Diego",
   },
   weightLoss: {
-    title: "Weight Care - J'adore Wellness Oceanside CA",
+    title: "Medical Weight Loss Oceanside CA - GLP-1 & Semaglutide Programs | J'adore Wellness",
     description:
-      "Medical weight care programs in Oceanside using evidence-based, physician-supervised protocols. Achieve sustainable results with personalized metabolic care.",
+      "Physician-supervised medical weight loss in Oceanside, CA. GLP-1 receptor agonists, semaglutide, tirzepatide, and metabolic optimization. Sustainable weight loss results. Serving Carlsbad, Vista, San Marcos.",
     canonical: "/services/weight-loss",
     keywords:
-      "medical weight care Oceanside, medical weight management Oceanside, metabolic optimization San Diego, weight care clinic California",
+      "medical weight loss Oceanside, GLP-1 weight loss Oceanside, semaglutide Oceanside, tirzepatide Carlsbad, weight loss clinic San Diego, medical weight loss near me, GLP-1 injections North County, weight loss doctor Oceanside CA",
   },
   coldPlunge: {
     title: "Cold Plunge Therapy - J'adore Wellness Oceanside CA",
