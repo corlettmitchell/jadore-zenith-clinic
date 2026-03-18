@@ -338,5 +338,53 @@ Object.entries(seoPages).forEach(([route, seo]) => {
   }
 });
 
-console.log(`\n🎉 Generated ${successCount} static HTML files with unique SEO content!`);
-console.log('✨ Each page now has its own title, description, and static fallback for Google.');
+console.log(`\n📁 Generated ${successCount} static HTML files with unique SEO content.`);
+
+// ============================================================
+// Inject inline SEO script into root index.html
+// Lovable's SPA hosting serves root index.html for all clean URLs,
+// bypassing our static files. This inline script runs synchronously
+// in <head> and sets correct metadata based on location.pathname.
+// ============================================================
+
+console.log('\n🔧 Injecting inline SEO metadata script into root index.html...');
+
+const metaMap = {};
+Object.entries(seoPages).forEach(([route, seo]) => {
+  if (route === '/') return;
+  metaMap[route] = [seo.title, seo.description];
+});
+
+const inlineScript = `<script>
+(function(){
+  var p=location.pathname.replace(/\\/$/,"");
+  if(!p)return;
+  var m=${JSON.stringify(metaMap)};
+  var d=m[p];
+  if(!d)return;
+  document.title=d[0];
+  var desc=document.querySelector('meta[name="description"]');
+  if(desc)desc.setAttribute("content",d[1]);
+  var ogT=document.querySelector('meta[property="og:title"]');
+  if(ogT)ogT.setAttribute("content",d[0]);
+  var ogD=document.querySelector('meta[property="og:description"]');
+  if(ogD)ogD.setAttribute("content",d[1]);
+  var twT=document.querySelector('meta[name="twitter:title"]');
+  if(twT)twT.setAttribute("content",d[0]);
+  var twD=document.querySelector('meta[name="twitter:description"]');
+  if(twD)twD.setAttribute("content",d[1]);
+  var can=document.querySelector('link[rel="canonical"]');
+  if(can)can.setAttribute("href","https://jadore-wellness.com"+p);
+})();
+</script>`;
+
+const rootIndexPath = path.join(distPath, 'index.html');
+let rootHtml = fs.readFileSync(rootIndexPath, 'utf8');
+rootHtml = rootHtml.replace('<head>', '<head>\n' + inlineScript);
+fs.writeFileSync(rootIndexPath, rootHtml);
+
+const scriptSizeKB = (Buffer.byteLength(inlineScript) / 1024).toFixed(1);
+console.log(`✅ Injected ${scriptSizeKB}KB inline metadata script (${Object.keys(metaMap).length} routes)`);
+
+console.log(`\n🎉 SEO optimization complete!`);
+console.log('✨ Static files + inline script = every route gets unique metadata on Lovable.');
