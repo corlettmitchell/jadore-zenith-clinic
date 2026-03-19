@@ -246,7 +246,7 @@ const GoogleReviews = () => {
             <CarouselContent className="-ml-4">
               {reviews.map((review, index) => (
                 <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <ReviewCard review={review} />
+                  <ReviewCard review={review} onReadMore={setSelectedReview} />
                 </CarouselItem>
               ))}
             </CarouselContent>
