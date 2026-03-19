@@ -22,7 +22,7 @@ const Index = () => {
       <WhyJadore />
       <CareModel />
       <ProcessSection />
-      <ReviewsPlaceholder />
+      <GoogleReviews />
       <CTASection />
     </Layout>
   );
