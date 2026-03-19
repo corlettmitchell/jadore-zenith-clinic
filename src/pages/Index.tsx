@@ -6,7 +6,7 @@ import CoreServices from "@/components/home/CoreServices";
 import WhyJadore from "@/components/home/WhyJadore";
 import CareModel from "@/components/home/CareModel";
 import ProcessSection from "@/components/home/ProcessSection";
-import ReviewsPlaceholder from "@/components/home/ReviewsPlaceholder";
+import GoogleReviews from "@/components/home/GoogleReviews";
 import CTASection from "@/components/home/CTASection";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
