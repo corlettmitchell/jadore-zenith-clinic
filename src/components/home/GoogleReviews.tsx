@@ -273,6 +273,12 @@ const GoogleReviews = () => {
           </a>
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {selectedReview && (
+          <ReviewModal review={selectedReview} onClose={() => setSelectedReview(null)} />
+        )}
+      </AnimatePresence>
     </section>
   );
 };
