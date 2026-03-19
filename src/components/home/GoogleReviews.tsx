@@ -301,12 +301,12 @@ const GoogleReviews = () => {
           className="mt-10 text-center"
         >
           <a
-            href="https://www.google.com/maps/place/J'adore+Wellness"
+            href="https://g.page/r/CRFNTY2i1_e-EBM/review"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-sans uppercase tracking-wide text-gold transition-colors hover:text-gold-light"
           >
-            See All Reviews on Google
+            Leave Us a Review
             <ExternalLink size={14} />
           </a>
         </motion.div>
