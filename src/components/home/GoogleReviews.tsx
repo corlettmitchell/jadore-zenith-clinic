@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
   CarouselNext,
 } from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import AutoScroll from "embla-carousel-auto-scroll";
 import { useRef, useState } from "react";
 
 interface Review {
@@ -140,8 +140,8 @@ const ReviewCard = ({ review }: { review: Review }) => {
 };
 
 const GoogleReviews = () => {
-  const autoplayPlugin = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })
+  const autoScrollPlugin = useRef(
+    AutoScroll({ speed: 0.8, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   return (
@@ -185,7 +185,7 @@ const GoogleReviews = () => {
         >
           <Carousel
             opts={{ align: "start", loop: true }}
-            plugins={[autoplayPlugin.current]}
+            plugins={[autoScrollPlugin.current]}
             className="w-full max-w-6xl mx-auto"
           >
             <CarouselContent className="-ml-4">
