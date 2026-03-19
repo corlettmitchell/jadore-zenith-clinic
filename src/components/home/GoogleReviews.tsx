@@ -185,7 +185,7 @@ const GoogleReviews = () => {
         >
           <Carousel
             opts={{ align: "start", loop: true }}
-            plugins={[autoplayPlugin.current]}
+            plugins={[autoScrollPlugin.current]}
             className="w-full max-w-6xl mx-auto"
           >
             <CarouselContent className="-ml-4">
