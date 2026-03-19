@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, ExternalLink } from "lucide-react";
+import { Star, ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -8,7 +8,7 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 interface Review {
   name: string;
@@ -17,26 +17,127 @@ interface Review {
 }
 
 const reviews: Review[] = [
-  { name: "Reviewer 1", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 2", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 3", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 4", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 5", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 6", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 7", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 8", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 9", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 10", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 11", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 12", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 13", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 14", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 15", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 16", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
-  { name: "Reviewer 17", text: "Placeholder review text. Replace with your actual Google review.", date: "2024" },
+  {
+    name: "Michael L",
+    text: "Jadore Wellness is fantastic. The space is clean, calming, and very welcoming the moment you walk in. The staff is knowledgeable, professional, and takes the time to make sure you feel comfortable and taken care of. Everything feels very personalized and high quality, and you can tell they genuinely care about their clients and the results they deliver. I left feeling refreshed and well taken care of. Highly recommend Jadore Wellness to anyone looking for a great experience and excellent service. I'll definitely be back.",
+    date: "1 week ago",
+  },
+  {
+    name: "Yuliya N",
+    text: "Highly recommend! I had a great experience at J'adore Wellness. The team is extremely professional and the clinic is very modern and clean. The hormone optimization program was explained in detail and I felt like the doctor really took time to go through my labs and symptoms. Highly recommend for anyone looking to improve energy, fitness, and overall health. Will be back again soon.",
+    date: "1 week ago",
+  },
+  {
+    name: "Chuan",
+    text: "I've had a really great experience with J'adore Wellness. From the moment I walked in, the team took the time to really listen and understand what I was looking for rather than just rushing through an appointment. They explained everything clearly, answered all of my questions patiently, and made sure I felt comfortable with each step of the process. You can tell they genuinely care about their clients and take pride in their work. The whole experience was thoughtful, welcoming, and very personalized.",
+    date: "1 week ago",
+  },
+  {
+    name: "Varvara L",
+    text: "I had a really great experience. The clinic is beautiful and the staff is super friendly. The doctor actually took time to go over my labs and explain everything about hormone optimization. It feels like a very professional, physician-led clinic and I left feeling great. Definitely recommend if you're looking for a wellness clinic in Oceanside. Really impressed with J'adore Wellness. The doctor took the time to review my labs in depth and explain everything clearly. Dr Oleg took care of me. The approach is very evidence-based and personalized. The recovery services are also great — cold plunge is getting those endorphins out after therapy.",
+    date: "1 week ago",
+  },
+  {
+    name: "Ari P",
+    text: "J'adore Wellness is a great addition to the Oceanside wellness scene. The space is thoughtfully designed and the team clearly takes a modern, science-based approach to health and recovery. They offer a wide range of services—from hormone optimization and IV therapy to recovery tools like cold plunge and infrared sauna—so it feels like a true one-stop shop for people looking to improve how they feel and perform day to day. What really stands out is the focus on personalized care and making clients feel comfortable and informed throughout the process. If you're looking for a place that blends advanced wellness treatments with a welcoming environment, J'adore Wellness is definitely worth checking out.",
+    date: "1 week ago",
+  },
+  {
+    name: "Luda K",
+    text: "I highly recommend J'adore Wellness. Dr. Oleg took the time to explain hormone balance in a way that made total sense. It's clear he truly cares about his patients.",
+    date: "1 week ago",
+  },
+  {
+    name: "Ivan K",
+    text: "The team at J'adore Wellness is wonderful. The consultation was detailed and educational, and the clinic itself has such a relaxing and professional atmosphere.",
+    date: "1 week ago",
+  },
+  {
+    name: "Elina M",
+    text: "Found J'adore Wellness for hormone optimization in Oceanside and was very impressed. The consultation was very detailed, the team clearly knows what they're doing. Highly recommend.",
+    date: "1 week ago",
+  },
+  {
+    name: "Kayla L",
+    text: "Such a great experience!! I loved my time and well worth the money. I loved the complete suite of services—especially the sauna and cold plunge. Will be back!!",
+    date: "1 week ago",
+  },
+  {
+    name: "Blake S",
+    text: "Dr. Oleg is incredibly personable and was able to curate a unique conversation on health and wellness tailored to my lab results which was greatly appreciated. He has a unique ability to create a proactive and positive experience when discussing men's health and is refreshingly genuine in outlining care path options / recommendations etc. 10/10 experience, thank you!",
+    date: "1 day ago",
+  },
+  {
+    name: "Jenn L",
+    text: "I'd been dealing with perimenopause symptoms for a while, and my primary care doctor was pretty dismissive — basically told me I wasn't suffering enough to warrant any real conversation. J'adore was the opposite. The providers actually listened, took me seriously, and didn't make me feel like I was being dramatic. They started me on a low dose of hormones and within days I genuinely felt like myself again — mental clarity, better energy, mood lifted. I keep thinking about how different the last two years could have been. If you're on the fence, just go. The process was simple and fast, and I'm already looking forward to asking about peptides at my next visit.",
+    date: "6 days ago",
+  },
+  {
+    name: "Mary W",
+    text: "Very inviting place and staff is so pleasant and informative. All my questions were answered in terms that were straightforward and also great follow-up. Felt at ease at all times and left fully revitalized. Definitely will be back to try more of their services! Give them a try, you won't be disappointed.",
+    date: "1 week ago",
+  },
+  {
+    name: "Ronita G",
+    text: "J'adore Wellness is on point. The team is extremely knowledgeable and professional. They truly focus on helping you feel your best.",
+    date: "1 week ago",
+  },
+  {
+    name: "Julia D",
+    text: "Absolutely loved my first visit here. The clinic is gorgeous and the staff is so welcoming. The consultation was very thorough and I felt like all of my questions were answered and health concerns were really listened to. The doctor laid out a great plan for my journey.",
+    date: "1 week ago",
+  },
+  {
+    name: "Jenna H",
+    text: "I've known Dr. Ryabinin for years — even back when he was completing his surgery residency — and he has always been the kind of doctor who genuinely listens, not that fake buzz words \"what other questions do you have\" vibe. So seeing that same energy at J'adore Wellness in Oceanside, CA feels exactly right. The whole vibe of this physician-led clinic is warm, calm, and actually comforting. I've been working with him on hormone optimization, and he explains everything in a way that feels supportive and easy to understand. No pressure, no confusion — just real, thoughtful guidance. If you're looking for a wellness clinic in Oceanside that offers medical weight-loss support, TRT clinic services, recovery treatments, and patient-centered care, J'adore Wellness is such an easy yes. Oceanside truly lucked out with this one.",
+    date: "1 week ago",
+  },
+  {
+    name: "Cooper M",
+    text: "Great service, and amenities. Quality care I would recommend to anyone! Thanks again Dr. Oleg.",
+    date: "1 week ago",
+  },
 ];
 
-const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/place/J'adore+Wellness"; // Replace with your actual Google Business URL
+const CHAR_LIMIT = 180;
+const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/place/J'adore+Wellness";
+
+const ReviewCard = ({ review }: { review: Review }) => {
+  const isLong = review.text.length > CHAR_LIMIT;
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="h-full rounded-sm border border-border bg-card p-6 flex flex-col shadow-luxury">
+      <div className="flex gap-0.5 mb-4">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} size={16} className="fill-gold text-gold" />
+        ))}
+      </div>
+      <div className="flex-1 mb-4">
+        <p className="body-regular text-foreground/80 italic">
+          "{expanded || !isLong ? review.text : `${review.text.slice(0, CHAR_LIMIT).trimEnd()}…`}"
+        </p>
+        {isLong && (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="inline-flex items-center gap-1 mt-2 text-xs font-sans text-gold hover:text-gold-light transition-colors"
+          >
+            {expanded ? "Show less" : "Read more"}
+            {expanded ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
+          </button>
+        )}
+      </div>
+      <div className="flex items-center justify-between pt-4 border-t border-border">
+        <span className="font-sans text-sm font-medium text-foreground">
+          {review.name}
+        </span>
+        <span className="text-xs text-muted-foreground font-sans">
+          {review.date}
+        </span>
+      </div>
+    </div>
+  );
+};
 
 const GoogleReviews = () => {
   const autoplayPlugin = useRef(
@@ -54,7 +155,6 @@ const GoogleReviews = () => {
           className="text-center max-w-2xl mx-auto mb-12"
         >
           <div className="flex items-center justify-center gap-2 mb-6">
-            {/* Google "G" logo */}
             <svg viewBox="0 0 24 24" className="w-6 h-6" aria-hidden="true">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
               <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -74,9 +174,7 @@ const GoogleReviews = () => {
           <span className="inline-block text-sm font-sans uppercase tracking-[0.2em] text-gold mb-4">
             Patient Reviews
           </span>
-          <h2 className="heading-section">
-            What Our Patients Say
-          </h2>
+          <h2 className="heading-section">What Our Patients Say</h2>
         </motion.div>
 
         <motion.div
@@ -86,37 +184,14 @@ const GoogleReviews = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
+            opts={{ align: "start", loop: true }}
             plugins={[autoplayPlugin.current]}
             className="w-full max-w-6xl mx-auto"
           >
             <CarouselContent className="-ml-4">
               {reviews.map((review, index) => (
-                <CarouselItem
-                  key={index}
-                  className="pl-4 basis-full md:basis-1/2 lg:basis-1/3"
-                >
-                  <div className="h-full rounded-sm border border-border bg-card p-6 flex flex-col shadow-luxury">
-                    <div className="flex gap-0.5 mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} size={16} className="fill-gold text-gold" />
-                      ))}
-                    </div>
-                    <p className="body-regular text-foreground/80 italic flex-1 mb-4 line-clamp-5">
-                      "{review.text}"
-                    </p>
-                    <div className="flex items-center justify-between pt-4 border-t border-border">
-                      <span className="font-sans text-sm font-medium text-foreground">
-                        {review.name}
-                      </span>
-                      <span className="text-xs text-muted-foreground font-sans">
-                        {review.date}
-                      </span>
-                    </div>
-                  </div>
+                <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                  <ReviewCard review={review} />
                 </CarouselItem>
               ))}
             </CarouselContent>
