@@ -140,8 +140,8 @@ const ReviewCard = ({ review }: { review: Review }) => {
 };
 
 const GoogleReviews = () => {
-  const autoplayPlugin = useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })
+  const autoScrollPlugin = useRef(
+    AutoScroll({ speed: 0.8, stopOnInteraction: false, stopOnMouseEnter: true })
   );
 
   return (
