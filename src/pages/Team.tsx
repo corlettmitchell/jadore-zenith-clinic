@@ -31,7 +31,7 @@ const teamMembers = [
   {
     name: "Katy Ouellette",
     title: "General Manager",
-    image: teamNurse,
+    image: teamKaty,
     bio: [
       "With over 20 years of experience in medicine, Katy Ouellette brings extensive real-world experience in health, performance, and recovery to J'adore Wellness. A lifelong athlete, she has worked closely with professional bodybuilders and performance-driven individuals, gaining firsthand insight into what it takes to train hard, recover effectively, and achieve lasting results.",
       "Katy believes in a functional approach to medicine — focusing on identifying root causes and creating strategies that transform the body, not just manage symptoms. Her approach centers on helping individuals optimize their health, performance, and recovery so they can feel and function at their best.",
