@@ -5,6 +5,18 @@ import { seoData } from "@/lib/seo-data";
 import teamDoctor from "@/assets/team-doctor.jpg";
 import teamNurse from "@/assets/team-nurse.jpg";
 
+const founder = {
+  name: "Dr. Oleg Ryabinin, MD",
+  title: "Founder & Medical Director",
+  image: teamDoctor,
+  bio: [
+    "Dr. Oleg Ryabinin is a board-certified general surgeon who completed seven years of rigorous post-graduate surgical training following medical school. His training includes extensive experience in bariatric and metabolic surgery, as well as endocrine surgery—providing a strong foundation in weight regulation, hormonal physiology, and metabolic health.",
+    "Through this background, Dr. Ryabinin developed a deep understanding of the complex interplay between hormones, body composition, and long-term health—including the hypothalamic-pituitary-gonadal axis, thyroid function, and metabolic adaptation. This expertise forms the backbone of his clinical approach to hormone optimization and medical weight loss.",
+    "After personally experiencing the physical toll of surgical training, including significant weight gain and injury, he applied these principles to his own health—successfully losing nearly 70 pounds through structured hormone optimization, GLP-1–based therapy, and targeted lifestyle interventions.",
+    "Today, Dr. Ryabinin brings both clinical expertise and personal experience to J'adore Wellness, delivering evidence-based hormone therapy and medical weight loss programs designed to help patients restore energy, optimize performance, and achieve sustainable results.",
+  ],
+};
+
 const teamMembers = [
   {
     name: "Dr. Jim O'Loughlin, DO",
@@ -57,6 +69,74 @@ const Team = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Featured Founder */}
+      <section className="pb-20 md:pb-28 bg-background">
+        <div className="container-luxury">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 xl:gap-24 items-start">
+              {/* Image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.97 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+                className="lg:order-1"
+              >
+                <div className="relative">
+                  <div className="aspect-[3/4] overflow-hidden rounded-xl">
+                    <img
+                      src={founder.image}
+                      alt={founder.name}
+                      className="w-full h-full object-cover object-center"
+                      loading="eager"
+                    />
+                  </div>
+                  <div className="absolute -bottom-3 -right-3 w-28 h-28 border border-gold/20 rounded-xl -z-10" />
+                </div>
+              </motion.div>
+
+              {/* Text Content */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
+                className="flex flex-col justify-center lg:order-2"
+              >
+                <div className="lg:py-4">
+                  <h2 className="font-serif text-[2rem] md:text-[2.6rem] lg:text-[2.8rem] font-medium tracking-tight text-foreground mb-2 leading-[1.1]">
+                    {founder.name}
+                  </h2>
+                  <p className="text-sm font-sans uppercase tracking-[0.18em] text-gold mb-8">
+                    {founder.title}
+                  </p>
+                  <div className="space-y-5">
+                    {founder.bio.map((paragraph, pIndex) => (
+                      <p
+                        key={pIndex}
+                        className="text-base md:text-[1.05rem] leading-[1.8] text-muted-foreground font-sans"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="flex justify-center pb-20 md:pb-28">
+        <div className="w-16 h-px bg-gold/30" />
+      </div>
 
       {/* Team Members */}
       <section className="pb-24 md:pb-32 bg-background">
