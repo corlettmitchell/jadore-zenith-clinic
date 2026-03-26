@@ -5,6 +5,18 @@ import { seoData } from "@/lib/seo-data";
 import teamDoctor from "@/assets/team-doctor.jpg";
 import teamNurse from "@/assets/team-nurse.jpg";
 
+const founder = {
+  name: "Dr. Oleg Ryabinin, MD",
+  title: "Founder & Medical Director",
+  image: teamDoctor,
+  bio: [
+    "Dr. Oleg Ryabinin is a board-certified general surgeon who completed seven years of rigorous post-graduate surgical training following medical school. His training includes extensive experience in bariatric and metabolic surgery, as well as endocrine surgery—providing a strong foundation in weight regulation, hormonal physiology, and metabolic health.",
+    "Through this background, Dr. Ryabinin developed a deep understanding of the complex interplay between hormones, body composition, and long-term health—including the hypothalamic-pituitary-gonadal axis, thyroid function, and metabolic adaptation. This expertise forms the backbone of his clinical approach to hormone optimization and medical weight loss.",
+    "After personally experiencing the physical toll of surgical training, including significant weight gain and injury, he applied these principles to his own health—successfully losing nearly 70 pounds through structured hormone optimization, GLP-1–based therapy, and targeted lifestyle interventions.",
+    "Today, Dr. Ryabinin brings both clinical expertise and personal experience to J'adore Wellness, delivering evidence-based hormone therapy and medical weight loss programs designed to help patients restore energy, optimize performance, and achieve sustainable results.",
+  ],
+};
+
 const teamMembers = [
   {
     name: "Dr. Jim O'Loughlin, DO",
