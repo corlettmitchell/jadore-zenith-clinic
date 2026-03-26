@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
 import teamDoctor from "@/assets/team-doctor.jpg";
-import teamNurse from "@/assets/team-nurse.jpg";
+import teamKaty from "@/assets/team-katy.png";
 
 const founder = {
   name: "Dr. Oleg Ryabinin, MD",
