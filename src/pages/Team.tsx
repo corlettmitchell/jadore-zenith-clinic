@@ -1,30 +1,29 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Linkedin, Mail } from "lucide-react";
 import Layout from "@/components/layout/Layout";
-import SectionHeading from "@/components/shared/SectionHeading";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
 import teamDoctor from "@/assets/team-doctor.jpg";
 import teamNurse from "@/assets/team-nurse.jpg";
 
-const team = [
+const teamMembers = [
   {
-    name: "Dr. [Name]",
-    role: "Medical Director",
-    credentials: "MD, Board Certified",
+    name: "Dr. Jim O'Loughlin, DO",
+    title: "Staff Physician",
     image: teamDoctor,
-    bio: "[Bio placeholder - Add your medical director's background, experience, and passion for wellness medicine here. Include their journey to founding J'adore Wellness and their approach to patient care.]",
-    specialties: ["Specialty 1", "Specialty 2", "Specialty 3"],
+    bio: [
+      "Dr. O'Loughlin is a board-certified surgeon whose extensive surgical training gave him a deep appreciation for the complexity of the human body and its remarkable capacity for recovery and optimization. With a clinical foundation rooted in anatomy, physiology, and metabolic health, Dr. O'Loughlin brings a surgeon's precision and evidence-based thinking to every patient interaction.",
+      "Over the course of his career, Dr. O'Loughlin found himself increasingly drawn to a question that traditional medicine rarely stops to ask: what does it actually look like to feel your best? Guiding family and friends through their own health optimization journeys gave him a firsthand view of what becomes possible when hormonal balance, body composition, and lifestyle are addressed together — and it redirected the course of his practice.",
+      "Today, Dr. O'Loughlin puts that experience to work at J'adore Wellness, where he specializes in personalized hormone therapy, peptide therapy, and medical weight optimization. He believes that while conventional medicine excels at treating disease, it isn't currently ideal at helping people thrive — and that the tools to do so are available for those ready to pursue them. His approach pairs clinical rigor with genuine curiosity about each patient's goals, helping them restore energy, reclaim vitality, and build a foundation for long-term health.",
+    ],
   },
   {
-    name: "[Name]",
-    role: "Nurse Practitioner",
-    credentials: "NP-C, MSN",
+    name: "Katy Ouellette",
+    title: "General Manager",
     image: teamNurse,
-    bio: "[Bio placeholder - Add your nurse practitioner's experience, areas of expertise, and approach to patient care here. Highlight their training and what makes them passionate about helping patients.]",
-    specialties: ["Specialty 1", "Specialty 2", "Specialty 3"],
+    bio: [
+      "With over 20 years of experience in medicine, Katy Ouellette brings extensive real-world experience in health, performance, and recovery to J'adore Wellness. A lifelong athlete, she has worked closely with professional bodybuilders and performance-driven individuals, gaining firsthand insight into what it takes to train hard, recover effectively, and achieve lasting results.",
+      "Katy believes in a functional approach to medicine — focusing on identifying root causes and creating strategies that transform the body, not just manage symptoms. Her approach centers on helping individuals optimize their health, performance, and recovery so they can feel and function at their best.",
+    ],
   },
 ];
 
@@ -32,77 +31,128 @@ const Team = () => {
   return (
     <Layout>
       <SEO {...seoData.team} />
-      {/* Hero */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-luxury">
+
+      {/* Intro Section */}
+      <section className="pt-36 pb-16 md:pt-44 md:pb-24 bg-background">
         <div className="container-luxury">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block text-sm font-sans uppercase tracking-[0.2em] text-gold-light mb-4">
-              Our Experts
+            <span className="inline-block text-xs font-sans uppercase tracking-[0.25em] text-gold mb-5">
+              Meet the Team
             </span>
-            <h1 className="heading-display text-ivory mb-6">
-              Meet Your Care Team
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.4rem] font-medium leading-[1.1] tracking-tight text-foreground mb-6">
+              The People Behind{" "}
+              <span className="italic">J'adore Wellness</span>
             </h1>
-            <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
-              Our team combines decades of medical expertise with a genuine 
-              commitment to your health and wellbeing.
+            <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+              At J'adore Wellness, our team combines clinical expertise with a
+              personalized, whole-body approach to health, recovery, and
+              optimization. Get to know the professionals helping guide your
+              wellness journey.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Team Coming Soon */}
-      <section className="section-padding bg-background">
-        <div className="container-luxury text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl mx-auto"
-          >
-            <p className="body-large text-muted-foreground">
-              Our team profiles are coming soon. In the meantime, reach out to us directly — we'd love to connect.
-            </p>
-            <div className="mt-8">
-              <Link to="/contact">
-                <Button variant="gold" size="lg" className="gap-2">
-                  Contact Us
-                  <ArrowRight size={16} />
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* Team Members */}
+      <section className="pb-24 md:pb-32 bg-background">
+        <div className="container-luxury">
+          <div className="space-y-20 md:space-y-32">
+            {teamMembers.map((member, index) => {
+              const isReversed = index % 2 !== 0;
 
-      {/* CTA */}
-      <section className="section-padding bg-secondary/50">
-        <div className="container-luxury text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-2xl mx-auto"
-          >
-            <h2 className="heading-section mb-6">
-              Ready to Meet Your Provider?
-            </h2>
-            <p className="body-large mb-8">
-              Schedule your consultation and start your journey to 
-              optimal health with our expert team.
-            </p>
-            <Link to="/contact">
-              <Button variant="luxury" size="xl" className="gap-2">
-                Schedule Consultation
-                <ArrowRight size={18} />
-              </Button>
-            </Link>
-          </motion.div>
+              return (
+                <motion.div
+                  key={member.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+                >
+                  {/* Subtle top divider for second member onward */}
+                  {index > 0 && (
+                    <div className="flex justify-center mb-20 md:mb-32">
+                      <div className="w-16 h-px bg-gold/30" />
+                    </div>
+                  )}
+
+                  <div
+                    className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-20 items-start ${
+                      isReversed ? "lg:direction-rtl" : ""
+                    }`}
+                  >
+                    {/* Image */}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.97 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true, margin: "-60px" }}
+                      transition={{
+                        duration: 0.8,
+                        delay: 0.15,
+                        ease: "easeOut",
+                      }}
+                      className={`${isReversed ? "lg:order-2" : "lg:order-1"}`}
+                    >
+                      <div className="relative">
+                        <div className="aspect-[3/4] overflow-hidden rounded-xl">
+                          <img
+                            src={member.image}
+                            alt={member.name}
+                            className="w-full h-full object-cover object-center"
+                            loading={index === 0 ? "eager" : "lazy"}
+                          />
+                        </div>
+                        {/* Subtle decorative accent */}
+                        <div
+                          className={`absolute -bottom-3 ${
+                            isReversed ? "-left-3" : "-right-3"
+                          } w-24 h-24 border border-gold/20 rounded-xl -z-10`}
+                        />
+                      </div>
+                    </motion.div>
+
+                    {/* Text Content */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: "-60px" }}
+                      transition={{
+                        duration: 0.7,
+                        delay: 0.25,
+                        ease: "easeOut",
+                      }}
+                      className={`flex flex-col justify-center ${
+                        isReversed ? "lg:order-1" : "lg:order-2"
+                      }`}
+                    >
+                      <div className="lg:py-4">
+                        <h2 className="font-serif text-3xl md:text-4xl font-medium tracking-tight text-foreground mb-2">
+                          {member.name}
+                        </h2>
+                        <p className="text-sm font-sans uppercase tracking-[0.18em] text-gold mb-8">
+                          {member.title}
+                        </p>
+                        <div className="space-y-5">
+                          {member.bio.map((paragraph, pIndex) => (
+                            <p
+                              key={pIndex}
+                              className="text-base md:text-[1.05rem] leading-[1.8] text-muted-foreground font-sans"
+                            >
+                              {paragraph}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
     </Layout>
