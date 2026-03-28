@@ -45,7 +45,7 @@ const Team = () => {
       <SEO {...seoData.team} />
 
       {/* Intro Section */}
-      <section className="pt-36 pb-16 md:pt-44 md:pb-24 bg-background">
+      <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-luxury">
         <div className="container-luxury">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
