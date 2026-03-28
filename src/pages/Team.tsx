@@ -45,7 +45,7 @@ const Team = () => {
       <SEO {...seoData.team} />
 
       {/* Intro Section */}
-      <section className="pt-36 pb-16 md:pt-44 md:pb-24 bg-background">
+      <section className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-luxury">
         <div className="container-luxury">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -53,14 +53,14 @@ const Team = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto"
           >
-            <span className="inline-block text-xs font-sans uppercase tracking-[0.25em] text-gold mb-5">
+            <span className="inline-block text-xs font-sans uppercase tracking-[0.25em] text-gold-light mb-5">
               Meet the Team
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.4rem] font-medium leading-[1.1] tracking-tight text-foreground mb-6">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.4rem] font-medium leading-[1.1] tracking-tight text-ivory mb-6">
               The People Behind{" "}
               <span className="italic">J'adore Wellness</span>
             </h1>
-            <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+            <p className="text-ivory/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
               At J'adore Wellness, our team combines clinical expertise with a
               personalized, whole-body approach to health, recovery, and
               optimization. Get to know the professionals helping guide your
