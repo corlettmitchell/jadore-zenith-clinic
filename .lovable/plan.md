@@ -1,21 +1,12 @@
 
 
-## Plan: Add Brown Hero Header to /team Page
+## Plan: Add Top Padding to Founder Section
 
-Replace the current plain intro section on the `/team` page with a dark hero header matching the pattern used on other pages (Services, About, etc.).
+The Featured Founder section (`<section className="pb-20 md:pb-28 bg-background">`) has no top padding, so it sits flush against the brown hero header.
 
-### Changes
+### Change
 
-**Edit `src/pages/Team.tsx`**
+**Edit `src/pages/Team.tsx` line 75** — Add top padding to the founder section:
 
-Replace the current intro `<section>` (plain `bg-background` with centered text) with a hero section using `bg-gradient-luxury` — the same charcoal/brown gradient used on the Services page:
-
-- Same padding: `pt-32 pb-20 md:pt-40 md:pb-28`
-- `bg-gradient-luxury` background
-- Gold eyebrow text (`text-gold-light`)
-- Ivory heading and body text (`text-ivory`, `text-ivory/80`)
-- Keep the same "Meet the Team" eyebrow, heading, and paragraph content
-- Keep the existing framer-motion animation
-
-This matches the Services page hero pattern exactly and gives the Team page the same premium dark header as the rest of the site.
+Change `pb-20 md:pb-28` to `pt-16 pb-20 md:pt-24 md:pb-28` to create comfortable spacing between the hero header and Dr. Oleg's profile.
 
