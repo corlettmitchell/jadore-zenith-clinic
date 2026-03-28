@@ -9,7 +9,7 @@ import teamKaty from "@/assets/team-katy.png";
 const founder = {
   name: "Dr. Oleg Ryabinin, MD",
   title: "Founder & Medical Director",
-  image: teamDoctor,
+  image: teamOleg,
   bio: [
     "Dr. Oleg Ryabinin is a board-certified general surgeon who completed seven years of rigorous post-graduate surgical training following medical school. His training includes extensive experience in bariatric and metabolic surgery, as well as endocrine surgery—providing a strong foundation in weight regulation, hormonal physiology, and metabolic health.",
     "Through this background, Dr. Ryabinin developed a deep understanding of the complex interplay between hormones, body composition, and long-term health—including the hypothalamic-pituitary-gonadal axis, thyroid function, and metabolic adaptation. This expertise forms the backbone of his clinical approach to hormone optimization and medical weight loss.",
@@ -87,7 +87,7 @@ const Team = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-                className="lg:order-1"
+                className="lg:order-2"
               >
                 <div className="relative">
                   <div className="aspect-[3/4] overflow-hidden rounded-xl">
@@ -108,7 +108,7 @@ const Team = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
-                className="flex flex-col justify-center lg:order-2"
+                className="flex flex-col justify-center lg:order-1"
               >
                 <div className="lg:py-4">
                   <h2 className="font-serif text-[2rem] md:text-[2.6rem] lg:text-[2.8rem] font-medium tracking-tight text-foreground mb-2 leading-[1.1]">
