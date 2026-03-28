@@ -72,7 +72,7 @@ const Team = () => {
       </section>
 
       {/* Featured Founder */}
-      <section className="pb-20 md:pb-28 bg-background">
+      <section className="pt-16 pb-20 md:pt-24 md:pb-28 bg-background">
         <div className="container-luxury">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
