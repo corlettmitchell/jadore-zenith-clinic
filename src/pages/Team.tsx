@@ -94,7 +94,7 @@ const Team = () => {
                     <img
                       src={founder.image}
                       alt={founder.name}
-                      className="w-full h-full object-cover object-bottom"
+                      className="w-full h-full object-cover object-top"
                       loading="eager"
                     />
                   </div>
