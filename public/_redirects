@@ -1,0 +1,29 @@
+# Serve static HTML files with unique SEO metadata at clean URLs
+# These rewrites run BEFORE the SPA catch-all
+/about /about.html 200
+/team /team.html 200
+/contact /contact.html 200
+/intake /intake.html 200
+/services /services.html 200
+/hormone-therapy /hormone-therapy.html 200
+/aesthetics /aesthetics.html 200
+/services/peptide-therapy /services/peptide-therapy.html 200
+/services/weight-loss /services/weight-loss.html 200
+/services/cold-plunge /services/cold-plunge.html 200
+/services/infrared-sauna /services/infrared-sauna.html 200
+/services/compression /services/compression.html 200
+/services/hyperbaric-oxygen /services/hyperbaric-oxygen.html 200
+/services/float-spa /services/float-spa.html 200
+/locations/carlsbad /locations/carlsbad.html 200
+/locations/vista /locations/vista.html 200
+/locations/san-marcos /locations/san-marcos.html 200
+/locations/encinitas /locations/encinitas.html 200
+/locations/escondido /locations/escondido.html 200
+/locations/fallbrook /locations/fallbrook.html 200
+/locations/rancho-santa-fe /locations/rancho-santa-fe.html 200
+/locations/del-mar /locations/del-mar.html 200
+/locations/camp-pendleton /locations/camp-pendleton.html 200
+/locations/temecula /locations/temecula.html 200
+
+# SPA fallback for all other routes
+/* /index.html 200
