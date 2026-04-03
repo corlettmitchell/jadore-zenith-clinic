@@ -193,8 +193,11 @@ const BASE_URL = 'https://jadore-wellness.com';
 
 Object.entries(seoPages).forEach(([route, seo]) => {
   try {
-    const routePath = route === '/' ? '/index' : route;
-    const filePath = path.join(distPath, `${routePath}.html`);
+    // Use /route/index.html so clean URLs serve the correct HTML
+    const routePath = route === '/' ? '' : route;
+    const filePath = route === '/' 
+      ? path.join(distPath, 'index.html')
+      : path.join(distPath, routePath, 'index.html');
     const dirPath = path.dirname(filePath);
 
     if (!fs.existsSync(dirPath)) {
@@ -331,7 +334,7 @@ Object.entries(seoPages).forEach(([route, seo]) => {
     );
 
     fs.writeFileSync(filePath, html);
-    console.log(`✅ ${route} -> ${routePath}.html`);
+    console.log(`✅ ${route} -> ${route === '/' ? 'index.html' : routePath + '/index.html'}`);
     successCount++;
   } catch (error) {
     console.error(`❌ Failed to create ${route}:`, error.message);
