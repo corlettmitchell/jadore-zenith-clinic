@@ -45,6 +45,7 @@ const Hero = () => {
             className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
+        <div className="absolute inset-0 bg-[#C4A35A]/15" />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/60 to-charcoal/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-charcoal/30" />
       </div>
