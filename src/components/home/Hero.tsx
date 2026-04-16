@@ -1,21 +1,50 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-wellness.jpg";
+
+import heroLobby1 from "@/assets/hero-lobby-1.jpg";
+import heroLobby2 from "@/assets/hero-lobby-2.jpg";
+import heroColdPlunge from "@/assets/hero-cold-plunge.jpg";
+import heroSauna from "@/assets/hero-sauna.jpg";
+import heroFloat from "@/assets/hero-float.jpg";
+import heroHyperbaric from "@/assets/hero-hyperbaric.jpg";
+
+const heroImages = [
+  { src: heroLobby1, alt: "J'adore Wellness reception with circular wall art" },
+  { src: heroLobby2, alt: "J'adore Wellness entrance and front desk" },
+  { src: heroColdPlunge, alt: "Cold plunge therapy room" },
+  { src: heroSauna, alt: "Infrared sauna room" },
+  { src: heroFloat, alt: "Float spa therapy room" },
+  { src: heroHyperbaric, alt: "Hyperbaric oxygen chamber room" },
+];
 
 const Hero = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % heroImages.length);
+    }, 18000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Slideshow */}
       <div className="absolute inset-0">
-        <motion.img
-          initial={{ scale: 1.1 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          src={heroImage}
-          alt="J'adore Wellness luxury clinic interior"
-          className="w-full h-full object-cover"
-        />
+        <AnimatePresence mode="sync">
+          <motion.img
+            key={activeIndex}
+            src={heroImages[activeIndex].src}
+            alt={heroImages[activeIndex].alt}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-charcoal/60 to-charcoal/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 via-transparent to-charcoal/30" />
       </div>
