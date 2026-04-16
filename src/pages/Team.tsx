@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
 import teamOleg from "@/assets/team-oleg.jpg";
-import teamDoctor from "@/assets/team-doctor.jpg";
+import teamDoctor from "@/assets/team-oloughlin.png";
 import teamKaty from "@/assets/team-katy.png";
 
 const founder = {
