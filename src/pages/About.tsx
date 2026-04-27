@@ -6,7 +6,7 @@ import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/shared/SectionHeading";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
-import heroImage from "@/assets/hero-wellness.jpg";
+
 
 const values = [
   {
@@ -36,15 +36,7 @@ const About = () => {
     <Layout>
       <SEO {...seoData.about} />
       {/* Hero */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={heroImage}
-            alt="J'adore Wellness clinic"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-charcoal/50" />
-        </div>
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-luxury">
         <div className="container-luxury relative">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
