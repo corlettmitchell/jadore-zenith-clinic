@@ -3,7 +3,7 @@ import { Volume2, VolumeX, Play } from "lucide-react";
 
 // Once the MP4 is uploaded to the `videos` storage bucket, paste its public URL here.
 // Format: https://<project>.supabase.co/storage/v1/object/public/videos/<filename>.mp4
-const VIDEO_SRC = "";
+const VIDEO_SRC = "https://kjaaztqprlvmvkslspyj.supabase.co/storage/v1/object/public/videos//Dr%20Oleg%20Introduction%20Reel.mp4";
 const POSTER_SRC = ""; // optional: still-frame URL
 
 const FounderVideo = () => {
