@@ -6,6 +6,7 @@ import Layout from "@/components/layout/Layout";
 import SectionHeading from "@/components/shared/SectionHeading";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
+import FounderVideo from "@/components/about/FounderVideo";
 
 
 const values = [
@@ -97,15 +98,8 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-square bg-secondary/50 rounded-sm p-8 flex items-center justify-center">
-                <div className="text-center">
-                  <span className="text-8xl font-serif text-gold/30">J'</span>
-                  <p className="text-muted-foreground font-serif italic text-xl mt-4 max-w-xs mx-auto">
-                    "Where science meets personal wellness."
-                  </p>
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-teal/10 rounded-sm -z-10" />
+              <FounderVideo />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gold/10 rounded-sm -z-10" />
             </motion.div>
           </div>
         </div>
