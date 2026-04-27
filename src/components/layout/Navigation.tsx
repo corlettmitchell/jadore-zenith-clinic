@@ -19,11 +19,16 @@ const recoverySubLinks = [
   { name: "Float Spa", path: "/services/float-spa" },
 ];
 
+const aboutSubLinks = [
+  { name: "About J'adore", path: "/about" },
+  { name: "Meet Our Team", path: "/team" },
+];
+
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "Vitality Services", path: "/hormone-therapy", hasDropdown: true, dropdownKey: "hormone" },
   { name: "Recovery Services", path: "/services", hasDropdown: true, dropdownKey: "recovery" },
-  { name: "About", path: "/about" },
+  { name: "About", path: "/about", hasDropdown: true, dropdownKey: "about" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -51,6 +56,7 @@ const Navigation = () => {
   const getSubLinks = (key: string) => {
     if (key === "hormone") return hormoneSubLinks;
     if (key === "recovery") return recoverySubLinks;
+    if (key === "about") return aboutSubLinks;
     return [];
   };
 
