@@ -214,6 +214,7 @@ const Bloodwork = () => {
           background: `linear-gradient(135deg, ${BG_DARK} 0%, #2a1d1a 100%)`,
         }}
       >
+        {/* Gold ambient glow */}
         <div
           aria-hidden
           className="absolute inset-0 opacity-[0.08] pointer-events-none"
@@ -222,52 +223,51 @@ const Bloodwork = () => {
               "radial-gradient(circle at 15% 20%, hsl(var(--gold)) 0, transparent 45%), radial-gradient(circle at 85% 80%, hsl(var(--gold)) 0, transparent 45%)",
           }}
         />
+        {/* Vignette — brighter center, darker edges */}
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, transparent 0%, transparent 40%, rgba(0,0,0,0.55) 100%)",
+          }}
+        />
         <div className="container-luxury relative">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="max-w-3xl"
+            className="max-w-2xl mx-auto text-center"
           >
-            <SectionEyebrow light>
-              Bloodwork + Physician Consultation
-            </SectionEyebrow>
-            <h1 className="heading-display text-ivory mb-6">
-              Still Feel Off?{" "}
-              <span className="text-gradient-gold">Get Real Answers</span> — In
-              Person
-            </h1>
-            <p className="text-ivory/80 text-lg md:text-xl leading-relaxed mb-6 max-w-2xl">
-              Comprehensive bloodwork and a physician consultation at our
-              Oceanside clinic. No guesswork, no generic reports — just clear
-              guidance from a real medical team.
-            </p>
-            <p className="font-serif italic text-ivory/70 text-base md:text-lg max-w-2xl mb-10">
-              You know your body better than anyone — this is about finally
-              getting answers that make sense.
-            </p>
+            <div className="rounded-2xl bg-black/30 backdrop-blur-md border border-ivory/10 shadow-2xl px-8 py-12 md:px-14 md:py-16">
+              <h1 className="font-serif text-ivory font-light leading-[1.05] text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8">
+                Still Feel Off?
+                <br />
+                <span className="text-gradient-gold">Get Real Answers</span>
+                <span className="text-ivory"> — In Person</span>
+              </h1>
+              <p className="text-ivory/85 text-lg md:text-xl leading-relaxed mb-5 max-w-xl mx-auto">
+                Comprehensive bloodwork and a physician consultation at our
+                Oceanside clinic.
+              </p>
+              <p className="text-ivory/55 text-sm md:text-base font-sans mb-10">
+                No guesswork. No generic reports.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-5 sm:items-center">
               <Button
                 variant="gold"
                 size="xl"
                 onClick={scrollToForm}
-                className="w-full sm:w-auto"
+                className="px-12 py-7 text-base tracking-wide hover:scale-[1.03] transition-transform"
               >
                 Get Started
               </Button>
-              <a
-                href="tel:+14422211138"
-                className="text-ivory/80 hover:text-gold transition-colors text-sm font-sans inline-flex items-center gap-2"
-              >
-                <Phone size={16} className="text-gold" />
-                (442) 221-1138
-              </a>
-            </div>
 
-            <p className="mt-6 text-ivory/60 text-sm font-sans tracking-wide">
-              Located in Oceanside · Serving North County San Diego
-            </p>
+              <p className="mt-6 text-ivory/60 text-xs md:text-sm font-sans tracking-[0.15em] uppercase inline-flex items-center gap-2 justify-center">
+                <MapPin size={14} className="text-gold" />
+                Located in Oceanside, CA
+              </p>
+            </div>
           </motion.div>
         </div>
       </section>
