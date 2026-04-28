@@ -18,6 +18,7 @@ import About from "./pages/About";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Intake from "./pages/Intake";
+import Bloodwork from "./pages/Bloodwork";
 import NotFound from "./pages/NotFound";
 import Logo from "./pages/Logo";
 import Logo2 from "./pages/Logo2";
@@ -60,6 +61,7 @@ const App = () => (
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/intake" element={<Intake />} />
+          <Route path="/bloodwork" element={<Bloodwork />} />
           <Route path="/logo.png" element={<Logo />} />
           <Route path="/logo2" element={<Logo2 />} />
           {/* Location Pages */}
