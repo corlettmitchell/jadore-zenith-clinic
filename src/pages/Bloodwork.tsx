@@ -21,12 +21,17 @@ import { toast } from "@/hooks/use-toast";
 const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbyGV_Hl1g0nJePL-ARIEsMIPHXOwcu0-tpW2tGo1rF3Pv6KtWE-4J0JOl7Xjso8QFhcJA/exec";
 
+// Section background palette (per spec)
+const BG_LIGHT = "#FFFFFF";
+const BG_BEIGE = "#F4EFEA";
+const BG_DARK = "#3B2A26";
+
 const scrollToForm = () => {
   const el = document.getElementById("bloodwork-form");
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
-const LeadForm = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
+const LeadForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
@@ -79,39 +84,15 @@ const LeadForm = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
   };
 
   const labelClass =
-    variant === "dark"
-      ? "block text-xs font-sans uppercase tracking-[0.15em] text-ivory/80 mb-2"
-      : "block text-xs font-sans uppercase tracking-[0.15em] text-foreground/80 mb-2";
-
-  const inputClass =
-    variant === "dark"
-      ? "bg-charcoal/40 border-gold/30 text-ivory placeholder:text-ivory/40 focus:border-gold"
-      : "bg-card border-border focus:border-gold";
+    "block text-xs font-sans uppercase tracking-[0.15em] text-foreground/80 mb-2";
+  const inputClass = "bg-card border-border focus:border-gold h-12";
 
   if (submitted) {
     return (
-      <div
-        className={
-          variant === "dark"
-            ? "bg-charcoal/40 border border-gold/30 rounded-sm p-10 text-center"
-            : "bg-secondary/50 border border-gold/20 rounded-sm p-10 text-center"
-        }
-      >
+      <div className="bg-secondary/50 border border-gold/20 rounded-sm p-10 text-center">
         <CheckCircle size={44} className="text-gold mx-auto mb-4" />
-        <h3
-          className={`font-serif text-2xl mb-2 ${
-            variant === "dark" ? "text-ivory" : "text-foreground"
-          }`}
-        >
-          Thank You
-        </h3>
-        <p
-          className={
-            variant === "dark"
-              ? "text-ivory/75 text-sm"
-              : "body-regular text-sm"
-          }
-        >
+        <h3 className="font-serif text-2xl mb-2 text-foreground">Thank You</h3>
+        <p className="body-regular text-sm">
           A member of our team will reach out shortly to confirm your
           appointment.
         </p>
@@ -120,7 +101,7 @@ const LeadForm = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
         <label className={labelClass}>Name *</label>
         <Input
@@ -133,7 +114,7 @@ const LeadForm = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
         />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label className={labelClass}>Phone *</label>
           <Input
@@ -193,16 +174,28 @@ const LeadForm = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
         )}
       </Button>
 
-      <p
-        className={`text-xs text-center ${
-          variant === "dark" ? "text-ivory/60" : "text-muted-foreground"
-        }`}
-      >
+      <p className="text-xs text-center text-muted-foreground">
         We'll reach out to confirm your appointment and answer any questions.
       </p>
     </form>
   );
 };
+
+const SectionEyebrow = ({
+  children,
+  light = false,
+}: {
+  children: React.ReactNode;
+  light?: boolean;
+}) => (
+  <span
+    className={`inline-block text-xs font-sans uppercase tracking-[0.25em] mb-4 ${
+      light ? "text-gold-light" : "text-gold"
+    }`}
+  >
+    {children}
+  </span>
+);
 
 const Bloodwork = () => {
   return (
@@ -214,104 +207,90 @@ const Bloodwork = () => {
         keywords="bloodwork Oceanside, blood panel San Diego, physician consultation, lab work North County, comprehensive blood panel"
       />
 
-      {/* SECTION 1 — HERO */}
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-luxury overflow-hidden">
+      {/* SECTION 1 — HERO (DARK) */}
+      <section
+        className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden"
+        style={{
+          background: `linear-gradient(135deg, ${BG_DARK} 0%, #2a1d1a 100%)`,
+        }}
+      >
         <div
           aria-hidden
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          className="absolute inset-0 opacity-[0.08] pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 20% 20%, hsl(var(--gold)) 0, transparent 40%), radial-gradient(circle at 80% 70%, hsl(var(--gold)) 0, transparent 40%)",
+              "radial-gradient(circle at 15% 20%, hsl(var(--gold)) 0, transparent 45%), radial-gradient(circle at 85% 80%, hsl(var(--gold)) 0, transparent 45%)",
           }}
         />
         <div className="container-luxury relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-              className="lg:col-span-7"
-            >
-              <span className="inline-block text-xs font-sans uppercase tracking-[0.25em] text-gold-light mb-5">
-                Introductory Bloodwork + Consultation
-              </span>
-              <h1 className="heading-display text-ivory mb-6">
-                Still Feel Off?{" "}
-                <span className="text-gradient-gold">Get Real Answers</span> —
-                In Person
-              </h1>
-              <p className="text-ivory/80 text-lg md:text-xl leading-relaxed max-w-xl mb-8">
-                Comprehensive bloodwork and a physician consultation at our
-                Oceanside clinic. No guesswork, no generic reports — just clear
-                guidance from a real medical team.
-              </p>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-3xl"
+          >
+            <SectionEyebrow light>
+              Bloodwork + Physician Consultation
+            </SectionEyebrow>
+            <h1 className="heading-display text-ivory mb-6">
+              Still Feel Off?{" "}
+              <span className="text-gradient-gold">Get Real Answers</span> — In
+              Person
+            </h1>
+            <p className="text-ivory/80 text-lg md:text-xl leading-relaxed mb-6 max-w-2xl">
+              Comprehensive bloodwork and a physician consultation at our
+              Oceanside clinic. No guesswork, no generic reports — just clear
+              guidance from a real medical team.
+            </p>
+            <p className="font-serif italic text-ivory/70 text-base md:text-lg max-w-2xl mb-10">
+              You know your body better than anyone — this is about finally
+              getting answers that make sense.
+            </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 sm:items-center">
-                <Button
-                  variant="gold"
-                  size="xl"
-                  onClick={scrollToForm}
-                  className="w-full sm:w-auto"
-                >
-                  Get Started
-                </Button>
-                <a
-                  href="tel:+14422211138"
-                  className="text-ivory/80 hover:text-gold transition-colors text-sm font-sans inline-flex items-center gap-2"
-                >
-                  <Phone size={16} className="text-gold" />
-                  (442) 221-1138
-                </a>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-5 sm:items-center">
+              <Button
+                variant="gold"
+                size="xl"
+                onClick={scrollToForm}
+                className="w-full sm:w-auto"
+              >
+                Get Started
+              </Button>
+              <a
+                href="tel:+14422211138"
+                className="text-ivory/80 hover:text-gold transition-colors text-sm font-sans inline-flex items-center gap-2"
+              >
+                <Phone size={16} className="text-gold" />
+                (442) 221-1138
+              </a>
+            </div>
 
-              <p className="mt-5 text-ivory/60 text-sm max-w-md">
-                Local to North County San Diego. Our team will follow up to
-                schedule your visit.
-              </p>
-            </motion.div>
-
-            {/* Hero form */}
-            <motion.div
-              id="bloodwork-form"
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-              className="lg:col-span-5"
-            >
-              <div className="bg-ivory/5 backdrop-blur-sm border border-gold/30 rounded-sm p-7 md:p-8 shadow-luxury-lg">
-                <div className="mb-5 text-center">
-                  <span className="inline-block text-[11px] font-sans uppercase tracking-[0.25em] text-gold mb-2">
-                    Request Your Visit
-                  </span>
-                  <h2 className="font-serif text-2xl text-ivory">
-                    Claim Your Bloodwork
-                  </h2>
-                </div>
-                <LeadForm variant="dark" />
-              </div>
-            </motion.div>
-          </div>
+            <p className="mt-6 text-ivory/60 text-sm font-sans tracking-wide">
+              Located in Oceanside · Serving North County San Diego
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* SECTION 2 — DIFFERENTIATION */}
-      <section className="section-padding bg-background">
+      {/* SECTION 2 — DIFFERENTIATION (LIGHT) */}
+      <section
+        className="py-24 md:py-32"
+        style={{ backgroundColor: BG_LIGHT }}
+      >
         <div className="container-luxury">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-5"
+              className="text-center mb-12"
             >
-              <span className="inline-block text-xs font-sans uppercase tracking-[0.25em] text-gold mb-4">
-                The Difference
-              </span>
+              <SectionEyebrow>The Difference</SectionEyebrow>
               <h2 className="heading-section mb-6">
                 Not Another Online Lab Report
               </h2>
-              <p className="body-regular">
+              <p className="body-regular max-w-2xl mx-auto">
                 Most bloodwork services send you results and leave you to
                 figure things out on your own.
               </p>
@@ -322,10 +301,11 @@ const Bloodwork = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="lg:col-span-7"
             >
-              <p className="body-regular mb-6">At J'adore Wellness, you'll:</p>
-              <ul className="space-y-4 mb-8">
+              <p className="body-regular mb-6 text-center">
+                At J'adore Wellness, you'll:
+              </p>
+              <ul className="space-y-4 max-w-2xl mx-auto mb-10">
                 {[
                   "Have your labs drawn in person",
                   "Sit down with a physician to review your results",
@@ -333,7 +313,7 @@ const Bloodwork = () => {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 p-4 bg-secondary/40 border border-border/60 rounded-sm"
+                    className="flex items-start gap-3 p-5 bg-secondary/40 border border-border/60 rounded-sm"
                   >
                     <CheckCircle
                       size={20}
@@ -343,7 +323,7 @@ const Bloodwork = () => {
                   </li>
                 ))}
               </ul>
-              <p className="font-serif italic text-lg text-foreground/80">
+              <p className="font-serif italic text-lg text-foreground/80 text-center">
                 No back-and-forth emails. No guessing what your results mean.
               </p>
             </motion.div>
@@ -351,8 +331,11 @@ const Bloodwork = () => {
         </div>
       </section>
 
-      {/* SECTION 3 — WHY THIS MATTERS */}
-      <section className="py-20 md:py-24 bg-secondary/40">
+      {/* SECTION 3 — WHY THIS MATTERS (BEIGE) */}
+      <section
+        className="py-24 md:py-32"
+        style={{ backgroundColor: BG_BEIGE }}
+      >
         <div className="container-luxury">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -361,27 +344,73 @@ const Bloodwork = () => {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <span className="inline-block text-xs font-sans uppercase tracking-[0.25em] text-gold mb-4">
-              Why It Matters
-            </span>
+            <SectionEyebrow>Why It Matters</SectionEyebrow>
             <h2 className="heading-section mb-6">
-              A More Personal, More Accurate Approach
+              Why You Can Feel "Off" — Even When Labs Look Normal
             </h2>
-            <p className="body-large mb-4">
-              Many people are told their labs are "normal" — even when they
-              don't feel their best.
+            <p className="body-large mb-5">
+              It's common to feel low energy, out of balance, or not like
+              yourself — and still be told everything looks "normal."
+            </p>
+            <p className="body-regular mb-5">
+              Standard lab ranges are designed to detect disease, not
+              necessarily optimize how you feel.
             </p>
             <p className="body-regular">
-              We take a closer, more individualized look at your results so you
-              can better understand what's actually going on and what to do
-              next.
+              We take a more individualized and detailed approach to reviewing
+              your results so you can better understand what's actually going
+              on.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* SECTION 4 — THE OFFER */}
-      <section className="section-padding bg-background">
+      {/* SECTION 4 — WHO THIS IS FOR (LIGHT) */}
+      <section
+        className="py-24 md:py-32"
+        style={{ backgroundColor: BG_LIGHT }}
+      >
+        <div className="container-luxury">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto"
+          >
+            <div className="text-center mb-12">
+              <SectionEyebrow>Who It's For</SectionEyebrow>
+              <h2 className="heading-section">Who This Is For</h2>
+            </div>
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {[
+                "You feel low energy but can't pinpoint why",
+                'You\'ve been told your labs are "normal"',
+                "You want a clearer understanding of your health",
+                "You prefer working with real doctors in person",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 p-5 bg-secondary/40 border border-border/60 rounded-sm"
+                >
+                  <CheckCircle
+                    size={20}
+                    className="text-gold flex-shrink-0 mt-0.5"
+                  />
+                  <span className="text-foreground font-sans">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 5 — THE OFFER (BEIGE) */}
+      <section
+        className="py-24 md:py-32"
+        style={{ backgroundColor: BG_BEIGE }}
+      >
         <div className="container-luxury">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -390,11 +419,11 @@ const Bloodwork = () => {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="text-center mb-10">
-              <span className="inline-block text-xs font-sans uppercase tracking-[0.25em] text-gold mb-4">
-                The Offer
-              </span>
-              <h2 className="heading-section mb-6">Start With the Right Data</h2>
+            <div className="text-center mb-12">
+              <SectionEyebrow>The Offer</SectionEyebrow>
+              <h2 className="heading-section mb-6">
+                Start With the Right Data
+              </h2>
               <p className="body-regular max-w-2xl mx-auto">
                 Your first step is a comprehensive blood panel paired with a
                 one-on-one consultation. This allows our team to better
@@ -403,20 +432,7 @@ const Bloodwork = () => {
               </p>
             </div>
 
-            <div className="relative bg-card border border-gold/30 rounded-sm p-8 md:p-12 shadow-luxury-lg">
-              <div
-                aria-hidden
-                className="absolute -inset-px rounded-sm pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(135deg, hsl(var(--gold) / 0.4), transparent 40%, transparent 60%, hsl(var(--gold) / 0.4))",
-                  WebkitMask:
-                    "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)",
-                  WebkitMaskComposite: "xor",
-                  maskComposite: "exclude",
-                  padding: 1,
-                }}
-              />
+            <div className="relative bg-card border border-gold/40 rounded-sm p-8 md:p-12 shadow-luxury-lg">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div>
                   <h3 className="font-serif text-xs uppercase tracking-[0.25em] text-gold mb-5">
@@ -450,9 +466,14 @@ const Bloodwork = () => {
                   <span className="text-xs font-sans uppercase tracking-[0.25em] text-gold mb-3">
                     Introductory Pricing
                   </span>
-                  <p className="font-serif text-3xl md:text-4xl text-foreground mb-3">
-                    $99 – $149
-                  </p>
+                  <div className="flex items-baseline gap-3 mb-2">
+                    <span className="font-serif text-5xl md:text-6xl text-gold leading-none">
+                      $99
+                    </span>
+                    <span className="font-serif text-xl text-foreground/60">
+                      – $149
+                    </span>
+                  </div>
                   <p className="text-sm text-muted-foreground mb-6">
                     Depending on program selection.
                   </p>
@@ -466,23 +487,24 @@ const Bloodwork = () => {
         </div>
       </section>
 
-      {/* SECTION 5 — PROCESS */}
-      <section className="py-20 md:py-24 bg-secondary/40">
+      {/* SECTION 6 — PROCESS (WHITE) */}
+      <section
+        className="py-24 md:py-32"
+        style={{ backgroundColor: BG_LIGHT }}
+      >
         <div className="container-luxury">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-2xl mx-auto mb-14"
+            className="text-center max-w-2xl mx-auto mb-16"
           >
-            <span className="inline-block text-xs font-sans uppercase tracking-[0.25em] text-gold mb-4">
-              The Process
-            </span>
+            <SectionEyebrow>The Process</SectionEyebrow>
             <h2 className="heading-section">Simple, Guided Process</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {[
               {
                 icon: FileText,
@@ -511,7 +533,7 @@ const Bloodwork = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="relative bg-background border border-border/60 rounded-sm p-6 hover:border-gold/40 transition-colors"
+                className="relative bg-secondary/40 border border-border/60 rounded-sm p-7 hover:border-gold/40 transition-colors"
               >
                 <span className="absolute top-4 right-5 font-serif text-sm text-gold/60 tracking-widest">
                   0{i + 1}
@@ -531,8 +553,11 @@ const Bloodwork = () => {
         </div>
       </section>
 
-      {/* SECTION 6 — TRUST / AUTHORITY */}
-      <section className="section-padding bg-background">
+      {/* SECTION 7 — TRUST / AUTHORITY (BEIGE) */}
+      <section
+        className="py-24 md:py-32"
+        style={{ backgroundColor: BG_BEIGE }}
+      >
         <div className="container-luxury">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -541,9 +566,7 @@ const Bloodwork = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto mb-14"
           >
-            <span className="inline-block text-xs font-sans uppercase tracking-[0.25em] text-gold mb-4">
-              Physician-Led Care
-            </span>
+            <SectionEyebrow>Physician-Led Care</SectionEyebrow>
             <h2 className="heading-section mb-6">
               Local, Physician-Led Care in Oceanside
             </h2>
@@ -569,7 +592,7 @@ const Bloodwork = () => {
             ].map((doc) => (
               <div
                 key={doc.name}
-                className="bg-secondary/40 border border-border/60 rounded-sm p-7 flex items-start gap-5 hover:border-gold/40 transition-colors"
+                className="bg-card border border-border/60 rounded-sm p-7 flex items-start gap-5 hover:border-gold/40 transition-colors"
               >
                 <span className="w-14 h-14 rounded-full bg-charcoal flex items-center justify-center flex-shrink-0 border border-gold/30">
                   <UserRound size={24} className="text-gold" />
@@ -595,11 +618,52 @@ const Bloodwork = () => {
         </div>
       </section>
 
-      {/* SECTION 7 — FINAL CTA */}
-      <section className="relative py-20 md:py-28 bg-gradient-luxury overflow-hidden">
+      {/* SECTION 8 — FORM SECTION (LIGHT) */}
+      <section
+        id="bloodwork-form"
+        className="py-24 md:py-32 scroll-mt-24"
+        style={{ backgroundColor: BG_LIGHT }}
+      >
+        <div className="container-luxury">
+          <div className="max-w-2xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-10"
+            >
+              <SectionEyebrow>Request Your Visit</SectionEyebrow>
+              <h2 className="heading-section mb-4">Request Your Visit</h2>
+              <p className="body-regular max-w-xl mx-auto">
+                Share a few details and our team will reach out to schedule
+                your bloodwork and consultation.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-card border border-gold/30 rounded-md p-8 md:p-10 shadow-luxury-lg"
+            >
+              <LeadForm />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 9 — FINAL CTA (DARK) */}
+      <section
+        className="relative py-24 md:py-32 overflow-hidden"
+        style={{
+          background: `linear-gradient(135deg, ${BG_DARK} 0%, #2a1d1a 100%)`,
+        }}
+      >
         <div
           aria-hidden
-          className="absolute inset-0 opacity-[0.06] pointer-events-none"
+          className="absolute inset-0 opacity-[0.08] pointer-events-none"
           style={{
             backgroundImage:
               "radial-gradient(circle at 50% 50%, hsl(var(--gold)) 0, transparent 50%)",
@@ -616,14 +680,14 @@ const Bloodwork = () => {
             <h2 className="heading-section text-ivory mb-6">
               Start With <span className="text-gradient-gold">Clarity</span>
             </h2>
-            <p className="text-ivory/80 text-lg leading-relaxed mb-8">
-              Take the first step toward understanding your health with a simple
-              blood panel and consultation.
+            <p className="text-ivory/80 text-lg leading-relaxed mb-10">
+              Take the first step toward understanding your health with a
+              simple blood panel and consultation.
             </p>
             <Button variant="gold" size="xl" onClick={scrollToForm}>
               Claim Your Bloodwork
             </Button>
-            <p className="mt-5 text-ivory/60 text-sm">
+            <p className="mt-6 text-ivory/60 text-sm">
               Our team will follow up shortly to schedule your visit.
             </p>
           </motion.div>
