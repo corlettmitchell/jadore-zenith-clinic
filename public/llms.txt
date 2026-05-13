@@ -1,0 +1,39 @@
+# J'adore Wellness
+
+> Premium medical wellness clinic in Oceanside, CA specializing in hormone therapy, peptides, medical weight care, and recovery services for North County San Diego.
+
+J'adore Wellness is a physician-led clinic offering personalized hormone replacement therapy (HRT), peptide therapy, medical weight care, cold plunge, infrared sauna, compression therapy, hyperbaric oxygen, and float spa services. Located at 1763 Oceanside Blvd, Suite B, Oceanside, CA 92054.
+
+## Pages
+
+- [Home](/): Overview of J'adore Wellness services and approach.
+- [About](/about): Our mission, values, and physician-led approach.
+- [Team](/team): Meet our medical team led by Dr. Oleg Ryabinin.
+- [Contact](/contact): Schedule a consultation or visit.
+- [Patient Intake](/intake): New patient intake form.
+
+## Services
+
+- [All Services](/services): Full list of wellness and recovery services.
+- [Hormone Therapy (HRT)](/hormone-therapy): Bioidentical hormone optimization for men and women.
+- [Peptide Therapy](/services/peptide-therapy): Targeted peptide protocols for recovery and anti-aging.
+- [Medical Weight Care](/services/weight-loss): Physician-supervised GLP-1 and metabolic programs.
+- [Cold Plunge](/services/cold-plunge): Cold water immersion for recovery and inflammation.
+- [Infrared Sauna](/services/infrared-sauna): Far-infrared sauna for detox and relaxation.
+- [Compression Therapy](/services/compression): Pneumatic compression for muscle recovery.
+- [Hyperbaric Oxygen](/services/hyperbaric-oxygen): HBOT for healing and recovery.
+- [Float Spa](/services/float-spa): Sensory deprivation float therapy.
+- [Bloodwork + Consultation](/bloodwork): Comprehensive blood panel and physician consult.
+
+## Locations Served
+
+- [Carlsbad](/locations/carlsbad)
+- [Vista](/locations/vista)
+- [San Marcos](/locations/san-marcos)
+- [Encinitas](/locations/encinitas)
+- [Escondido](/locations/escondido)
+- [Fallbrook](/locations/fallbrook)
+- [Rancho Santa Fe](/locations/rancho-santa-fe)
+- [Del Mar](/locations/del-mar)
+- [Camp Pendleton](/locations/camp-pendleton)
+- [Temecula](/locations/temecula)

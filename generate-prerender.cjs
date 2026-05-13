@@ -124,11 +124,17 @@ function getMeta(route) {
 
 function generateHtml(route, meta) {
   let html = baseHtml;
+  const fullUrl = `${BASE_URL}${route}`;
   html = html.replace(/<title>.*?<\/title>/, `<title>${meta.title}</title>`);
   html = html.replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${meta.desc}" />`);
-  
+
   // OG/Twitter tags if they exist
   html = html.replace(/<meta property="og:title" content=".*?" \/>/g, `<meta property="og:title" content="${meta.title}" />`);
+  html = html.replace(/<meta property="og:description" content=".*?" \/>/g, `<meta property="og:description" content="${meta.desc}" />`);
+  html = html.replace(/<meta property="og:url" content=".*?" \/>/g, `<meta property="og:url" content="${fullUrl}" />`);
+  html = html.replace(/<meta name="twitter:title" content=".*?" \/>/g, `<meta name="twitter:title" content="${meta.title}" />`);
+  html = html.replace(/<meta name="twitter:description" content=".*?" \/>/g, `<meta name="twitter:description" content="${meta.desc}" />`);
+  html = html.replace(/<meta name="twitter:url" content=".*?" \/>/g, `<meta name="twitter:url" content="${fullUrl}" />`);
   html = html.replace(/<meta property="og:description" content=".*?" \/>/g, `<meta property="og:description" content="${meta.desc}" />`);
   html = html.replace(/<meta name="twitter:title" content=".*?" \/>/g, `<meta name="twitter:title" content="${meta.title}" />`);
   html = html.replace(/<meta name="twitter:description" content=".*?" \/>/g, `<meta name="twitter:description" content="${meta.desc}" />`);
