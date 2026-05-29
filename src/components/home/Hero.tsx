@@ -5,18 +5,12 @@ import { Button } from "@/components/ui/button";
 
 import heroLobby1 from "@/assets/hero-lobby-1.jpg";
 import heroLobby2 from "@/assets/hero-lobby-2.jpg";
-import heroColdPlunge from "@/assets/hero-cold-plunge.jpg";
-import heroSauna from "@/assets/hero-sauna.jpg";
-import heroFloat from "@/assets/hero-float.jpg";
-import heroHyperbaric from "@/assets/hero-hyperbaric.jpg";
+import clinicLobby from "@/assets/clinic-lobby.jpg";
 
 const heroImages = [
   { src: heroLobby1, alt: "J'adore Wellness reception with circular wall art" },
   { src: heroLobby2, alt: "J'adore Wellness entrance and front desk" },
-  { src: heroColdPlunge, alt: "Cold plunge therapy room" },
-  { src: heroSauna, alt: "Infrared sauna room" },
-  { src: heroFloat, alt: "Float spa therapy room" },
-  { src: heroHyperbaric, alt: "Hyperbaric oxygen chamber room" },
+  { src: clinicLobby, alt: "J'adore Wellness consultation lobby" },
 ];
 
 const Hero = () => {
@@ -58,7 +52,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <span className="inline-block text-gold text-sm font-sans uppercase tracking-[0.3em] mb-6">
-            Hormone Optimization · Regenerative Medicine · Recovery
+            Hormone Therapy · Weight Care · Peptide Consultation · In-House Bloodwork
           </span>
         </motion.div>
 
@@ -79,9 +73,9 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="text-ivory/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-sans leading-relaxed"
         >
-          J'adore Wellness is a physician-led clinic in Oceanside delivering hormone optimization, 
-          peptide therapy, and recovery modalities—grounded in diagnostics, refined in execution, 
-          and tailored to real life.
+          J'adore Wellness is a physician-led clinic in Oceanside delivering hormone therapy,
+          medically guided weight care, peptide consultation, and in-house bloodwork — built on
+          diagnostics, refined dosing, and structured follow-up.
         </motion.p>
 
         <motion.div

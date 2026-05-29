@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import logo from "@/assets/jadore-logo.png";
+import { MapPin, Phone, Mail, Clock, Instagram } from "lucide-react";
+import logo from "@/assets/jadore-logo-round-full.png";
 
 const Footer = () => {
   return (
@@ -9,11 +9,22 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <img src={logo} alt="J'adore Wellness" className="h-12 mb-6" />
+            <img src={logo} alt="J'adore Wellness" className="h-16 mb-6" />
             <p className="text-ivory/70 text-sm leading-relaxed mb-6">
-              Where science meets personal wellness. Delivering hormone optimization, 
-              regenerative therapies, and medical weight management.
+              Physician-led wellness in Oceanside. Hormone therapy, medically
+              guided weight care, peptide consultation, and in-house bloodwork.
             </p>
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.instagram.com/jadore.wellness/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="J'adore Wellness on Instagram"
+                className="w-9 h-9 rounded-full border border-ivory/20 flex items-center justify-center text-ivory/70 hover:text-gold hover:border-gold/60 transition-colors"
+              >
+                <Instagram size={16} />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -44,14 +55,19 @@ const Footer = () => {
             <h4 className="font-serif text-lg mb-6 text-gold">Services</h4>
             <ul className="space-y-3">
               {[
-                "Hormone Replacement Therapy",
-                "Peptide Therapy",
-                "Weight Care",
-                "Cold Plunge Therapy",
-                "Infrared Sauna",
+                { name: "Hormone Replacement Therapy", path: "/hormone-therapy" },
+                { name: "Peptide Therapy", path: "/services/peptide-therapy" },
+                { name: "Weight Care", path: "/services/weight-loss" },
+                { name: "In-House Bloodwork", path: "/bloodwork" },
+                { name: "Patient Intake", path: "/intake" },
               ].map((service) => (
-                <li key={service}>
-                  <span className="text-ivory/70 text-sm">{service}</span>
+                <li key={service.path}>
+                  <Link
+                    to={service.path}
+                    className="text-ivory/70 hover:text-gold transition-colors text-sm"
+                  >
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>

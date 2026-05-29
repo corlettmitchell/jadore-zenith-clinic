@@ -257,7 +257,7 @@ const GoogleReviews = () => {
               ))}
             </div>
             <span className="ml-1 text-sm font-sans text-muted-foreground">
-              5.0 · {reviews.length} reviews
+              5.0 · 31 reviews
             </span>
           </div>
 

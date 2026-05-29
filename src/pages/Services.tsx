@@ -1,34 +1,48 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Droplets, TrendingDown, Snowflake, Sun } from "lucide-react";
+import { ArrowRight, Syringe, Droplets, TrendingDown, FlaskConical } from "lucide-react";
 import Layout from "@/components/layout/Layout";
-import SectionHeading from "@/components/shared/SectionHeading";
-import PartnerRedirectModal from "@/components/shared/PartnerRedirectModal";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
+import hormoneImage from "@/assets/service-hormone.jpg";
 import ivImage from "@/assets/service-iv.jpg";
 import weightlossImage from "@/assets/service-weightloss.jpg";
-import coldPlungeImage from "@/assets/service-coldplunge.jpg";
-import saunaImage from "@/assets/service-sauna.jpg";
+import clinicLobbyImage from "@/assets/clinic-lobby.jpg";
 
 const services = [
+  {
+    id: "hormone-therapy",
+    icon: Syringe,
+    title: "Hormone Replacement Therapy",
+    tagline: "HRT · Physician-Led",
+    description:
+      "Bioidentical hormone optimization for men and women, overseen by board-certified physicians. Built on diagnostics, refined dosing, and structured follow-up.",
+    benefits: [
+      "Comprehensive hormone panel review",
+      "Personalized protocols for men and women",
+      "Physician-led dosing and titration",
+      "Ongoing labs and follow-up visits",
+      "Energy, mood, and body composition support",
+    ],
+    image: hormoneImage,
+    link: "/hormone-therapy",
+  },
   {
     id: "peptide-therapy",
     icon: Droplets,
     title: "Peptide Therapy",
-    tagline: "Regenerative Medicine",
-    description: "Advanced peptide protocols for cellular optimization, tissue healing, hormone support, and anti-aging. Our physician-supervised protocols are tailored to your unique health goals.",
+    tagline: "Regenerative Consultation",
+    description:
+      "Advanced peptide protocols for cellular optimization, tissue healing, hormone support, and longevity. Physician-supervised and tailored to your health goals.",
     benefits: [
       "Enhanced cellular regeneration",
       "Improved immune function",
       "Increased energy and vitality",
       "Accelerated recovery",
-      "Anti-aging support",
+      "Longevity and performance support",
     ],
     image: ivImage,
-    isPartner: false,
     link: "/services/peptide-therapy",
   },
   {
@@ -36,7 +50,8 @@ const services = [
     icon: TrendingDown,
     title: "Weight Care",
     tagline: "Medical Weight Management",
-    description: "Physician-supervised weight management using evidence-based medical protocols, personalized metabolic testing, and ongoing physician monitoring for sustainable, lasting results.",
+    description:
+      "Physician-supervised weight management using evidence-based medical protocols, personalized metabolic testing, and ongoing physician monitoring.",
     benefits: [
       "Physician-prescribed medical protocols",
       "Personalized metabolic testing",
@@ -45,54 +60,28 @@ const services = [
       "Ongoing physician monitoring",
     ],
     image: weightlossImage,
-    isPartner: false,
     link: "/services/weight-loss",
   },
   {
-    id: "cold-plunge",
-    icon: Snowflake,
-    title: "Cold Plunge Therapy",
-    tagline: "Metabolic Activation",
-    description: "Cold water immersion therapy to boost metabolism, reduce inflammation, and enhance mental clarity through controlled cold exposure.",
+    id: "bloodwork",
+    icon: FlaskConical,
+    title: "In-House Bloodwork",
+    tagline: "Diagnostics + Consultation",
+    description:
+      "Comprehensive blood panels and physician consultation, performed in-clinic. The clearest first step toward understanding your health.",
     benefits: [
-      "Increased metabolism",
-      "Reduced inflammation",
-      "Enhanced mental clarity",
-      "Improved mood",
-      "Better sleep quality",
+      "Comprehensive blood panel",
+      "Physician-led results review",
+      "Clear next-step recommendations",
+      "In-clinic, no extra lab visit",
+      "Foundation for any wellness program",
     ],
-    image: coldPlungeImage,
-    isPartner: true,
-  },
-  {
-    id: "infrared-sauna",
-    icon: Sun,
-    title: "Infrared Sauna",
-    tagline: "Deep Detoxification",
-    description: "Far-infrared sauna sessions for deep tissue heating, detoxification, and relaxation without the extreme temperatures of traditional saunas.",
-    benefits: [
-      "Deep detoxification",
-      "Pain relief",
-      "Skin rejuvenation",
-      "Stress reduction",
-      "Cardiovascular support",
-    ],
-    image: saunaImage,
-    isPartner: true,
+    image: clinicLobbyImage,
+    link: "/bloodwork",
   },
 ];
 
 const Services = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState("");
-
-  const handleBooking = (service: typeof services[0]) => {
-    if (service.isPartner) {
-      setSelectedService(service.title);
-      setModalOpen(true);
-    }
-  };
-
   return (
     <Layout>
       <SEO {...seoData.services} />
@@ -109,12 +98,12 @@ const Services = () => {
               Our Services
             </span>
             <h1 className="heading-display text-ivory mb-6">
-              Comprehensive Wellness Therapies
+              Physician-Led Wellness Programs
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed">
-              From cutting-edge regenerative treatments to medical weight care 
-              and recovery therapies, discover our full range of wellness services 
-              designed to optimize your health and performance.
+              Hormone therapy, medically guided weight care, peptide consultation,
+              and in-house bloodwork — all built on diagnostics and structured
+              physician follow-up.
             </p>
           </motion.div>
         </div>
@@ -158,7 +147,7 @@ const Services = () => {
                   </span>
                   <h2 className="heading-section mb-4">{service.title}</h2>
                   <p className="body-large mb-6">{service.description}</p>
-                  
+
                   <ul className="space-y-3 mb-8">
                     {service.benefits.map((benefit) => (
                       <li key={benefit} className="flex items-center gap-3">
@@ -168,31 +157,12 @@ const Services = () => {
                     ))}
                   </ul>
 
-                  {service.isPartner ? (
-                    <Button 
-                      variant="gold" 
-                      size="lg" 
-                      className="gap-2"
-                      onClick={() => handleBooking(service)}
-                    >
-                      Book Session
+                  <Link to={service.link}>
+                    <Button variant="gold" size="lg" className="gap-2">
+                      Learn More
                       <ArrowRight size={18} />
                     </Button>
-                  ) : service.link ? (
-                    <Link to={service.link}>
-                      <Button variant="gold" size="lg" className="gap-2">
-                        Learn More
-                        <ArrowRight size={18} />
-                      </Button>
-                    </Link>
-                  ) : (
-                    <Link to="/contact">
-                      <Button variant="gold" size="lg" className="gap-2">
-                        Learn More
-                        <ArrowRight size={18} />
-                      </Button>
-                    </Link>
-                  )}
+                  </Link>
                 </div>
               </motion.div>
             ))}
@@ -214,9 +184,8 @@ const Services = () => {
               Not Sure Where to Start?
             </h2>
             <p className="body-large mb-8">
-              Our team will help you determine which treatments are best suited 
-              for your goals. Schedule a consultation to create your personalized 
-              wellness plan.
+              Our physicians will help you determine which program fits your
+              goals. Schedule a consultation to build your personalized plan.
             </p>
             <Link to="/contact">
               <Button variant="luxury" size="xl" className="gap-2">
@@ -227,13 +196,6 @@ const Services = () => {
           </motion.div>
         </div>
       </section>
-
-      <PartnerRedirectModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        serviceName={selectedService}
-        partnerUrl="https://bellalongevityspa.com/?srsltid=AfmBOopuTglJHLU1fbvYLJ4foozrYLrZfIYu0hy7ZiG-qvuFfv8XskE0"
-      />
     </Layout>
   );
 };

@@ -26,8 +26,7 @@ const aboutSubLinks = [
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Vitality Services", path: "/hormone-therapy", hasDropdown: true, dropdownKey: "hormone" },
-  { name: "Recovery Services", path: "/services", hasDropdown: true, dropdownKey: "recovery" },
+  { name: "Services", path: "/hormone-therapy", hasDropdown: true, dropdownKey: "hormone" },
   { name: "About", path: "/about", hasDropdown: true, dropdownKey: "about" },
   { name: "Contact", path: "/contact" },
 ];
