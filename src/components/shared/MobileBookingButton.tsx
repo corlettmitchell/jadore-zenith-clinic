@@ -1,8 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Calendar } from "lucide-react";
 import { motion } from "framer-motion";
 
 const MobileBookingButton = () => {
+  const location = useLocation();
+  const isContactPage = location.pathname === "/contact";
+
+  if (isContactPage) return null;
+
   return (
     <motion.div
       initial={{ y: 100 }}
