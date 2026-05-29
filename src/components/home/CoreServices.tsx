@@ -1,15 +1,11 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Syringe, Droplets, TrendingDown, Snowflake, Sun, Wind } from "lucide-react";
+import { ArrowRight, Syringe, Droplets, TrendingDown, FlaskConical } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
-import PartnerRedirectModal from "@/components/shared/PartnerRedirectModal";
 import hormoneImage from "@/assets/service-hormone.jpg";
 import ivImage from "@/assets/service-iv.jpg";
 import weightlossImage from "@/assets/service-weightloss.jpg";
-import coldPlungeImage from "@/assets/service-coldplunge.jpg";
-import saunaImage from "@/assets/service-sauna-jadore.png";
-import floatSpaImage from "@/assets/service-floatspa-chamber.jpg";
+import clinicLobbyImage from "@/assets/clinic-lobby.jpg";
 
 const services = [
   {
@@ -18,7 +14,6 @@ const services = [
     icon: Syringe,
     image: hormoneImage,
     link: "/hormone-therapy",
-    isPartner: false,
   },
   {
     title: "Peptide Therapy",
@@ -26,7 +21,6 @@ const services = [
     icon: Droplets,
     image: ivImage,
     link: "/services/peptide-therapy",
-    isPartner: false,
   },
   {
     title: "Weight Care",
@@ -34,56 +28,27 @@ const services = [
     icon: TrendingDown,
     image: weightlossImage,
     link: "/services/weight-loss",
-    isPartner: false,
   },
   {
-    title: "Cold Plunge Therapy",
-    description: "Boost metabolism and reduce inflammation naturally.",
-    icon: Snowflake,
-    image: coldPlungeImage,
-    link: "/services/cold-plunge",
-    isPartner: true,
-  },
-  {
-    title: "Infrared Sauna",
-    description: "Deep detoxification and relaxation therapy.",
-    icon: Sun,
-    image: saunaImage,
-    link: "/services/infrared-sauna",
-    isPartner: true,
-  },
-  {
-    title: "Hyperbaric Oxygen Therapy",
-    description: "Accelerate healing and recovery with pressurized oxygen therapy.",
-    icon: Wind,
-    image: floatSpaImage,
-    link: "/services/hyperbaric-oxygen",
-    isPartner: true,
+    title: "In-House Bloodwork",
+    description: "Comprehensive blood panels and physician consultation, in-clinic.",
+    icon: FlaskConical,
+    image: clinicLobbyImage,
+    link: "/bloodwork",
   },
 ];
 
 const CoreServices = () => {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState("");
-
-  const handleServiceClick = (service: typeof services[0], e: React.MouseEvent) => {
-    if (service.isPartner) {
-      e.preventDefault();
-      setSelectedService(service.title);
-      setModalOpen(true);
-    }
-  };
-
   return (
     <section className="section-padding bg-background">
       <div className="container-luxury">
         <SectionHeading
           eyebrow="Our Services"
-          title="Comprehensive Wellness Solutions"
-          description="From hormone optimization to recovery therapies, discover treatments designed to transform how you feel and perform."
+          title="Physician-Led Wellness Solutions"
+          description="From hormone optimization to in-house diagnostics, our team builds every protocol around objective data and clinical follow-through."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -94,7 +59,6 @@ const CoreServices = () => {
             >
               <Link
                 to={service.link}
-                onClick={(e) => handleServiceClick(service, e)}
                 className="group block card-luxury h-full"
               >
                 <div className="relative h-52 overflow-hidden">
@@ -126,13 +90,6 @@ const CoreServices = () => {
           ))}
         </div>
       </div>
-
-      <PartnerRedirectModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        serviceName={selectedService}
-        partnerUrl="https://bellalongevityspa.com/?srsltid=AfmBOopuTglJHLU1fbvYLJ4foozrYLrZfIYu0hy7ZiG-qvuFfv8XskE0"
-      />
     </section>
   );
 };
