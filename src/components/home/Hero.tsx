@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button";
 
 import heroLobby1 from "@/assets/hero-lobby-1.jpg";
 import heroLobby2 from "@/assets/hero-lobby-2.jpg";
-import heroLobby1 from "@/assets/hero-lobby-1.jpg";
-import heroLobby2 from "@/assets/hero-lobby-2.jpg";
 import clinicLobby from "@/assets/clinic-lobby.jpg";
 
 const heroImages = [
@@ -54,14 +52,14 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <span className="inline-block text-gold text-sm font-sans uppercase tracking-[0.3em] mb-6">
-            Hormone Optimization · Regenerative Medicine · Recovery
+            Hormone Therapy · Weight Care · Peptide Consultation · In-House Bloodwork
           </span>
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-            Hormone Therapy · Weight Care · Peptide Consultation · In-House Bloodwork
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-medium text-ivory leading-[1.05] mb-8 max-w-5xl mx-auto"
         >
           Clinical Rigor.
@@ -75,16 +73,18 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="text-ivory/80 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-sans leading-relaxed"
         >
-          J'adore Wellness is a physician-led clinic in Oceanside delivering hormone optimization, 
-          peptide therapy, and recovery modalities—grounded in diagnostics, refined in execution, 
-          and tailored to real life.
+          J'adore Wellness is a physician-led clinic in Oceanside delivering hormone therapy,
+          medically guided weight care, peptide consultation, and in-house bloodwork — built on
+          diagnostics, refined dosing, and structured follow-up.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          J'adore Wellness is a physician-led clinic in Oceanside delivering hormone therapy,
-          medically guided weight care, peptide consultation, and in-house bloodwork — built on
-          diagnostics, refined dosing, and structured follow-up.
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <Link to="/contact">
             <Button variant="gold" size="xl">
               Book Your Consultation
             </Button>
