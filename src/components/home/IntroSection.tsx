@@ -23,9 +23,10 @@ const IntroSection = () => {
               Built on Data, Refined by Experience
             </h2>
             <p className="body-large mb-6">
-              At J'adore Wellness, your plan is built and overseen by board-certified physicians 
-              with real-world experience in complex physiology, recovery, and performance. We practice 
-              with the discipline you'd expect from medicine—not marketing—using objective data, 
+            <p className="body-large mb-6">
+              At J'adore Wellness, your plan is built and overseen by board-certified physicians
+              with real-world experience in hormonal health, weight regulation, and performance. We practice
+              with the discipline you'd expect from medicine—not marketing—using objective data,
               thoughtful dosing, and a clear plan for follow-up.
             </p>
             <p className="body-regular mb-6">

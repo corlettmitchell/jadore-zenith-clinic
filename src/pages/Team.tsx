@@ -63,8 +63,8 @@ const Team = () => {
             </h1>
             <p className="text-ivory/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
               At J'adore Wellness, our team combines clinical expertise with a
-              personalized, whole-body approach to health, recovery, and
-              optimization. Get to know the professionals helping guide your
+              personalized, whole-body approach to health, hormone optimization,
+              and longevity. Get to know the professionals helping guide your
               wellness journey.
             </p>
           </motion.div>

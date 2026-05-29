@@ -5,18 +5,14 @@ import { Button } from "@/components/ui/button";
 
 import heroLobby1 from "@/assets/hero-lobby-1.jpg";
 import heroLobby2 from "@/assets/hero-lobby-2.jpg";
-import heroColdPlunge from "@/assets/hero-cold-plunge.jpg";
-import heroSauna from "@/assets/hero-sauna.jpg";
-import heroFloat from "@/assets/hero-float.jpg";
-import heroHyperbaric from "@/assets/hero-hyperbaric.jpg";
+import heroLobby1 from "@/assets/hero-lobby-1.jpg";
+import heroLobby2 from "@/assets/hero-lobby-2.jpg";
+import clinicLobby from "@/assets/clinic-lobby.jpg";
 
 const heroImages = [
   { src: heroLobby1, alt: "J'adore Wellness reception with circular wall art" },
   { src: heroLobby2, alt: "J'adore Wellness entrance and front desk" },
-  { src: heroColdPlunge, alt: "Cold plunge therapy room" },
-  { src: heroSauna, alt: "Infrared sauna room" },
-  { src: heroFloat, alt: "Float spa therapy room" },
-  { src: heroHyperbaric, alt: "Hyperbaric oxygen chamber room" },
+  { src: clinicLobby, alt: "J'adore Wellness consultation lobby" },
 ];
 
 const Hero = () => {
@@ -65,7 +61,7 @@ const Hero = () => {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+            Hormone Therapy · Weight Care · Peptide Consultation · In-House Bloodwork
           className="font-serif text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-medium text-ivory leading-[1.05] mb-8 max-w-5xl mx-auto"
         >
           Clinical Rigor.
@@ -86,11 +82,9 @@ const Hero = () => {
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Link to="/contact">
+          J'adore Wellness is a physician-led clinic in Oceanside delivering hormone therapy,
+          medically guided weight care, peptide consultation, and in-house bloodwork — built on
+          diagnostics, refined dosing, and structured follow-up.
             <Button variant="gold" size="xl">
               Book Your Consultation
             </Button>
