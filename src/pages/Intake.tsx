@@ -90,19 +90,20 @@ const Intake = () => {
         <div className="container-luxury">
           <div className="flex flex-wrap items-center justify-center gap-8 text-ivory/60 text-sm">
             <div className="flex items-center gap-2">
-              <Shield size={18} className="text-gold" />
-              <span>HIPAA Compliant</span>
+              <Lock size={18} className="text-gold" />
+              <span>Secure SSL Encryption</span>
             </div>
             <div className="flex items-center gap-2">
-              <Lock size={18} className="text-gold" />
-              <span>256-bit SSL Encryption</span>
+              <Shield size={18} className="text-gold" />
+              <span>Confidential Intake</span>
             </div>
             <div className="flex items-center gap-2">
               <FileText size={18} className="text-gold" />
-              <span>Protected Health Information</span>
+              <span>Reviewed by Our Care Team</span>
             </div>
           </div>
         </div>
+
       </section>
 
       {/* Intake Form */}
