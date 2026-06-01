@@ -21,6 +21,7 @@ import Intake from "./pages/Intake";
 import Bloodwork from "./pages/Bloodwork";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import Logo from "./pages/Logo";
 import Logo2 from "./pages/Logo2";
 // Location Pages
@@ -64,6 +65,7 @@ const App = () => (
           <Route path="/intake" element={<Intake />} />
           <Route path="/bloodwork" element={<Bloodwork />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/logo.png" element={<Logo />} />
           <Route path="/logo2" element={<Logo2 />} />
           {/* Location Pages */}
