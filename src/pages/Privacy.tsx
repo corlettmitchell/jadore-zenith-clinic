@@ -3,7 +3,7 @@ import Layout from "@/components/layout/Layout";
 import SEO from "@/components/seo/SEO";
 import { seoData } from "@/lib/seo-data";
 
-const lastUpdated = "June 1, 2026";
+
 
 const sections = [
   {
@@ -90,9 +90,6 @@ const Privacy = () => {
               Legal
             </span>
             <h1 className="heading-display text-ivory mb-6">Privacy Policy</h1>
-            <p className="text-ivory/70 text-sm uppercase tracking-[0.2em]">
-              Last updated: {lastUpdated}
-            </p>
           </motion.div>
         </div>
       </section>

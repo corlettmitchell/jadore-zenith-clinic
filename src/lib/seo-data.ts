@@ -134,6 +134,14 @@ export const seoData: Record<string, PageSEO> = {
     keywords:
       "privacy policy, J'adore Wellness privacy, data protection, patient privacy Oceanside",
   },
+  terms: {
+    title: "Terms of Service - J'adore Wellness",
+    description:
+      "Read the J'adore Wellness Terms of Service. Learn about the terms and conditions governing your use of our website and wellness services in Oceanside, CA.",
+    canonical: "/terms",
+    keywords:
+      "terms of service, J'adore Wellness terms, service agreement, medical services terms, patient agreement Oceanside",
+  },
   // Location Pages
   carlsbad: {
     title: "Hormone Therapy & Wellness Near Carlsbad CA - J'adore Wellness",
