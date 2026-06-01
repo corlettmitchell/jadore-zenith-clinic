@@ -77,9 +77,6 @@ const Terms = () => {
             transition={{ duration: 0.8 }}
             className="max-w-2xl"
           >
-            <span className="inline-block text-sm font-sans uppercase tracking-[0.2em] text-gold mb-4">
-              Legal
-            </span>
             <h1 className="heading-display text-ivory mb-6">Terms of Service</h1>
           </motion.div>
         </div>
