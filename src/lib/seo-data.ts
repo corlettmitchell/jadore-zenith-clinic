@@ -126,6 +126,14 @@ export const seoData: Record<string, PageSEO> = {
     keywords:
       "patient intake form, new patient registration, HIPAA compliant, wellness clinic intake",
   },
+  privacy: {
+    title: "Privacy Policy - J'adore Wellness",
+    description:
+      "Read the J'adore Wellness Privacy Policy. Learn how we collect, use, and protect your personal information at our Oceanside, CA wellness clinic.",
+    canonical: "/privacy",
+    keywords:
+      "privacy policy, J'adore Wellness privacy, data protection, patient privacy Oceanside",
+  },
   // Location Pages
   carlsbad: {
     title: "Hormone Therapy & Wellness Near Carlsbad CA - J'adore Wellness",
